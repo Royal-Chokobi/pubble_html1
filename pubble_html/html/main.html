@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../css/icons.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+
+    <!--
+       application.js 에서 left 메뉴 슬라이드 제어됩니다.
+       application.js 로딩시 uniform 로딩되며 (기존에 함께 로딩되었던 JS부분 코드는 다 지워버렸습니다.),
+       HYML 기본 radio, check box 에 span 붙여서 디자인 부분 사용하려면 uniform 필요합니다.
+       application.js 파일에 주석처리 해놓았습니다.
+    -->
+
+    <script type="text/javascript" src="../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+</head>
+
+<body marginwidth="0" marginheight="0" >
+
+<!-- ================================  Navbar 시작되는 곳 ================================ -->
+
+<form name="top_frm" id="top_frm">
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <h1 style="width: 280px; line-height: normal;"><a href="#"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <strong> 2017년 09월 30일 (토) </strong>  </a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <strong> SMS 발송가능 : 1,636건 </strong>
+                </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="#"  class="btn btn_white">  신규예약 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="#"  class="btn btn_white">  예약문의 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="#"  class="btn btn_white">  1:1문의 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <p><a href="#"  class="btn btn_logout">  Log out </a></p>
+            </li>
+
+        </ul>
+    </div>
+</form>
+
+<!-- /navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================  Sidebar 시작되는 곳 ================================  -->
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+
+            <!-- User dropdown -->
+            <div class="user-menu dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<div class="user-info">
+                    </div>-->
+                    <strong class="user-info">Home</strong>
+                </a>
+            </div>
+            <!-- /user dropdown -->
+
+
+            <!-- Main navigation -->
+            <ul class="navigation">
+                <!--  <li class="has-ul"><a href="#"><span>Main</span> <i class="icon-screen2"></i></a></li>-->
+                <!--
+
+                <li class="has-ul">
+                    <a href="#"><span>예약관리</span> <i class="icon-gift"></i></a>
+                    <ul class="hidden-ul">
+                        <li><a href="#">예약관리</a></li>
+                        <li></li>
+                    </ul>
+                </li>
+
+                -->
+
+                <li class="has-ul">
+                    <a href="#" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
+                    <!--
+                    <ul class="hidden-ul">
+                        <li><a href="#">예약관리</a></li>
+                    </ul>
+                    -->
+                </li>
+                <li class="has-ul">
+                    <a href="#" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="#">사내게시판</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">문의 및 답변</a></li>
+                        <li><a href="#">예약 1:1 문의</a></li>
+                        <li><a href="#">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="#" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="#">SMS 발송 내역</a></li>
+                        <li><a href="#">E-Mail 발송 내역</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="#" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="#">기본정보</a></li>
+                        <li><a href="#">약관</a></li>
+                        <li><a href="#">개인정보 취급방침</a></li>
+                        <li><a href="#">취소/환불 규정</a></li>
+                        <li><a href="#">예약 전 필독사항</a></li>
+                        <li><a href="#">SMS 설정</a></li>
+                        <li><a href="#">Mail 설정</a></li>
+                        <li><a href="#">항공편 관리</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="#" class="navi_a_icon5"><span><strong>허브사이트 관리</strong></span> </a>
+                    <ul>
+                        <li><a href="#">허브페이지 관리</a></li>
+                        <li><a href="#">팝업관리</a></li>
+                        <!--<li><a href="#">회사소개</a></li>-->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="#" class="navi_a_icon6"><span><strong>호텔사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <!--
+                        <li><a href="#">메뉴1</a></li>
+                        <li><a href="#">메뉴1</a></li>
+                        <li><a href="#">메뉴1</a></li>
+                        <li><a href="#">메뉴1</a></li>
+                        <li><a href="#">메뉴1</a></li>
+                        -->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="#" class="navi_a_icon7"><span><strong>정산 및 운영관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="#">사용자 관리</a></li>
+                        <li><a href="#">업무 관리</a></li>
+                        <li><a href="#">정산 관리</a></li>
+                        <li><a href="#">매출 통계</a></li>
+                        <li><a href="#">접속 통계</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="#" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                  </li>-->
+            </ul>
+            <!-- /main navigation -->
+
+        </div>
+
+    </div>
+
+
+    <!-- /sidebar 끝-->
+
+    <div class="page-content"><div class="page-content-inner" style="height: 3000px;">
+
+
+
+
+        <script>
+            $( function() {
+                $( "#draggable" ).draggable();
+            } );
+        </script>
+
+        <div style="width: 300px; height: 300px; right: 50px; top: 50%; position: fixed;" id="draggable" >
+            <div class="sidebar-content">
+                <ul class="navigation">
+                    <li class="has-ul">
+                        <a href="#" style="background-color: #0d514c; border-color: #0d514c;"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                        <ul class="hidden-ul">
+                            <li>
+                                <div style="height: 200px; background-color: #1e347b;">
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+
+        <br>
+
+        <iframe id="_IFrame" name="_IFrame" width="0" height="0" title="빈프레임"></iframe>
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-2" tabindex="0" style="display: none;"></ul></body>
+
+</html>

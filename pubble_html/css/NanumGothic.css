@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+@font-face	{
+		font-family:'NanumGothicWeb';
+		src:url('../fonts/NanumGothic.eot');
+		src:local("NanumGothic"), url('../fonts/NanumGothic.woff') format("woff");
+	}
+
+@font-face	{
+		font-family:'NanumGothicWeb_s';
+		src:url('../fonts/NanumGothic.eot');
+		src:local("NanumGothic"), url('../fonts/NanumGothic.woff') format("woff");
+	}
+
+@font-face	{
+	font-family:'NanumGothicWeb_b';
+	src:url('../fonts/NanumGothicBold.eot');
+	src:local("NanumGothicBold"), url('../fonts/NanumGothicBold.woff') format("woff");
+}
+
+@font-face	{
+	font-family:'NanumMyeongjo_s';
+	src:url('../fonts/NanumMyeongjo_s.eot');
+	src:local("NanumMyeongjo"), url('../fonts/NanumMyeongjo_s.woff') format("woff");
+}
+
+@font-face	{
+	font-family:'SeoulHangangL';
+	src:url('../fonts/SeoulHangangL.eot');
+	src:local("SeoulHangang"), url('../fonts/SeoulHangangL.woff') format("woff");
+}
+
+@font-face	{
+	font-family:'SeoulHangangM';
+	src:url('../fonts/SeoulHangangM.eot');
+	src:local("SeoulHangang"), url('../fonts/SeoulHangangM.woff') format("woff");
+}

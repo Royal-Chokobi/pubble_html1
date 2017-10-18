@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../css/icons.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="../../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+</head>
+
+<body marginwidth="0" marginheight="0">
+
+
+<!-- ================================  TOP_bar 시작되는 곳 ================================ -->
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <h1 style="width: 280px; line-height: normal;"><a class="hotelin-title" href="javascript:;"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> 2017년 09월 30일 (토) </strong>  </a>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> SMS 발송가능 : 1,636건 </strong>
+            </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  신규예약 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  예약문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  1:1문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <p><a href="javascript:;"  class="btn btn_logout">  Log out </a></p>
+        </li>
+
+    </ul>
+</div>
+<!-- /TOP_bar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================  Sidebar 시작되는 곳 ================================  -->
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+
+            <!-- User dropdown -->
+            <div class="user-menu dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<div class="user-info">
+                    </div>-->
+                    <strong class="user-info">Home</strong>
+                </a>
+            </div>
+            <!-- /user dropdown -->
+
+
+            <!-- Main navigation -->
+            <ul class="navigation">
+                <li class="has-ul active">
+                    <a href="javascript:;" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
+                    <ul class="hidden-ul"></ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사내게시판</a></li>
+                        <li><a href="javascript:;">공지사항</a></li>
+                        <li><a href="javascript:;">문의 및 답변</a></li>
+                        <li><a href="javascript:;">예약 1:1 문의</a></li>
+                        <li><a href="javascript:;">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">SMS 발송 내역</a></li>
+                        <li><a href="javascript:;">E-Mail 발송 내역</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">기본정보</a></li>
+                        <li><a href="javascript:;">약관</a></li>
+                        <li><a href="javascript:;">개인정보 취급방침</a></li>
+                        <li><a href="javascript:;">취소/환불 규정</a></li>
+                        <li><a href="javascript:;">예약 전 필독사항</a></li>
+                        <li><a href="javascript:;">SMS 설정</a></li>
+                        <li><a href="javascript:;">Mail 설정</a></li>
+                        <li><a href="javascript:;">항공편 관리</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon5"><span><strong>허브사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">허브페이지 관리</a></li>
+                        <li><a href="javascript:;">팝업관리</a></li>
+                        <!--<li><a href="javascript:;">회사소개</a></li>-->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon6"><span><strong>호텔사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <!--
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        -->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon7"><span><strong>정산 및 운영관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사용자 관리</a></li>
+                        <li><a href="javascript:;">업무 관리</a></li>
+                        <li><a href="javascript:;">정산 관리</a></li>
+                        <li><a href="javascript:;">매출 통계</a></li>
+                        <li><a href="javascript:;">접속 통계</a></li>
+                    </ul>
+                </li>
+              <!--  <li>
+                    <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                </li>-->
+            </ul>
+            <!-- /main navigation -->
+
+        </div>
+
+    </div>
+
+
+
+    <!-- /sidebar 끝-->
+
+
+    <!-- ================================ Page content 부분 시작 ================================ -->
+
+    <div class="page-content"><div class="page-content-inner">
+
+        <div class="page-header">
+
+        </div>
+
+
+        <!-- Breadcrumbs line -->
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="javascript:;">Home</a></li>
+                <li class="active">예약관리</li>
+                <li class="active">예약상세</li>
+            </ul>
+
+            <div class="visible-xs breadcrumb-toggle">
+                <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+            </div>
+
+        </div>
+        <!-- /breadcrumbs line -->
+
+        <div class="panel panel-info text-center">
+            <div class="panel-body">
+                <div class="col-sm-9 text-left">
+                    <button type="button" class="btn btn-icon btn-xs btn-danger" >접수</button>
+                    <span>&nbsp;&nbsp;<i class="icon-arrow-right5"></i>&nbsp;&nbsp;</span>
+                    <button type="button" class="btn btn-icon btn-xs btn-danger" >견적</button>
+                    <span>&nbsp;&nbsp;<i class="icon-arrow-right5"></i>&nbsp;&nbsp;</span>
+                    <button type="button" class="btn btn-icon btn-xs btn-default" >계약금</button>
+                    <span>&nbsp;&nbsp;<i class="icon-arrow-right5"></i>&nbsp;&nbsp;</span>
+                    <button type="button" class="btn btn-icon btn-xs btn-default" >확정</button>
+                    <span>&nbsp;&nbsp;<i class="icon-arrow-right5"></i>&nbsp;&nbsp;</span>
+                    <button type="button" class="btn btn-icon btn-xs btn-default" >잔금</button>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <label class="lalbe-inline">
+                        담당자 : &nbsp;
+                        <div class="select2-container select" id="s2id_user_id" style="width: 200px;">
+                            <select class="popup_select row_select">
+                                <option selected="selected">미지정</option>
+                                <option>박소정</option>
+                                <option>김미정</option>
+                                <option>나루토</option>
+                            </select>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ======================== 플로팅 메뉴 =========================== -->
+
+        <script>
+            $( function() {
+                $( "#draggable" ).draggable();
+            } );
+
+            /** 팝업 on off 구분  **/
+            function popup_onoff(onoff_type, popup_type_num) {
+                var type_onoff = onoff_type;
+                var type_number = popup_type_num*1;
+
+                switch(type_number){
+                    case 1:     /** 블랙리스트 팝업 **/
+                        black_list_popup(type_onoff);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                }
+            }
+
+            /** 블랙리스트 팝업 **/
+            function black_list_popup(type_onoff) {
+                if(type_onoff == "on"){
+
+                    document.body.classList.add( 'modal-open' );
+                    $("#popup_frame_id").addClass( 'modal-backdrop fade in' );
+                    $("#popup_tb_id").addClass( 'modal fade in' ).css("display", "block");
+
+                }else if(type_onoff == "off"){
+
+                    $( '#popup_tb_id' ).removeClass( 'modal fade in' ).css("display", "none");
+                    $( '#popup_frame_id' ).removeClass( 'modal-backdrop fade in' );
+                    document.body.classList.remove( 'modal-open' );
+
+                }else{
+                    alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
+                }
+            }
+
+        </script>
+
+
+        <div style="width: 300px; right: 25px; top: 50%; position: fixed; z-index: 9;" id="draggable" >
+            <div>
+                <ul class="navigation" style="background-color: white; border-bottom: 1px solid white; margin: 0px;">
+                    <li class="has-ul" style="border: 1px solid rgb(204, 204, 204);">
+                        <a href="#" class="icon-menu2" style="width: 50px; display: inline-block; padding: 0; height: 35px; text-align: center; line-height: 2; background-color: #ccc; border-color: #ccc;"></a>
+                        <span style="font-size: 14px; margin-left: 50px;">예약자 정보</span>
+                        <button type="button" class="btn btn-primary" style="float: right; background-color: #ccc; border-color: #ccc;">목록</button>
+                        <ul class="hidden-ul" style="display: block; border: 1px solid rgb(204, 204, 204);">
+                            <li>
+                                <div style="background-color: white;">
+                                    <br/>
+                                    <table class="table table-bordered  font12_black  table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="2" style="border-top: 1px solid white; border-left: 1px solid white; border-right: 1px solid white;">
+                                                <div class="text-center">
+                                                    <label class="checkbox-inline" style="width: 30%;">
+                                                        <a href="javascript:;" class="btn label-default" style="width: 100%;">접수</a>
+                                                    </label>
+                                                    <label class="checkbox-inline" style="width: 30%; margin-left: 5px;">
+                                                        <a href="javascript:;" class="btn btn-warning" style="width: 100%;">견적</a>
+                                                    </label>
+                                                    <label class="checkbox-inline" style="width: 30%; margin-left: 5px;">
+                                                        <a href="javascript:;" class="btn label-default" style="width: 100%;">계약금</a>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active" style="border-left: 1px solid white;">이름</td>
+                                            <td class="text-left col-sm-4" style="border-right: 1px solid white;">
+                                                이성재
+                                                <span data-icon="" style="color: green; margin-left: 3px; font-size: 15px;"></span><!-- 정상회원 -->
+                                                <span data-icon="!" style="color: red; margin-left: 3px; font-size: 15px;"></span><!-- 블랙리스트 -->
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 1);">블랙리스트 등록</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active" style="border-left: 1px solid white;">이메일</td>
+                                            <td class="text-left col-sm-4" style="border-right: 1px solid white;">
+                                                lsjksy@hanmail.net
+                                                <span class="label label-info" style="cursor:pointer; float: right;">메일 발송</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active" style="border-left: 1px solid white;">연락처</td>
+                                            <td class="text-left col-sm-4" style="border-right: 1px solid white;">
+                                                010-2673-3306
+                                                <span class="label label-info" style="cursor:pointer; float: right;">SMS 발송</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="border-bottom: 1px solid white;  border-left: 1px solid white; border-right: 1px solid white;" >
+                                                <div class="text-center">
+                                                    <a href="javascript:;" class="btn label-default" style="width: 100%;">견적서 발송</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Table line --> <!-- 예약정보1 ST -->
+
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>예약자정보1</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">리조트</td>
+                        <td class="text-left col-sm-4">PIC괌</td>
+                        <td class="text-center col-sm-2 active">객실</td>
+                        <td class="text-left col-sm-4">
+                            디럭스룸 가든뷰(객실 + 조식 (2017.06.01 이후 요금) (1)<br/>
+                            세부 스윗룸 오션뷰(객실 + 조식 (2017.06.01 이후 요금)) (1)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">채크인(기간)</td>
+                        <td class="text-left col-sm-4">2017-11-25 ~ 2017-11-28 (3박4일)</td>
+                        <td class="text-center col-sm-2 active">여행인원</td>
+                        <td class="text-left col-sm-4">성인:2명 / 아동:1명</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">출국항공</td>
+                        <td class="text-left col-sm-4">진에어 LJ643 (인천-오전출발)</td>
+                        <td class="text-center col-sm-2 active">귀국항공</td>
+                        <td class="text-left col-sm-4">진에어 LJ644 (인천)</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">성인(4명)</td>
+                        <td class="text-left col-sm-10" colspan="3">
+                            <table class="table table-bordered  font12_black  table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자1</td>
+                                    <td class="col-sm-2">김동주</td>
+                                    <td class="col-sm-2">KIMDONGJU</td>
+                                    <td class="col-sm-2">여</td>
+                                    <td class="col-sm-2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자2</td>
+                                    <td class="col-sm-2">이풍철</td>
+                                    <td class="col-sm-2">LEEPOONGCHUL</td>
+                                    <td class="col-sm-2">남</td>
+                                    <td class="col-sm-2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자3</td>
+                                    <td class="col-sm-2">이풍철</td>
+                                    <td class="col-sm-2">LEEPOONGCHUL</td>
+                                    <td class="col-sm-2">남</td>
+                                    <td class="col-sm-2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자4</td>
+                                    <td class="col-sm-2">이풍철</td>
+                                    <td class="col-sm-2">LEEPOONGCHUL</td>
+                                    <td class="col-sm-2">남</td>
+                                    <td class="col-sm-2"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">아동(2명)</td>
+                        <td class="text-left col-sm-10" colspan="3">
+                            <table class="table table-bordered font12_black table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자1</td>
+                                    <td class="col-sm-2">이태윤</td>
+                                    <td class="col-sm-2">LEETAEYOON</td>
+                                    <td class="col-sm-2">남</td>
+                                    <td class="col-sm-2">2013-06-23</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자2</td>
+                                    <td class="col-sm-2">이태윤</td>
+                                    <td class="col-sm-2">LEETAEYOON</td>
+                                    <td class="col-sm-2">남</td>
+                                    <td class="col-sm-2">2013-06-23</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">요청사항</td>
+                        <td class="text-left col-sm-4" colspan="3" style="height:60px;">
+                            세부 왕복 공항셔틀 요청합니다. 선택을 했는데 예약할 때 포함이 안 되네요.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">거래처</td>
+                        <td class="text-left col-md-4" colspan="3">
+                            <span>거래처 : </span>
+                            <label class="checkbox-inline">
+                                <input type="text" class="form-control input-sm">
+
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <select class="popup_select" >
+                                    <option selected="selected">직접입력</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">호텔 수배서</td>
+                        <td class="text-left col-md-4" colspan="3">
+                            <span class="label label-info" style="cursor:pointer" >수배서작성</span>
+                            <span class="label label-default" style="cursor:pointer" >수배서 파일 생성</span>
+                            <a href="javascript:;">
+                                <i class="icon-file-excel"></i>
+                                <span class="text-left">[2017.08.06]호텔인-이성제님 수배서(jpark_cebu_4094_060624).xlsx</span>
+                            </a>
+                            <span class="label label-warning" style="cursor:pointer" >수배서 메일 전송</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">수배 정보</td>
+                        <td class="text-left col-md-4" colspan="3">
+                            <label class="checkbox-inline">
+                                <span >수배 정보 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline" style="cursor: default;">
+                                <span >컴펌번호 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-wide">
+                            </label>
+                            <label class="checkbox-inline" style="cursor: default;">
+                                <span >현지 연락처 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline" style="float: right;">
+                                <button type="button" class="btn btn-warning">저장</button>
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <a href="javascript:;" class="btn btn-success">예약 정보 삭제</a>
+                <label class="checkbox-inline">
+                    <select class="btn btn-success select-green-button" >
+                        <option selected="selected">예약 추가</option>
+                        <option>직접 입력</option>
+                        <option>불러오기</option>
+                    </select>
+                </label>
+                <a href="javascript:;" class="btn btn-success">예약 정보 수정</a>
+            </div>
+        </div>
+            <!-- 예약정보1 EN -->
+
+
+            <!-- 예약정보2 ST-->
+
+        <div class="panel panel-default" style="margin-top: 15px;">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>예약자정보2</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">리조트</td>
+                        <td class="text-left col-sm-4">PIC괌</td>
+                        <td class="text-center col-sm-2 active">객실</td>
+                        <td class="text-left col-sm-4">
+                            디럭스룸 가든뷰(객실 + 조식 (2017.06.01 이후 요금) (1)<br/>
+                            세부 스윗룸 오션뷰(객실 + 조식 (2017.06.01 이후 요금)) (1)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">채크인(기간)</td>
+                        <td class="text-left col-sm-4">2017-11-25 ~ 2017-11-28 (3박4일)</td>
+                        <td class="text-center col-sm-2 active">여행인원</td>
+                        <td class="text-left col-sm-4">성인:2명 / 아동:1명</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">출국항공</td>
+                        <td class="text-left col-sm-4">진에어 LJ643 (인천-오전출발)</td>
+                        <td class="text-center col-sm-2 active">귀국항공</td>
+                        <td class="text-left col-sm-4">진에어 LJ644 (인천)</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">성인(2명)</td>
+                        <td class="text-left col-sm-10" colspan="3">
+                            <table class="table table-bordered  font12_black  table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자1</td>
+                                    <td class="col-sm-2">김동주</td>
+                                    <td class="col-sm-2">KIMDONGJU</td>
+                                    <td class="col-sm-2">여</td>
+                                    <td class="col-sm-2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center active col-sm-2">여행자2</td>
+                                    <td class="col-sm-2">이풍철</td>
+                                    <td class="col-sm-2">LEEPOONGCHUL</td>
+                                    <td class="col-sm-2">남</td>
+                                    <td class="col-sm-2"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">요청사항</td>
+                        <td class="text-left col-sm-4" colspan="3" style="height:60px;">
+                            세부 왕복 공항셔틀 요청합니다. 선택을 했는데 예약할 때 포함이 안 되네요.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">거래처</td>
+                        <td class="text-left col-md-4" colspan="3">
+                            <span>거래처 : </span>
+                            <label class="checkbox-inline">
+                                <input type="text" class="form-control input-sm">
+
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <select class="popup_select" >
+                                    <option selected="selected">직접입력</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">호텔 수배서</td>
+                        <td class="text-left col-md-4" colspan="3">
+                            <span class="label label-info" style="cursor:pointer" >수배서작성</span>
+                            <span class="label label-default" style="cursor:pointer" >수배서 파일 생성</span>
+                            <a href="javascript:;">
+                                <i class="icon-file-excel"></i>
+                                <span class="text-left">[2017.08.06]호텔인-이성제님 수배서(jpark_cebu_4094_060624).xlsx</span>
+                            </a>
+                            <span class="label label-warning" style="cursor:pointer" >수배서 메일 전송</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">수배 정보</td>
+                        <td class="text-left col-md-4" colspan="3">
+                            <label class="checkbox-inline">
+                                <span >수배 정보 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline" style="cursor: default;">
+                                <span >컴펌번호 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-wide">
+                            </label>
+                            <label class="checkbox-inline" style="cursor: default;">
+                                <span >현지 연락처 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline" style="float: right;">
+                                <button type="button" class="btn btn-warning">저장</button>
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <a href="javascript:;" class="btn btn-success">예약 정보 삭제</a>
+                <label class="checkbox-inline">
+                    <select class="btn btn-success select-green-button" >
+                        <option selected="selected">예약 추가</option>
+                        <option>직접 입력</option>
+                        <option>불러오기</option>
+                    </select>
+                </label>
+                <a href="javascript:;" class="btn btn-success">예약 정보 수정</a>
+            </div>
+        </div>
+            <!-- 예약정보2 EN -->
+
+
+            <!-- 포함사항 ST -->
+
+        <div class="panel panel-default" style="margin-top: 15px;">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>포함사항</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                          <textarea style="width: 100%; height: 150px;"></textarea>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <a href="javascript:;" class="btn btn-warning">포함사항 저장</a>
+            </div>
+        </div>
+
+            <!-- 포함사항 EM -->
+
+
+
+
+        <!-- Table line -->
+
+        <!--버튼 라인 -->
+
+        <div class="btn-toolbar  text-center">
+            <button type="button" class="btn btn-warning">수정</button>
+            <button type="button" class="btn btn-primary">목록</button>
+        </div>
+        <br/>
+        <!--버튼 라인 -->
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+
+<!-- ================================  popup_st ================================  -->
+
+<div id="popup_tb_id" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off', 1);">×</button>
+                <h4 class="modal-title">  블랙리스트 고객 등록</h4>
+            </div>
+
+            <div class="modal-body with-padding" style="height:700px">
+                <div class="table-responsive">
+                    <div id="modal_5_frame" name="modal_5_frame" width="100%" height="700px" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+
+                        <div class="row" style="width:99%; text-align:center; overflow: auto; height: 670px;">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">블랙리스트 등록</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 1);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="" id="popup_frame_id"></div>
+
+<!--popup 끝-->
+
+
+
+</body>
+
+</html>

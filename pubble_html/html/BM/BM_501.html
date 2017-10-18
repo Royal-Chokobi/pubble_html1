@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../css/icons.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+
+
+    <!--
+            application.js 에서 left 메뉴 슬라이드 제어됩니다.
+            application.js 로딩시 uniform 로딩되며 (기존에 함께 로딩되었던 JS부분 코드는 다 지워버렸습니다.),
+            HYML 기본 radio, check box 에 span 붙여서 디자인 부분 사용하려면 uniform 필요합니다.
+            application.js 파일에 주석처리 해놓았습니다.
+         -->
+
+    <script type="text/javascript" src="../../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+
+</head>
+
+<body marginwidth="0" marginheight="0" >
+
+<!-- ================================  TOP_bar 시작되는 곳 ================================ -->
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <h1 style="width: 280px; line-height: normal;"><a class="hotelin-title" href="javascript:;"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> 2017년 09월 30일 (토) </strong>  </a>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> SMS 발송가능 : 1,636건 </strong>
+            </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  신규예약 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  예약문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  1:1문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <p><a href="javascript:;"  class="btn btn_logout">  Log out </a></p>
+        </li>
+
+    </ul>
+</div>
+<!-- /TOP_bar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================  Sidebar 시작되는 곳 ================================  -->
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+
+            <!-- User dropdown -->
+            <div class="user-menu dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<div class="user-info">
+                    </div>-->
+                    <strong class="user-info">Home</strong>
+                </a>
+            </div>
+            <!-- /user dropdown -->
+
+
+            <!-- Main navigation -->
+            <ul class="navigation">
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
+                </li>
+                <li class="active has-ul">
+                    <a href="javascript:;" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
+                    <ul class="active">
+                        <li class="active"><a href="javascript:;">사내게시판</a></li>
+                        <li><a href="javascript:;">공지사항</a></li>
+                        <li><a href="javascript:;">문의 및 답변</a></li>
+                        <li><a href="javascript:;">예약 1:1 문의</a></li>
+                        <li><a href="javascript:;">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">SMS 발송 내역</a></li>
+                        <li><a href="javascript:;">E-Mail 발송 내역</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">기본정보</a></li>
+                        <li><a href="javascript:;">약관</a></li>
+                        <li><a href="javascript:;">개인정보 취급방침</a></li>
+                        <li><a href="javascript:;">취소/환불 규정</a></li>
+                        <li><a href="javascript:;">예약 전 필독사항</a></li>
+                        <li><a href="javascript:;">SMS 설정</a></li>
+                        <li><a href="javascript:;">Mail 설정</a></li>
+                        <li><a href="javascript:;">항공편 관리</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon5"><span><strong>허브사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">허브페이지 관리</a></li>
+                        <li><a href="javascript:;">팝업관리</a></li>
+                        <!--<li><a href="javascript:;">회사소개</a></li>-->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon6"><span><strong>호텔사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <!--
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        -->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon7"><span><strong>정산 및 운영관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사용자 관리</a></li>
+                        <li><a href="javascript:;">업무 관리</a></li>
+                        <li><a href="javascript:;">정산 관리</a></li>
+                        <li><a href="javascript:;">매출 통계</a></li>
+                        <li><a href="javascript:;">접속 통계</a></li>
+                    </ul>
+                </li>
+              <!--  <li>
+                    <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                </li>-->
+            </ul>
+            <!-- /main navigation -->
+
+        </div>
+
+    </div>
+
+
+    <!-- /sidebar 끝-->
+
+
+    <!-- ================================ Page content 부분 시작 ================================ -->
+
+    <div class="page-content"><div class="page-content-inner">
+
+        <div class="page-header">
+
+        </div>
+
+
+        <!-- Breadcrumbs line -->
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="javascript:;">Home</a></li>
+                <li class="active">게시판 관리</li>
+                <li class="active">사내 게시판</li>
+            </ul>
+
+            <div class="visible-xs breadcrumb-toggle">
+                <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+            </div>
+
+        </div>
+        <!-- /breadcrumbs line -->
+
+        <!-- 검색 라인 시작 -->
+        <div class="row">
+                <div class="col-sm-4 text-left">
+                    <div class="block-inner">
+                        <select class="popup_select row_select">
+                            <option selected="selected">사이트전체</option>
+                            <option>HYATT 사이판</option>
+                            <option>J-PARK</option>
+                            <option>KENSINGTON 사이판</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-8 text-right">
+                    <div class="block-inner">
+                        <div class="input-group">
+                            <label class="checkbox-inline">
+                                <select class="popup_select row_select" style="width: 100px; height: 34px;">
+                                    <option selected="selected">제목</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 0px;">
+                                <input type="text" class="form-control autocomplete text-danger ui-autocomplete-input" placeholder="검색어를 입력하세요." >
+                            </label>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary btn-icon" type="button" ><i class="icon-search3"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- 검색 라인 끝 -->
+
+
+        <!-- Table line -->
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered font12_black table-condensed">
+                    <colgroup>
+                        <col width="5%"/>
+                        <col width="10%"/>
+                        <col width="65%"/>
+                        <col width="10%"/>
+                        <col width="10%"/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th colspan="5">
+                            <a href="javascript:;"  class="btn tb_btn_white">삭제 </a>
+                            <a href="javascript:;"  class="btn tb_btn_white_right">글쓰기</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text-center active"><input type="checkbox" class="styled" align="middle"></th>
+                        <th class="text-center active">NO</th>
+                        <th class="text-center active">제목</th>
+                        <th class="text-center active">작성자</th>
+                        <th class="text-center active">작성일</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" ><span class="btn-red">공지</span></td>
+                        <td class="text-left" >제이파크 아마존 리버 유지보수 공사 안내</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center" >2017.06.27</td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" ><span class="btn-red">공지</span></td>
+                        <td class="text-left" >  괌*사이판 스냅프로모션 오픈 * 상세페이지, 금액 모두 변경되었습니다.</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center" >2017.06.27</td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >8888888</td>
+                        <td class="text-left" >제이파크 아마존 리버 유지보수 공사 안내</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center" >2017.06.27</td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" >제이파크 아마존 리버 유지보수 공사 안내 제이파크 아마존 리버 유지보수 공사 안내 제이파크 아마존 리버 유지보수 공사 안내</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center" >2017.06.27</td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >1</td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Table line -->
+
+        <!-- 페이징 라인 시작 -->
+
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8 text-center">
+                <ul class="pagination">
+                    <li class="disabled"><a href="javascript:;">←</a></li>
+                    <li class="active"><a href="javascript:;">1</a></li>
+                    <li><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">4</a></li>
+                    <li><a href="javascript:;">5</a></li>
+                    <li><a href="javascript:;">6</a></li>
+                    <li><a href="javascript:;">7</a></li>
+                    <li><a href="javascript:;">8</a></li>
+                    <li><a href="javascript:;">9</a></li>
+                    <li><a href="javascript:;">10</a></li>
+                    <li><a href="javascript:;">→</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 text-right">
+            </div>
+        </div>
+        <br>
+        <!--페이징 라인 끝 -->
+
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+
+</body>
+
+</html>
