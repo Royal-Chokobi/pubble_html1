@@ -216,9 +216,6 @@
         <!-- ======================== 플로팅 메뉴 =========================== -->
 
         <script>
-            $( function() {
-                $( "#draggable" ).draggable();
-            } );
 
             /** 팝업 on off 구분  **/
             function popup_onoff(onoff_type, popup_type_num) {
@@ -258,7 +255,7 @@
         </script>
 
 
-        <div style="width: 300px; right: 25px; top: 50%; position: fixed; z-index: 9;" id="draggable" >
+        <div style="width: 300px; right: 25px; top: 50%; position: fixed; z-index: 9;">
             <div>
                 <ul class="navigation" style="background-color: white; border-bottom: 1px solid white; margin: 0px;">
                     <li class="has-ul" style="border: 1px solid rgb(204, 204, 204);">
@@ -665,6 +662,415 @@
         </div>
 
             <!-- 포함사항 EM -->
+
+            <!-- 가격정보 ST -->
+        <div class="panel panel-default" style="margin-top: 15px;">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>가격정보</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">객실가격</td>
+                        <td class="text-left col-sm-4" colspan="3">
+                            <table class="table table-bordered font12_black table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center active col-sm-1">리조트</td>
+                                    <td class="text-center active col-sm-3">객실(상품)</td>
+                                    <td class="text-center active col-sm-1">숙박일</td>
+                                    <td class="text-center active col-sm-1">객실금액</td>
+                                    <td class="text-center active col-sm-1">익스트라베드</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center  col-sm-1">J-PARK</td>
+                                    <td class="text-left  col-sm-3"> 디럭스룸 가든뷰(객실 + 조식 (2017.06.01 이후 요금) (1)</td>
+                                    <td class="text-center  col-sm-1 text-warning">3박</td>
+                                    <td class="text-center  col-sm-1 text-warning">900</td>
+                                    <td class="text-center  col-sm-1 text-warning">105</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center  col-sm-1">J-PARK</td>
+                                    <td class="text-left  col-sm-3"> 디럭스룸 가든뷰(객실 + 조식 (2017.06.01 이후 요금) (1)</td>
+                                    <td class="text-center  col-sm-1 text-warning">3박</td>
+                                    <td class="text-center  col-sm-1 text-warning">900</td>
+                                    <td class="text-center  col-sm-1 text-warning">105</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center  col-sm-1">J-PARK</td>
+                                    <td class="text-left  col-sm-3"> 디럭스룸 가든뷰(객실 + 조식 (2017.06.01 이후 요금) (1)</td>
+                                    <td class="text-center  col-sm-1 text-warning">3박</td>
+                                    <td class="text-center  col-sm-1 text-warning">900</td>
+                                    <td class="text-center  col-sm-1 text-warning">105</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center  col-sm-1">J-PARK</td>
+                                    <td class="text-left  col-sm-3"> 디럭스룸 가든뷰(객실 + 조식 (2017.06.01 이후 요금) (1)</td>
+                                    <td class="text-center  col-sm-1 text-warning">3박</td>
+                                    <td class="text-center  col-sm-1 text-warning">900</td>
+                                    <td class="text-center  col-sm-1 text-warning">105</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center  col-sm-1">J-PARK</td>
+                                    <td class="text-left  col-sm-3"> 디럭스룸 가든뷰(객실 + 조식 (2017.06.01 이후 요금) (1)</td>
+                                    <td class="text-center  col-sm-1 text-warning">3박</td>
+                                    <td class="text-center  col-sm-1 text-warning">900</td>
+                                    <td class="text-center  col-sm-1 text-warning">105</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">골드카드</td>
+                        <td class="text-center col-sm-4 text-warning">성인골드 : 900  /  아동골드 : 0</td>
+                        <td class="text-center col-sm-2 active">오후출발</td>
+                        <td class="text-left col-sm-4 text-info">180</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">추가상품</td>
+                        <td class="text-left col-sm-10" colspan="3">
+                            <table class="table table-bordered font12_black table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td class="text-center active col-sm-8">내용</td>
+                                    <td class="text-center active col-sm-2">금액</td>
+                                    <td class="text-center active col-sm-2">비고</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center col-sm-8">
+                                        <input type="text" class="form-control input-sm">
+                                    </td>
+                                    <td class="text-center col-sm-2">
+                                        <input type="text" class="form-control input-sm">
+                                    </td>
+                                    <td class="text-center col-sm-2">
+                                        <span class="label label-primary" style="cursor:pointer">추가</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center col-sm-8">
+                                        <input type="text" class="form-control input-sm">
+                                    </td>
+                                    <td class="text-center col-sm-2">
+                                        <input type="text" class="form-control input-sm">
+                                    </td>
+                                    <td class="text-center col-sm-2">
+                                        <span class="label label-danger" style="cursor:pointer">삭제</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center col-sm-8">
+                                        <input type="text" class="form-control input-sm">
+                                    </td>
+                                    <td class="text-center col-sm-2">
+                                        <input type="text" class="form-control input-sm">
+                                    </td>
+                                    <td class="text-center col-sm-2">
+                                        <span class="label label-danger" style="cursor:pointer">삭제</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">할인금액</td>
+                        <td class="text-center col-sm-4 text-warning">
+                            <div class="input-group col-sm-6">
+                                <input type="text" class="form-control input-sm  text-info" >
+                            </div>
+                        </td>
+                        <td class="text-center col-sm-2 active">할인내역</td>
+                        <td class="text-left col-sm-4">
+                            <div class="input-group col-sm-12">
+                                <input type="text" class="form-control input-sm  text-info " >
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active"><strong>합계금액</strong></td>
+                        <td class="text-left col-sm-10" colspan="3">
+                            <table class="table-line-none">
+                                <tbody>
+                                <tr >
+                                    <td class="text-left col-sm-1">
+                                        <strong>$<span>2,610</span></strong>
+                                    </td>
+                                    <td class="text-left col-sm-10 ">
+                                        <table class="table table-bordered font12_black table-condensed ">
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center active col-sm-1">객실금액</td>
+                                                <td class="text-center active col-sm-1">익스트라베드</td>
+                                                <td class="text-center active col-sm-1">골드카드</td>
+                                                <td class="text-center active col-sm-1">추가상품</td>
+                                                <td class="text-center active col-sm-1">오후출발</td>
+                                                <td class="text-center active col-sm-1">할인금액</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center  col-sm-1">2660</td>
+                                                <td class="text-center  col-sm-1">210</td>
+                                                <td class="text-center  col-sm-1">0</td>
+                                                <td class="text-center  col-sm-1">900</td>
+                                                <td class="text-center  col-sm-1 text-warning">0</td>
+                                                <td class="text-center  col-sm-1 text-warning">105</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <a href="javascript:;" class="btn btn-warning">가격정보 추가</a>
+            </div>
+        </div>
+             <!-- 가격정보 EM -->
+
+            <!-- 추가가격 정보 ST -->
+        <div class="panel panel-default" style="margin-top: 15px;">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>추가가격 정보</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left col-sm-2 active">추가금액</td>
+                        <td class="text-left col-sm-10 ">
+                            <table class="table-line-none">
+                                <tbody>
+                                <tr>
+                                    <td class="text-left col-sm-1">
+                                        <strong>$<span>2,610</span></strong>
+                                    </td>
+                                    <td class="text-left col-sm-10 ">
+                                        <table class="table table-bordered font12_black table-condensed">
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center active col-sm-8">내용</td>
+                                                <td class="text-center active col-sm-2">금액</td>
+                                                <td class="text-center active col-sm-2">비고</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center col-sm-8">
+                                                    <input type="text" class="form-control input-sm">
+                                                </td>
+                                                <td class="text-center col-sm-2">
+                                                    <input type="text" class="form-control input-sm">
+                                                </td>
+                                                <td class="text-center col-sm-2">
+                                                    <span class="label label-primary" style="cursor:pointer">추가</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center col-sm-8">
+                                                    <input type="text" class="form-control input-sm">
+                                                </td>
+                                                <td class="text-center col-sm-2">
+                                                    <input type="text" class="form-control input-sm">
+                                                </td>
+                                                <td class="text-center col-sm-2">
+                                                    <span class="label label-danger" style="cursor:pointer">삭제</span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+             <!-- 추가가격 정보 EN -->
+
+             <!-- 결제 정보 ST -->
+        <div class="panel panel-default" style="margin-top: 15px;">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>결제정보 <span class="text-warning">(잔금에 대해서는 카드결제가 가능하며 환률 적용 시 잔금에 3%가 추가됩니다.)</span></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-3 active"><strong>총여행경비</strong></td>
+                        <td class="text-center col-sm-3 active"><strong>계약금</strong></td>
+                        <td class="text-center col-sm-3 active"><strong>중간결제</strong></td>
+                        <td class="text-center col-sm-3 active"><strong>잔금</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-3">
+                            <table class="table-line-none">
+                                <tbody>
+                                <tr>
+                                    <td class="text-right col-sm-3">적용환률 :</td>
+                                    <td class="text-left col-sm-8">
+                                        <label class="checkbox-inline">
+                                            <input type="text" class="form-control input-sm">
+                                        </label>
+                                        <button class="btn btn-primary btn-xs" type="button">환율적용</button>
+                                </tr>
+                                <tr>
+                                    <td class="text-right col-sm-3">미화 :</td>
+                                    <td class="text-left col-sm-8"><input type="text" class="form-control input-sm">
+                                </tr>
+                                <tr>
+                                    <td class="text-right col-sm-3">한화 :</td>
+                                    <td class="text-left col-sm-8"><input type="text" class="form-control input-sm">
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="text-center col-sm-3">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td class="text-left col-sm-3" style="height: 150px; border-top: 1px solid white;">
+                                        <label class="checkbox-inline">
+                                            <input type="text" class="form-control input-sm" style="width: 100px;">
+                                        </label>
+                                        <label class="checkbox-inline" style="margin-left: 5px;">
+                                            <select class="popup_select" style="width: 55px;">
+                                                <option selected="selected">\</option>
+                                                <option>$</option>
+                                            </select>
+                                        </label>
+                                        <label class="checkbox-inline" style="margin-left: 1px;">
+                                            <input type="text" class="form-control input-sm" style="width: 120px;">
+                                        </label>
+                                        <button class="btn btn-primary btn-xs" type="button">저장</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left col-sm-3">
+                                        <label class="list-inline" style="display: block;">
+                                            <input type="text" class="form-control input-sm" style="width: 80%; float: left;">
+                                            <a class="plus-button" href="javascript:;"></a>
+                                        </label>
+                                        <label class="list-inline" style="display: block;">
+                                            <input type="text" class="form-control input-sm" style="width: 80%; float: left;">
+                                            <a class="plus-button" href="javascript:;"></a>
+                                        </label>
+                                        <label class="list-inline" style="display: block;">
+                                            <input type="text" class="form-control input-sm" style="width: 80%; float: left;">
+                                            <a class="plus-button" href="javascript:;"></a>
+                                        </label>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-12">
+                                <input type="text" class="form-control input-sm">
+                                <span class="input-group-btn">
+                        	<button class="btn btn-default btn-xs" type="button">미납</button>
+                                </span>
+                                <span class="input-group-btn">
+                        	<button class="btn btn-primary btn-xs" type="button">입금확인</button>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-12">
+                                <input type="text" class="form-control input-sm">
+                                <span class="input-group-btn">
+                        	<button class="btn btn-primary btn-xs" type="button">완납</button>
+                                </span>
+                                <span class="input-group-btn">
+                        	<button class="btn btn-danger btn-xs" type="button">입금취소</button>
+                                </span>
+                            </div>
+                            <div class="input-group col-sm-12" id="price_card">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default btn-xs" type="button">카드결제(+3%)</button>
+                        </span>
+                                <input type="text" class="form-control input-sm">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-3 active">옵션 예약금</td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-9">
+                        <span class="input-group-btn">
+                            <label class="btn btn-default btn-xs" type="button">입금일자
+                        </label></span>
+                                <input type="text" class="form-control input-sm hasDatepicker">
+
+                            </div>
+                        </td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-9">
+                        <span class="input-group-btn">
+                            <label class="btn btn-default btn-xs" type="button">입금일자
+                        </label></span>
+                                <input type="text" class="form-control input-sm hasDatepicker">
+                            </div>
+                        </td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-9">
+                        <span class="input-group-btn">
+                            <label class="btn btn-default btn-xs" type="button">입금일자
+                        </label></span>
+                                <input type="text" class="form-control input-sm hasDatepicker">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-3 active">현금 영수증 발행</td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-9">
+                        <span class="input-group-btn">
+                            <label class="btn btn-default btn-xs" type="button">입금일자
+                        </label></span>
+                                <input type="text" class="form-control input-sm hasDatepicker">
+
+                            </div>
+                        </td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-9">
+                        <span class="input-group-btn">
+                            <label class="btn btn-default btn-xs" type="button">입금일자
+                        </label></span>
+                                <input type="text" class="form-control input-sm hasDatepicker">
+                            </div>
+                        </td>
+                        <td class="text-center col-sm-3">
+                            <div class="input-group col-sm-9">
+                        <span class="input-group-btn">
+                            <label class="btn btn-default btn-xs" type="button">입금일자
+                        </label></span>
+                                <input type="text" class="form-control input-sm hasDatepicker">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+            <!-- 결제 정보 EN -->
+
+
 
 
 

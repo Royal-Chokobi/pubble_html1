@@ -163,6 +163,15 @@ select{
   background: url('../images/icon/nav_arrow_bottom.png') no-repeat #65B688 90% 50%;
   border-color: #65B688;
 }
+.select-white-button{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: white;
+  min-width: 55px;
+  background: url('../images/icon/nav_arrow_bottom.png') no-repeat #ccc 90% 50%;
+  border-color: #ccc;
+}
 .ui-datepicker-year{
   width: 65px;
   margin-right: 5px;
@@ -311,6 +320,10 @@ select{
   margin: 0; 
 }
 
+.table-line-none{
+  border: 1px solid white;
+  width: 100%;
+}
 
 
 
