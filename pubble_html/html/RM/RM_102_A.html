@@ -100,6 +100,32 @@
                     monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
                 }
             );
+            $("#rm102c_date7").datepicker(
+                {
+                    dateFormat: 'yy-mm-dd',
+                    //showOn: "button",
+                    //buttonImage: "../images/cal.png",
+                    //buttonImageOnly: false,
+                    changeYear: true,
+                    changeMonth: true,
+                    showMonthAfterYear: true,
+                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
+                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+                }
+            );
+            $("#rm102c_date8").datepicker(
+                {
+                    dateFormat: 'yy-mm-dd',
+                    //showOn: "button",
+                    //buttonImage: "../images/cal.png",
+                    //buttonImageOnly: false,
+                    changeYear: true,
+                    changeMonth: true,
+                    showMonthAfterYear: true,
+                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
+                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+                }
+            );
         });
     </script>
 
@@ -246,7 +272,8 @@
 
     <!-- ================================ Page content 부분 시작 ================================ -->
 
-    <div class="page-content"><div class="page-content-inner">
+    <div class="page-content">
+        <div class="page-content-inner">
 
         <div class="page-header">
 
@@ -1010,27 +1037,28 @@
                             <table class="table-line-none">
                                 <tbody>
                                 <tr style="height: 40px;">
-                                    <td class="text-right col-sm-3">적용환률 :</td>
+                                    <td class="text-right col-sm-4">적용환률 :</td>
                                     <td class="text-left col-sm-8">
                                         <label class="checkbox-inline">
-                                            <input type="text" class="form-control input-sm">
+                                            <input type="text" class="form-control input-sm" style="width: 100px;">
                                         </label>
                                         <button class="btn btn-primary btn-xs" type="button">환율적용</button>
+                                    </td>
                                 </tr>
                                 <tr style="height: 40px;">
-                                    <td class="text-right col-sm-3">미화 :</td>
-                                    <td class="text-left col-sm-8"><input type="text" class="form-control input-sm">
+                                    <td class="text-right col-sm-4">미화 :</td>
+                                    <td class="text-left col-sm-8"><input type="text" class="form-control input-sm"></td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right col-sm-3">한화 :</td>
-                                    <td class="text-left col-sm-8"><input type="text" class="form-control input-sm">
+                                    <td class="text-right col-sm-4">한화 :</td>
+                                    <td class="text-left col-sm-8"><input type="text" class="form-control input-sm"></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </td>
                         <td class="text-left col-sm-3 table-bottom-line">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date1">
+                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date1">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
                                 <select class="popup_select" style="width: 55px;">
@@ -1039,13 +1067,13 @@
                                 </select>
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
-                                <input type="text" class="form-control input-sm" style="width: 120px;">
+                                <input type="text" class="form-control input-sm" style="width: 100px;">
                             </label>
                             <button class="btn btn-primary btn-xs" type="button">저장</button>
                         </td>
                         <td class="text-left col-sm-3 table-bottom-line">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date2">
+                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date2">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
                                 <select class="popup_select" style="width: 55px;">
@@ -1054,7 +1082,7 @@
                                 </select>
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
-                                <input type="text" class="form-control input-sm" style="width: 120px;">
+                                <input type="text" class="form-control input-sm" style="width: 100px;">
                             </label>
                             <button class="btn btn-primary btn-xs" type="button">저장</button>
                         </td>
@@ -1062,11 +1090,11 @@
                             <div>
                                 미화
                                 <label class="checkbox-inline" style="margin-right: 10px;">
-                                    <input type="text" class="form-control input-sm" style="width: 130px;">
+                                    <input type="text" class="form-control input-sm" style="width: 100px;">
                                 </label>
                                 한화
                                 <label class="checkbox-inline" style="margin-left: 1px;">
-                                    <input type="text" class="form-control input-sm" style="width: 130px;">
+                                    <input type="text" class="form-control input-sm" style="width: 100px;">
                                 </label>
                             </div>
                             <div style="margin-top: 30px;">
@@ -1074,7 +1102,7 @@
                             </div>
                             <div style="margin-top: 15px;">
                                 <label class="checkbox-inline">
-                                    <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date3">
+                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date3">
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 5px;">
                                     <select class="popup_select" style="width: 55px;">
@@ -1083,7 +1111,7 @@
                                     </select>
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 1px;">
-                                    <input type="text" class="form-control input-sm" style="width: 120px;">
+                                    <input type="text" class="form-control input-sm" style="width: 100px;">
                                 </label>
                                 <button class="btn btn-primary btn-xs" type="button">저장</button>
                             </div>
@@ -1093,63 +1121,63 @@
                     <tr>
                         <td class="table-top-line"></td>
                         <td class="text-left col-sm-3 table-top-line">
-                            <label class="list-inline" style="display: block;">
+                            <label class="list-inline">
                                 <label class="label-txt-box">
                                     <span class="text-left span-days">2017.12.22</span>
                                     <span  class="text-left span-money">\ 1,500,000</span>
                                 </label>
-                                    <a class="x-button" href="javascript:;"></a>
                             </label>
-                            <label class="list-inline" style="display: block;">
+                            <button class="btn x-button" type="button"></button>
+                            <label class="list-inline" >
                                 <label class="label-txt-box">
                                     <span class="text-left span-days">2017.12.22</span>
                                     <span  class="text-left span-money-red">\ 1,500,000</span>
                                     <span class="label label-warning">환불대기중</span>
                                 </label>
-                                    <a class="x-button" href="javascript:;"></a>
                             </label>
-                            <label class="list-inline" style="display: block;">
+                            <button class="btn x-button" type="button"></button>
+                            <label class="list-inline" >
                                 <label class="label-txt-box">
                                     <span class="text-left span-days">2017.12.22</span>
                                     <span  class="text-left span-money">\ 1,500,000</span>
                                     <span class="label label-warning">환불대기중</span>
                                 </label>
-                                    <a class="x-button" href="javascript:;"></a>
                             </label>
+                            <button class="btn x-button" type="button"></button>
                         </td>
                         <td class="text-left col-sm-3 table-top-line">
-                            <label class="list-inline" style="display: block;">
+                            <label class="list-inline" >
                                 <label class="label-txt-box">
                                     <span class="text-left span-days">2017.12.22</span>
                                     <span  class="text-left span-money">\ 1,500,000</span>
                                 </label>
-                                <a class="x-button" href="javascript:;"></a>
                             </label>
-                            <label class="list-inline" style="display: block;">
+                            <button class="btn x-button" type="button"></button>
+                            <label class="list-inline" >
                                 <label class="label-txt-box">
                                     <span class="text-left span-days">2017.12.22</span>
                                     <span  class="text-left span-money">\ 1,500,000</span>
                                     <span class="label label-warning">환불대기중</span>
                                 </label>
-                                <a class="x-button" href="javascript:;"></a>
                             </label>
+                            <button class="btn x-button" type="button"></button>
                         </td>
                         <td class="text-left col-sm-3 table-top-line">
-                            <label class="list-inline" style="display: block;">
+                            <label class="list-inline" >
                                 <label class="label-txt-box">
                                     <span class="text-left span-days">2017.12.22</span>
                                     <span  class="text-left span-money">\ 1,500,000</span>
                                 </label>
-                                <a class="x-button" href="javascript:;"></a>
                             </label>
-                            <label class="list-inline" style="display: block;">
+                            <button class="btn x-button" type="button"></button>
+                            <label class="list-inline" >
                                 <label class="label-big-txt-box">
                                     <span class="text-left span-days">2017.12.22</span>
                                     <span  class="text-left span-money">\ 1,500,000</span>
                                     <span class="span-tx-card">(카드+3% : \ 1,797,865)</span>
                                 </label>
-                                <a class="x-big-button" href="javascript:;"></a>
                             </label>
+                            <button class="btn x-big-button" type="button"></button>
                         </td>
                     </tr>
                     <tr>
@@ -1168,7 +1196,7 @@
                                 <span class="text-left span-days">2017.12.22</span>
                                 <span  class="text-left span-money">\ 1,500,000</span>
                             </label>
-                            <a class="x-button" href="javascript:;"></a>
+                            <button class="btn x-button" type="button"></button>
                         </td>
                     </tr>
                     <tr>
@@ -1185,14 +1213,14 @@
                             </label>
                             <button class="btn btn-primary btn-xs" type="button">저장</button>
                         </td>
-                        <td class="text-center col-sm-3">
+                        <td class="text-left col-sm-3">
                             <label class="label-txt-box">
                                 <span class="text-left span-days">2017.12.22</span>
                                 <span  class="text-left span-money">\ 1,500,000</span>
                                 <span class="label label-warning">발행대기중</span>
                                 <!--<span class="label label-default">발행완료</span>-->
                             </label>
-                            <a class="x-button" href="javascript:;"></a>
+                            <button class="btn x-button" type="button"></button>
                         </td>
                     </tr>
                     <tr>
@@ -1201,19 +1229,19 @@
                             <table class="table-line-none">
                                 <tbody>
                                 <tr style="height: 40px;">
-                                    <td class="text-right col-sm-3">적용환률 :</td>
+                                    <td class="text-right col-sm-4">적용환률 :</td>
                                     <td class="text-left col-sm-8">
                                         <label class="checkbox-inline">
-                                            <input type="text" class="form-control input-sm">
+                                            <input type="text" class="form-control input-sm" style="width: 100px;">
                                         </label>
                                         <button class="btn btn-primary btn-xs" type="button">환율적용</button>
                                 </tr>
                                 <tr style="height: 40px;">
-                                    <td class="text-right col-sm-3">미화 :</td>
+                                    <td class="text-right col-sm-4">미화 :</td>
                                     <td class="text-left col-sm-8"><input type="text" class="form-control input-sm">
                                 </tr>
                                 <tr>
-                                    <td class="text-right col-sm-3">한화 :</td>
+                                    <td class="text-right col-sm-4">한화 :</td>
                                     <td class="text-left col-sm-8"><input type="text" class="form-control input-sm">
                                 </tr>
                                 </tbody>
@@ -1226,7 +1254,7 @@
                             </div>
                             <div style="margin-top: 10px; margin-bottom: 10px;">
                                 <label class="checkbox-inline">
-                                    <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date6">
+                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date6">
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 5px;">
                                     <select class="popup_select" style="width: 55px;">
@@ -1235,7 +1263,7 @@
                                     </select>
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 1px;">
-                                    <input type="text" class="form-control input-sm" style="width: 120px;">
+                                    <input type="text" class="form-control input-sm" style="width: 100px;">
                                 </label>
                                 <button class="btn btn-primary btn-xs" type="button">저장</button>
                             </div>
@@ -1243,7 +1271,7 @@
                                 <span class="text-left span-days">2017.12.22</span>
                                 <span  class="text-left span-money">\ 1,500,000</span>
                             </label>
-                            <a class="x-button" href="javascript:;"></a>
+                            <button class="btn x-button" type="button"></button>
                         </td>
                     </tr>
                     </tbody>
@@ -1265,46 +1293,341 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="text-center col-sm-3 active">결제금액</td>
-                        <td class="text-left col-sm-8 " colspan="3">
+                        <td class="text-center col-sm-2 active">결제금액</td>
+                        <td class="text-left col-sm-4 " colspan="3">
                             <label class="checkbox-inline">
                                 <span>한화 : </span>
                             </label>
-                            <label class="checkbox-inline">
+                            <label class="checkbox-inline" style="margin-left: 1px;">
                                 <input type="text" class="form-control input-sm">
                             </label>
                             <label class="checkbox-inline">
                                 <span>외화 : </span>
                             </label>
-                            <label class="checkbox-inline">
+                            <label class="checkbox-inline" style="margin-left: 1px;">
                                 <input type="text" class="form-control input-sm">
                             </label>
                             <label class="checkbox-inline">
                                 <span>카드결제 : </span>
                             </label>
-                            <label class="checkbox-inline">
+                            <label class="checkbox-inline" style="margin-left: 1px;">
                                 <input type="text" class="form-control input-wide">
                             </label>
                         </td>
                     </tr>
                     <tr>
-                        <td class="text-center col-sm-3 active">취소료(패널티)</td>
-                        <td class="text-left col-sm-3 "><input type="text" class="form-control input-sm"></td>
+                        <td class="text-center col-sm-2 active">취소료(패널티)</td>
+                        <td class="text-left col-sm-4 "><input type="text" class="form-control input-sm"></td>
                         <td class="text-center col-sm-2 active">환불계좌</td>
-                        <td class="text-left col-sm-3 "><input type="text" class="form-control input-sm"></td>
+                        <td class="text-left col-sm-4 "><input type="text" class="form-control input-sm"></td>
                     </tr>
                     <tr>
-                        <td class="text-center col-sm-3 active">환불액</td>
+                        <td class="text-center col-sm-2 active">환불액</td>
                         <td class="text-left col-sm-8 " colspan="3">
-
+                            <label class="checkbox-inline">
+                                <span>한화 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-sm" id="rm102c_date7">
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px;">
+                                <span class="label label-warning">환불대기중</span>
+                            </label>
+                            <label class="checkbox-inline">
+                                <label class="label-txt-box">
+                                    <span class="text-left span-days">2017.12.22</span>
+                                    <span class="text-left span-money">\ 1,500,000</span>
+                                    <span class="label label-default">환불완료</span>
+                                </label>
+                            </label>
+                            <button class="btn x-button" type="button"></button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
+        <div class="panel panel-default" style="margin-top: 15px;">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>취소 / 환불정보</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">결제금액</td>
+                        <td class="text-left col-sm-8 " colspan="3">
+                            <label class="checkbox-inline">
+                                <span>한화 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline">
+                                <span>외화 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline">
+                                <span>카드결제 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px;">
+                                <input type="text" class="form-control input-wide">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">취소료(패널티)</td>
+                        <td class="text-left col-sm-4 "><input type="text" class="form-control input-sm"></td>
+                        <td class="text-center col-sm-2 active">환불계좌</td>
+                        <td class="text-left col-sm-4"><input type="text" class="form-control input-sm"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active">환불액</td>
+                        <td class="text-left col-sm-8 " colspan="3">
+                            <label class="checkbox-inline">
+                                <span>한화 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px; width: 110px;">
+                                <input type="text" class="form-control input-sm">
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 5px;">
+                                <input type="text" class="form-control input-sm" style="width: 110px;" id="rm102c_date8">
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px;">
+                                <span class="label label-warning">환불대기중</span>
+                            </label>
+                            <label class="checkbox-inline" >
+                                <span>카드 : </span>
+                            </label>
+                            <label class="checkbox-inline" style="margin-left: 1px;">
+                                <input type="text" class="form-control" style="width: 270px;" value="\2,300,000 (카드 3% : \2,069,000)">
+                            </label>
+                            <label class="checkbox-inline" >
+                                <label class="label-txt-box" style="margin-bottom: 0px;">
+                                    <span class="text-left span-days">2017.12.22</span>
+                                    <span class="text-left span-money">\ 1,500,000</span>
+                                    <span class="label label-default">환불완료</span>
+                                </label>
+                            </label>
+                            <button class="btn x-button" type="button"></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <a href="javascript:;" class="btn btn-primary">환불정보 수정</a>
+            </div>
+        </div>
             <!-- 취소 / 환불정보 EN -->
+
+
+            <!-- 업무진행 메모 ST-->
+            <div class="panel panel-default" style="margin-top: 15px;">
+                <div class="table-responsive">
+                    <table class="table table-bordered  font12_black  table-condensed">
+                        <tbody>
+                        <tr>
+                            <td class="text-left col-sm-2 active" colspan="4">
+                                <h6 class="panel-title col-sm-11"><i class="icon-menu2"></i>업무진행 비공개 메모</h6>
+                                <div class="col-sm-1 control-label  text-left"><button type="button" class="btn btn-icon btn-info btn-xs" onclick="javascript:;">메모등록</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-default" style="margin-top: 15px;">
+                <div class="table-responsive">
+                    <table class="table table-bordered  font12_black  table-condensed">
+                        <tbody>
+                        <tr>
+                            <td class="text-left col-sm-2 active" colspan="4">
+                                <h6 class="panel-title col-sm-11"><i class="icon-menu2"></i>업무진행 공개 메모</h6>
+                                <div class="col-sm-1 control-label  text-left"><button type="button" class="btn btn-icon btn-info btn-xs" onclick="javascript:;">메모등록</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2">
+                                <div class="col-sm-2 text-left">2017-07-24 14:57:09</div>
+                                <div class="col-sm-9 text-left">예약정보 및 예약자정보 변경 (hotelin1)</div>
+                                <div class="col-sm-1 text-right">
+                                    <a href="javascript:;"><span style="margin-right: 15px;"><i class="icon-pencil"></i></span></a>
+                                    <a href="javascript:;"><span><i class="icon-remove2"></i></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-default" style="margin-top: 15px;">
+                <div class="table-responsive">
+                    <table class="table font12_black  table-condensed">
+                        <tbody>
+                        <tr>
+                            <td class="text-left col-sm-2 active" colspan="4">
+                                <h6 class="panel-title col-sm-11"><i class="icon-menu2"></i>예약 1:1 문의</h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2"><span>2017-07-24 14:57:09</span></td>
+                            <td class="text-center col-sm-1"><span class="label label-success">답변완료</span></td>
+                            <td class="text-left col-sm-8"><span>호핑 문의는 어디로 하면 되나요? 호핑 일정을 알고 싶어요.</span></td>
+                            <td class="text-center col-sm-1"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2"><span>2017-07-24 14:57:09</span></td>
+                            <td class="text-center col-sm-1"><span class="label label-default">미답변</span></td>
+                            <td class="text-left col-sm-8"><span>호핑 문의는 어디로 하면 되나요? 호핑 일정을 알고 싶어요.</span></td>
+                            <td class="text-center col-sm-1">
+                                <span style="cursor:pointer;">수정</span>
+                                <span style="cursor:pointer; margin-left: 5px;">삭제</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2"><span>2017-07-24 14:57:09</span></td>
+                            <td class="text-center col-sm-1"><span class="label label-default">미답변</span></td>
+                            <td class="text-left col-sm-8"><span>호핑 문의는 어디로 하면 되나요? 호핑 일정을 알고 싶어요.</span></td>
+                            <td class="text-center col-sm-1"><span style="cursor:pointer;">답변</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2"></td>
+                            <td class="text-center col-sm-1"></td>
+                            <td class="text-right col-sm-8">
+                                <div style="width: 100%; height: 60px;">
+                                    <textarea style="width: 100%; height: 60px;"></textarea>
+                                </div>
+                            </td>
+                            <td class="text-center col-sm-1">
+                                <span style="cursor:pointer;">저장</span>
+                                <span style="cursor:pointer; margin-left: 5px;">취소</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 업무진행 메모 EN-->
 
 
 

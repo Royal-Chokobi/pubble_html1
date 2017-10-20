@@ -206,20 +206,22 @@ select{
   cursor: pointer;
 }
 .x-button{
-  background: url(../images/icon/wt_vertical_arrows.png) no-repeat center #D65C4F;
+  background: url(../images/icon/wt_vertical_arrows.png) no-repeat center #999999;
   display: inline-block;
-  height: 30px;
+  height: 34px;
   width: 30px;
   cursor: pointer;
   margin-left: -5px;
+  vertical-align: top;
 }
 .x-big-button{
-  background: url(../images/icon/wt_vertical_arrows.png) no-repeat center #D65C4F;
+  background: url(../images/icon/wt_vertical_arrows.png) no-repeat center #999999;
   display: inline-block;
   height: 45px;
   width: 30px;
   cursor: pointer;
   margin-left: -5px;
+  vertical-align: top;
 }
 
 .btn-red{
@@ -250,8 +252,10 @@ table > tbody > tr > .table-top-line{
   vertical-align: top;
 }
 .label-txt-box{
-  width: 80%;
-  height: 30px;
+  width: 265px;
+  /*min-width: 263px;
+  max-width: 310px;*/
+  height: 34px;
   border: 1px solid #ddd;
   vertical-align: top;
   padding: 2px;
@@ -264,14 +268,14 @@ table > tbody > tr > .table-top-line{
   line-height: 22px;
 }
 .span-money{
-  width: 120px;
+  width: 90px;
   display: block;
   float: left;
   line-height: 22px;
 }
 .span-money-red{
   color: #e94343;
-  width: 120px;
+  width: 90px;
   display: block;
   float: left;
   line-height: 22px;
@@ -284,14 +288,14 @@ table > tbody > tr > .table-top-line{
 }
 .label-big-txt-box > .span-tx-card{color: #000}
 .label-big-txt-box{
-  width: 80%;
+  width: 265px;
   height: 45px;
   border: 1px solid #ddd;
   vertical-align: top;
   padding: 2px;
   padding-left: 5px;
 }
-
+.page-container{min-width: 1600px;}
 /*====================================================================================*/
 
 /* Demo list */
