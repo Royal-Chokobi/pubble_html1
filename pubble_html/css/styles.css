@@ -205,6 +205,22 @@ select{
   width: 30px;
   cursor: pointer;
 }
+.x-button{
+  background: url(../images/icon/wt_vertical_arrows.png) no-repeat center #D65C4F;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  margin-left: -5px;
+}
+.x-big-button{
+  background: url(../images/icon/wt_vertical_arrows.png) no-repeat center #D65C4F;
+  display: inline-block;
+  height: 45px;
+  width: 30px;
+  cursor: pointer;
+  margin-left: -5px;
+}
 
 .btn-red{
   background-color: rgba(253, 1, 0, 1);
@@ -225,6 +241,56 @@ select{
   user-select: none;
 }
 
+table > tbody > tr > .table-bottom-line{
+  border-bottom: 1px solid white;
+  vertical-align: top;
+}
+table > tbody > tr > .table-top-line{
+  border-top: 1px solid white;
+  vertical-align: top;
+}
+.label-txt-box{
+  width: 80%;
+  height: 30px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  padding: 2px;
+  padding-left: 5px;
+}
+.span-days{
+  width: 80px;
+  display: block;
+  float: left;
+  line-height: 22px;
+}
+.span-money{
+  width: 120px;
+  display: block;
+  float: left;
+  line-height: 22px;
+}
+.span-money-red{
+  color: #e94343;
+  width: 120px;
+  display: block;
+  float: left;
+  line-height: 22px;
+}
+.span-tx-card{
+  display: block;
+  clear: both;
+  font-weight: 600;
+  color: #e94343;
+}
+.label-big-txt-box > .span-tx-card{color: #000}
+.label-big-txt-box{
+  width: 80%;
+  height: 45px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  padding: 2px;
+  padding-left: 5px;
+}
 
 /*====================================================================================*/
 
