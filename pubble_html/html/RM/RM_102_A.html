@@ -20,9 +20,13 @@
     <!-- END :  기존 사용 CSS 및 JS -->
 
     <script>
+
         /** ======= 달력 ======**/
-        $(function() {
-            $("#rm102c_date1").datepicker(
+
+        function show_date_picker(id) {
+            var pic_id = id;
+
+            $(pic_id).datepicker(
                 {
                     dateFormat: 'yy-mm-dd',
                     //showOn: "button",
@@ -34,99 +38,37 @@
                     dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
                     monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
                 }
-            );
-            $("#rm102c_date2").datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-            );
-            $("#rm102c_date3").datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-            );
-            $("#rm102c_date4").datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-            );
-            $("#rm102c_date5").datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-            );
-            $("#rm102c_date6").datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-            );
-            $("#rm102c_date7").datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-            );
-            $("#rm102c_date8").datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-            );
-        });
+                );
+        }
+
+        /** 팝업 on off 구분  **/
+        function popup_onoff(onoff_type, popup_type_num) {
+            var type_onoff = onoff_type;
+            var type_number = popup_type_num*1;
+            var pop_id = "popup_tb_id" + type_number;
+
+            select_popup_list(type_onoff, pop_id);
+        }
+
+        /** 팝업 **/
+        function select_popup_list(type_onoff, pop_id) {
+            if(type_onoff == "on"){
+
+                document.body.classList.add( 'modal-open' );
+                $("#popup_frame_id").addClass( 'modal-backdrop fade in' );
+                $('#'+pop_id).addClass( 'modal fade in' ).css("display", "block");
+
+            }else if(type_onoff == "off"){
+
+                $( '#'+pop_id ).removeClass( 'modal fade in' ).css("display", "none");
+                $( '#popup_frame_id' ).removeClass( 'modal-backdrop fade in' );
+                document.body.classList.remove( 'modal-open' );
+
+            }else{
+                alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+        }
+
     </script>
 
 
@@ -327,46 +269,6 @@
 
         <!-- ======================== 플로팅 메뉴 =========================== -->
 
-        <script>
-
-            /** 팝업 on off 구분  **/
-            function popup_onoff(onoff_type, popup_type_num) {
-                var type_onoff = onoff_type;
-                var type_number = popup_type_num*1;
-
-                switch(type_number){
-                    case 1:     /** 블랙리스트 팝업 **/
-                        black_list_popup(type_onoff);
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                }
-            }
-
-            /** 블랙리스트 팝업 **/
-            function black_list_popup(type_onoff) {
-                if(type_onoff == "on"){
-
-                    document.body.classList.add( 'modal-open' );
-                    $("#popup_frame_id").addClass( 'modal-backdrop fade in' );
-                    $("#popup_tb_id").addClass( 'modal fade in' ).css("display", "block");
-
-                }else if(type_onoff == "off"){
-
-                    $( '#popup_tb_id' ).removeClass( 'modal fade in' ).css("display", "none");
-                    $( '#popup_frame_id' ).removeClass( 'modal-backdrop fade in' );
-                    document.body.classList.remove( 'modal-open' );
-
-                }else{
-                    alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
-                }
-            }
-
-        </script>
-
-
         <div style="width: 300px; right: 25px; top: 50%; position: fixed; z-index: 9;">
             <div>
                 <ul class="navigation" style="background-color: white; border-bottom: 1px solid white; margin: 0px;">
@@ -402,6 +304,8 @@
                                                 <span data-icon="" style="color: green; margin-left: 3px; font-size: 15px;"></span><!-- 정상회원 -->
                                                 <span data-icon="!" style="color: red; margin-left: 3px; font-size: 15px;"></span><!-- 블랙리스트 -->
                                                 <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 1);">블랙리스트 등록</span>
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 2);">test1</span>
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 3);">test2</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1058,7 +962,7 @@
                         </td>
                         <td class="text-left col-sm-3 table-bottom-line">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date1">
+                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date1" onclick="javascript:show_date_picker('#rm102c_date1');">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
                                 <select class="popup_select" style="width: 55px;">
@@ -1073,7 +977,7 @@
                         </td>
                         <td class="text-left col-sm-3 table-bottom-line">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date2">
+                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date2" onclick="javascript:show_date_picker('#rm102c_date2');">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
                                 <select class="popup_select" style="width: 55px;">
@@ -1102,7 +1006,7 @@
                             </div>
                             <div style="margin-top: 15px;">
                                 <label class="checkbox-inline">
-                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date3">
+                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date3" onclick="javascript:show_date_picker('#rm102c_date3');">
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 5px;">
                                     <select class="popup_select" style="width: 55px;">
@@ -1184,7 +1088,7 @@
                         <td class="text-center col-sm-3 active">옵션 예약금</td>
                         <td class="text-left col-sm-3">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date4">
+                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date4" onclick="javascript:show_date_picker('#rm102c_date4');">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <input type="text" class="form-control input-sm" style="width: 120px;">
@@ -1203,7 +1107,7 @@
                         <td class="text-center col-sm-3 active">현금 영수증 발행</td>
                         <td class="text-left col-sm-3" colspan="2">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date5">
+                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date5" onclick="javascript:show_date_picker('#rm102c_date5');">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <input type="text" class="form-control input-sm" style="width: 120px;" placeholder="금액">
@@ -1254,7 +1158,7 @@
                             </div>
                             <div style="margin-top: 10px; margin-bottom: 10px;">
                                 <label class="checkbox-inline">
-                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date6">
+                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date6" onclick="javascript:show_date_picker('#rm102c_date6');">
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 5px;">
                                     <select class="popup_select" style="width: 55px;">
@@ -1331,7 +1235,7 @@
                                 <input type="text" class="form-control input-sm">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
-                                <input type="text" class="form-control input-sm" id="rm102c_date7">
+                                <input type="text" class="form-control input-sm" id="rm102c_date7" onclick="javascript:show_date_picker('#rm102c_date7');">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <span class="label label-warning">환불대기중</span>
@@ -1398,7 +1302,7 @@
                                 <input type="text" class="form-control input-sm">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
-                                <input type="text" class="form-control input-sm" style="width: 110px;" id="rm102c_date8">
+                                <input type="text" class="form-control input-sm" style="width: 110px;" id="rm102c_date8" onclick="javascript:show_date_picker('#rm102c_date8');">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <span class="label label-warning">환불대기중</span>
@@ -1597,6 +1501,15 @@
                         </tr>
                         <tr>
                             <td class="text-center col-sm-2"><span>2017-07-24 14:57:09</span></td>
+                            <td class="text-center col-sm-1"> <span style="margin-left: 35px;"><i class="icon-arrow-right12" style="color: #428bca;"></i></span></td>
+                            <td class="text-left col-sm-8"><span>호핑 문의는 어디로 하면 되나요? 호핑 일정을 알고 싶어요.</span></td>
+                            <td class="text-center col-sm-1">
+                                <span style="cursor:pointer;">수정</span>
+                                <span style="cursor:pointer; margin-left: 5px;">삭제</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center col-sm-2"><span>2017-07-24 14:57:09</span></td>
                             <td class="text-center col-sm-1"><span class="label label-default">미답변</span></td>
                             <td class="text-left col-sm-8"><span>호핑 문의는 어디로 하면 되나요? 호핑 일정을 알고 싶어요.</span></td>
                             <td class="text-center col-sm-1">
@@ -1629,20 +1542,18 @@
             </div>
             <!-- 업무진행 메모 EN-->
 
-
-
-
-
-
         <!-- Table line -->
 
         <!--버튼 라인 -->
-
-        <div class="btn-toolbar  text-center">
-            <button type="button" class="btn btn-warning">수정</button>
-            <button type="button" class="btn btn-primary">목록</button>
-        </div>
-        <br/>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="button" value="목록" class="btn btn-primary" >
+                </div>
+                <div class="col-sm-6 text-right">
+                    <input type="button" value="삭제" class="btn btn-warning" >
+                    <input type="button" value="예약취소" class="btn btn-danger" >
+                </div>
+            </div>
         <!--버튼 라인 -->
 
 
@@ -1655,17 +1566,93 @@
 
 <!-- ================================  popup_st ================================  -->
 
-<div id="popup_tb_id" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
-    <div class="modal-dialog modal-lg">
+<div id="popup_tb_id1" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off', 1);">×</button>
                 <h4 class="modal-title">  블랙리스트 고객 등록</h4>
             </div>
 
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div id="" name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+
+                        <div class="row" style="text-align:center; overflow: auto; ">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default" style="border-style: none;">
+                                    <div class="col-sm-12">
+                                        <span data-icon="!" style="color: red; font-size: 35px;"></span>
+                                        <br/><br/>
+                                        <span class="blacklist-pop-red">
+                                            블랙리스트로 등록하시겠습니까?
+                                        <br/><br/>
+                                            하단 비공개 메모에
+                                        <br/>
+                                            기록을 꼭 하시기 바랍니다.
+                                        </span>
+                                        <br/><br/><br/>
+                                        <span class="blacklist-pop-black">
+                                            블랙리스트로 등록된 고객은 예약관리 상단
+                                        <br/>
+                                            블랙리스트 목록에서 삭제가 가능합니다.
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-12"  style="display: none;">
+                                        <span data-icon="!" style="color: red; font-size: 35px;"></span>
+                                        <br/><br/>
+                                        <span class="blacklist-pop-red">
+                                            블랙리스트 입니다. 주의하세요!
+                                        </span>
+                                        <br/><br/><br/>
+                                        <span class="blacklist-pop-black">
+                                            *** 고객은 2017.07.24
+                                        <br/>
+                                            블랙리스트로 등록되었습니다.
+                                        <br/><br/>
+                                            블랙리스트 등록 예약정보
+                                         <br/>
+                                            2017.07.20 PIC괌
+                                        <br/><br/>
+                                            메모내용 확인 필!!!!
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">확인</span></a>
+                <a href="javascript:;"><span class="btn btn-primary">블랙리스트 등록</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 1);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 예약관리 – 예약상세 (예약정보 수정, 예약추가 - 직접입력 팝업) -->
+
+<div id="popup_tb_id2" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',2);">×</button>
+                <h4 class="modal-title"> 예약 추가</h4>
+            </div>
+
             <div class="modal-body with-padding" style="height:700px">
                 <div class="table-responsive">
-                    <div id="modal_5_frame" name="modal_5_frame" width="100%" height="700px" frameborder="0" scrolling="auto" >
+                    <div name="modal_5_frame" width="100%" height="700px" frameborder="0" scrolling="auto" >
 
                         <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
 
@@ -1673,6 +1660,228 @@
                             <div class="col-sm-12">
                                 <div class="panel panel-default">
 
+                                        <span>
+
+                                            <table class="table table-bordered font12_black  table-condensed" >
+                                                <tbody>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">예약자 이름</td>
+                                                    <td class="text-left" colspan="3">
+                                                        <input type="text" class="form-control input-sm" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">이메일</td>
+                                                    <td class="text-center col-md-4">
+                                                        <input type="text" class="form-control input-sm" >
+                                                    </td>
+                                                    <td class="text-center active col-md-2">연락처</td>
+                                                    <td class="text-center col-md-4">
+                                                        <input type="text" class="form-control input-sm" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">리조트</td>
+                                                    <td class="text-center col-md-4" colspan="3">
+                                                        <select class="popup_select_wd">
+                                                            <option selected="selected">리조트 선택</option>
+                                                            <option>A리조트</option>
+                                                            <option>B리조트</option>
+                                                            <option>C리조트</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">객실/상품</td>
+                                                    <td class="text-center col-md-4" colspan="3">
+                                                        <div class="popup-div-block">
+                                                            <select class="popup_select">
+                                                                <option selected="selected">객실 선택</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                            </select>
+                                                            <input type="button" class="btn btn-primary btn-xs" style="float: left;" value="추가">
+                                                        </div>
+                                                        <div class="popup-div-block">
+                                                            <select class="popup_select">
+                                                                <option selected="selected">객실 선택</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                            </select>
+                                                            <input type="button" class="btn btn-warning btn-xs" style="float: left;" value="삭제">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">숙박일</td>
+                                                     <td class="text-left col-md-4" colspan="3">
+                                                        <label class="checkbox-inline">
+                                                            <input type="text" class="form-control input-sm" id="rm102c_date9" onclick="javascript:show_date_picker('#rm102c_date9');">
+                                                        </label>
+                                                        <label class="checkbox-inline" style="margin-left: 5px;">
+                                                            <select class="popup_select popup_day">
+                                                                <option selected="selected">1박</option>
+                                                                <option>2박</option>
+                                                                <option>10박</option>
+                                                                <option>15박</option>
+                                                            </select>
+                                                        </label>
+                                                        <label class="checkbox-inline" style="margin-left: 1px;">
+                                                            <input type="text" class="form-control input-sm" id="rm102c_date10" onclick="javascript:show_date_picker('#rm102c_date10');">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">출국항공</td>
+                                                    <td class="text-center col-md-4">
+                                                         <label class="checkbox-inline">
+                                                            <select class="popup_select">
+                                                                <option selected="selected">항공선택</option>
+                                                                <option>대한항공</option>
+                                                                <option>아시아나</option>
+                                                                <option>제주항공</option>
+                                                            </select>
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" class="styled" align="middle"> 현지이동
+                                                        </label>
+                                                    </td>
+                                                    <td class="text-center active col-md-2">도착항공</td>
+                                                    <td class="text-center col-md-4">
+                                                        <label class="checkbox-inline">
+                                                            <select class="popup_select">
+                                                                <option selected="selected">항공선택</option>
+                                                                <option>대한항공</option>
+                                                                <option>아시아나</option>
+                                                                <option>제주항공</option>
+                                                            </select>
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" class="styled" align="middle"> 현지이동
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">추가선택</td>
+                                                    <td class="text-center col-md-4" colspan="3">
+                                                        <table class="table table-bordered font12_black table-condensed">
+                                                            <colgroup>
+                                                                <col width="5%">
+                                                                <col width="30%">
+                                                                <col width="65%">
+                                                            </colgroup>
+                                                            <tbody>
+                                                                <tr class="notice_table_tr">
+                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
+                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
+                                                                </tr>
+                                                                <tr class="notice_table_tr">
+                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                                    <td class="text-center">괌 픽업/샌딩(여행사픽업/단독진행 아님)</td>
+                                                                    <td class="text-left">  성인 1인 $55, 아동 1인 $45 (왕복픽업, 크루즈, 스노클링, 낚세, 참치회, 음료 포함) / 오후타임만 가능</td>
+                                                                </tr>
+                                                                <tr class="notice_table_tr">
+                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
+                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
+                                                                </tr>
+                                                                <tr class="notice_table_tr">
+                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
+                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
+                                                                </tr>
+                                                                <tr class="notice_table_tr">
+                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
+                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
+                                                                </tr>
+                                                                <tr class="notice_table_tr">
+                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
+                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">여행인원</td>
+                                                    <td class="text-left col-md-4" colspan="3">
+                                                        <label class="checkbox-inline">성인</label>
+                                                        <label class="checkbox-inline">
+                                                            <select class="popup_select popup_day">
+                                                                <option selected="selected">1명</option>
+                                                                <option>2명</option>
+                                                                <option>3명</option>
+                                                            </select>
+                                                        </label>
+                                                        <label class="checkbox-inline">아동</label>
+                                                        <label class="checkbox-inline">
+                                                            <select class="popup_select popup_day">
+                                                                <option selected="selected">1명</option>
+                                                                <option>2명</option>
+                                                                <option>3명</option>
+                                                            </select>
+                                                        </label>
+                                                        <label class="checkbox-inline">유아</label>
+                                                        <label class="checkbox-inline">
+                                                            <select class="popup_select popup_day">
+                                                                <option selected="selected">1명</option>
+                                                                <option>2명</option>
+                                                                <option>3명</option>
+                                                            </select>
+                                                        </label>
+                                                        <br/>
+                                                        <br/>
+                                                        <table class="table table-bordered  font12_black  table-condensed">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="text-center active col-sm-2">구분</td>
+                                                                <td class="text-center active col-sm-2">한글이름</td>
+                                                                <td class="text-center active col-sm-2">영문이름</td>
+                                                                <td class="text-center active col-sm-2">성별</td>
+                                                                <td class="text-center active col-sm-2">생년월일</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center active col-sm-2">성인</td>
+                                                                <td class="col-sm-2">김동주</td>
+                                                                <td class="col-sm-2">KIMDONGJU</td>
+                                                                <td class="col-sm-2">
+                                                                    <select class="popup_select popup_day">
+                                                                        <option selected="selected">남</option>
+                                                                        <option>여</option>
+                                                                   </select>
+                                                                </td>
+                                                                <td class="col-sm-2">1980.12.12</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center active col-sm-2">아동1</td>
+                                                                <td class="col-sm-2">이풍철</td>
+                                                                <td class="col-sm-2">LEEPOONGCHUL</td>
+                                                                <td class="col-sm-2">
+                                                                    <select class="popup_select popup_day">
+                                                                        <option selected="selected">남</option>
+                                                                        <option>여</option>
+                                                                   </select>
+                                                                </td>
+                                                                <td class="col-sm-2">2008.08.08</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">요청사항</td>
+                                                    <td class="text-center col-md-4" colspan="3">
+                                                        <textarea style="width: 100%; height: 150px;"></textarea>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </span>
 
                                 </div>
                             </div>
@@ -1686,12 +1895,256 @@
             </div>
 
             <div class="modal-footer">
-                <a href="javascript:;"><span class="btn btn-primary">블랙리스트 등록</span></a>
-                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 1);">취소</button>
+                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',2);">취소</button>
             </div>
         </div>
     </div>
 </div>
+
+
+<!-- 예약관리 – 예약상세 (예약추가 - 불러오기 팝업) -->
+
+<div id="popup_tb_id3" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',3);">×</button>
+                <h4 class="modal-title"> 예약 추가</h4>
+            </div>
+
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+                        <div class="row" style="width:99%; text-align:center; overflow: auto; ">
+                            <div class="col-sm-8 text-left">
+                                <div class="block-inner">
+                                    <select class="popup_select row_select">
+                                        <option selected="selected">담당자 전체</option>
+                                        <option>홍길동</option>
+                                        <option>나루토 팀장</option>
+                                        <option>박소정 실장</option>
+                                    </select>
+                                    <select class="popup_select row_select">
+                                        <option selected="selected">사이트전체</option>
+                                        <option>HYATT 사이판</option>
+                                        <option>J-PARK</option>
+                                        <option>KENSINGTON 사이판</option>
+                                    </select>
+                                    <select class="popup_select row_select">
+                                        <option selected="selected">점수</option>
+                                        <option>10점</option>
+                                        <option>5점</option>
+                                        <option>100점</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 text-right">
+                                <div class="block-inner">
+                                    <div class="input-group">
+                                        <label class="checkbox-inline">
+                                            <input type="text" class="form-control autocomplete text-danger ui-autocomplete-input" placeholder="이름/휴대폰/이메일">
+                                        </label>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-icon" type="button"><i class="icon-search3"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                        <table class="table table-bordered font12_black  table-condensed">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center active col-sm-1"></th>
+                                                <th class="text-center active col-sm-1">R/N</th>
+                                                <th class="text-center active col-sm-2">리조트</th>
+                                                <th class="text-center active col-sm-3">객실/상품</th>
+                                                <th class="text-center active col-sm-1">체크인(기간)</th>
+                                                <th class="text-center active col-sm-1">예약일</th>
+                                                <th class="text-center active col-sm-1">예약자</th>
+                                                <th class="text-center active col-sm-1">인원</th>
+                                                <th class="text-center active col-sm-1">담당자</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            <tr class="notice_table_tr">
+                                                <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
+                                                <td class="text-center">3350</td>
+                                                <td class="text-center">KENSINGTON 사이판</td>
+                                                <td class="text-left">본관 디럭스 씨뷰 (1) [객실 + 22:00 체크아웃 4월이후]</td>
+                                                <td class="text-center">2017.10.05<br/>(4박)</td>
+                                                <td class="text-center">2017.05.30<br/>16:54:32</td>
+                                                <td class="text-center">홍길동</td>
+                                                <td class="text-center">성인:2명<br/>아동:2명</td>
+                                                <td class="text-center">장채희<br/>대리</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="javascript:;">←</a></li>
+                                    <li class="active"><a href="javascript:;">1</a></li>
+                                    <li><a href="javascript:;">2</a></li>
+                                    <li><a href="javascript:;">3</a></li>
+                                    <li><a href="javascript:;">4</a></li>
+                                    <li><a href="javascript:;">5</a></li>
+                                    <li><a href="javascript:;">6</a></li>
+                                    <li><a href="javascript:;">7</a></li>
+                                    <li><a href="javascript:;">8</a></li>
+                                    <li><a href="javascript:;">9</a></li>
+                                    <li><a href="javascript:;">10</a></li>
+                                    <li><a href="javascript:;">→</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-2 text-right">
+                            </div>
+                        </div>
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">추가</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',3);">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="" id="popup_frame_id"></div>
 
 <!--popup 끝-->
