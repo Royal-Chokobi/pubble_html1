@@ -22,24 +22,19 @@
     <script>
 
         /** ======= 달력 ======**/
-
-        function show_date_picker(id) {
-            var pic_id = id;
-
-            $(pic_id).datepicker(
-                {
-                    dateFormat: 'yy-mm-dd',
-                    //showOn: "button",
-                    //buttonImage: "../images/cal.png",
-                    //buttonImageOnly: false,
-                    changeYear: true,
-                    changeMonth: true,
-                    showMonthAfterYear: true,
-                    dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-                }
-                );
-        }
+        $(function() {
+            $('.datepick_date').each(function(){ $(this).datepicker({
+                dateFormat: 'yy-mm-dd',
+                //showOn: "button",
+                //buttonImage: "../images/cal.png",
+                //buttonImageOnly: false,
+                changeYear: true,
+                changeMonth: true,
+                showMonthAfterYear: true,
+                dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
+                monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+            }); });
+        });
 
         /** 팝업 on off 구분  **/
         function popup_onoff(onoff_type, popup_type_num) {
@@ -304,8 +299,11 @@
                                                 <span data-icon="" style="color: green; margin-left: 3px; font-size: 15px;"></span><!-- 정상회원 -->
                                                 <span data-icon="!" style="color: red; margin-left: 3px; font-size: 15px;"></span><!-- 블랙리스트 -->
                                                 <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 1);">블랙리스트 등록</span>
-                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 2);">test1</span>
-                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 3);">test2</span>
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 2);">test2</span>
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 3);">test3</span>
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 4);">test4</span>
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 5);">test5</span>
+                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 6);">test6</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -962,7 +960,7 @@
                         </td>
                         <td class="text-left col-sm-3 table-bottom-line">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date1" onclick="javascript:show_date_picker('#rm102c_date1');">
+                                <input type="text" class="form-control input-sm datepick_date" style="width: 88px;" id="rm102c_date1" >
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
                                 <select class="popup_select" style="width: 55px;">
@@ -977,7 +975,7 @@
                         </td>
                         <td class="text-left col-sm-3 table-bottom-line">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date2" onclick="javascript:show_date_picker('#rm102c_date2');">
+                                <input type="text" class="form-control input-sm datepick_date" style="width: 88px;" id="rm102c_date2" >
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
                                 <select class="popup_select" style="width: 55px;">
@@ -1006,7 +1004,7 @@
                             </div>
                             <div style="margin-top: 15px;">
                                 <label class="checkbox-inline">
-                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date3" onclick="javascript:show_date_picker('#rm102c_date3');">
+                                    <input type="text" class="form-control input-sm datepick_date" style="width: 88px;" id="rm102c_date3" >
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 5px;">
                                     <select class="popup_select" style="width: 55px;">
@@ -1088,7 +1086,7 @@
                         <td class="text-center col-sm-3 active">옵션 예약금</td>
                         <td class="text-left col-sm-3">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date4" onclick="javascript:show_date_picker('#rm102c_date4');">
+                                <input type="text" class="form-control input-sm datepick_date" style="width: 100px;" id="rm102c_date4" >
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <input type="text" class="form-control input-sm" style="width: 120px;">
@@ -1107,7 +1105,7 @@
                         <td class="text-center col-sm-3 active">현금 영수증 발행</td>
                         <td class="text-left col-sm-3" colspan="2">
                             <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm" style="width: 100px;" id="rm102c_date5" onclick="javascript:show_date_picker('#rm102c_date5');">
+                                <input type="text" class="form-control input-sm datepick_date" style="width: 100px;" id="rm102c_date5" >
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <input type="text" class="form-control input-sm" style="width: 120px;" placeholder="금액">
@@ -1158,7 +1156,7 @@
                             </div>
                             <div style="margin-top: 10px; margin-bottom: 10px;">
                                 <label class="checkbox-inline">
-                                    <input type="text" class="form-control input-sm" style="width: 88px;" id="rm102c_date6" onclick="javascript:show_date_picker('#rm102c_date6');">
+                                    <input type="text" class="form-control input-sm datepick_date" style="width: 88px;" id="rm102c_date6" >
                                 </label>
                                 <label class="checkbox-inline" style="margin-left: 5px;">
                                     <select class="popup_select" style="width: 55px;">
@@ -1235,7 +1233,7 @@
                                 <input type="text" class="form-control input-sm">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
-                                <input type="text" class="form-control input-sm" id="rm102c_date7" onclick="javascript:show_date_picker('#rm102c_date7');">
+                                <input type="text" class="form-control input-sm datepick_date" id="rm102c_date7" >
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <span class="label label-warning">환불대기중</span>
@@ -1302,7 +1300,7 @@
                                 <input type="text" class="form-control input-sm">
                             </label>
                             <label class="checkbox-inline" style="margin-left: 5px;">
-                                <input type="text" class="form-control input-sm" style="width: 110px;" id="rm102c_date8" onclick="javascript:show_date_picker('#rm102c_date8');">
+                                <input type="text" class="form-control input-sm datepick_date" style="width: 110px;" id="rm102c_date8" >
                             </label>
                             <label class="checkbox-inline" style="margin-left: 1px;">
                                 <span class="label label-warning">환불대기중</span>
@@ -1566,6 +1564,8 @@
 
 <!-- ================================  popup_st ================================  -->
 
+<!-- 예약관리 – 예약상세 (블랙리스트 안내 팝업)  -->
+
 <div id="popup_tb_id1" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -1576,7 +1576,7 @@
 
             <div class="modal-body with-padding">
                 <div class="table-responsive">
-                    <div id="" name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+                    <div name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
 
                         <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
 
@@ -1718,7 +1718,7 @@
                                                     <td class="text-center active col-md-2">숙박일</td>
                                                      <td class="text-left col-md-4" colspan="3">
                                                         <label class="checkbox-inline">
-                                                            <input type="text" class="form-control input-sm" id="rm102c_date9" onclick="javascript:show_date_picker('#rm102c_date9');">
+                                                            <input type="text" class="form-control input-sm datepick_date" id="rm102c_date9" >
                                                         </label>
                                                         <label class="checkbox-inline" style="margin-left: 5px;">
                                                             <select class="popup_select popup_day">
@@ -1729,7 +1729,7 @@
                                                             </select>
                                                         </label>
                                                         <label class="checkbox-inline" style="margin-left: 1px;">
-                                                            <input type="text" class="form-control input-sm" id="rm102c_date10" onclick="javascript:show_date_picker('#rm102c_date10');">
+                                                            <input type="text" class="form-control input-sm datepick_date" id="rm102c_date10" >
                                                         </label>
                                                     </td>
                                                 </tr>
@@ -2144,6 +2144,281 @@
     </div>
 </div>
 
+<!-- 예약관리 – 예약상세 (수배서 작성 팝업) -->
+
+<div id="popup_tb_id4" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',4);">×</button>
+                <h4 class="modal-title">수배서 작성</h4>
+            </div>
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+                        <div class="row" style="width:99%; text-align:center; overflow: auto; ">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                    <table class="table table-bordered font12_black  table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center active col-md-4" colspan="4">
+                                                <span class="popup-span-title">호텔인 수배 요청서</span>
+                                            </td>
+                                            <td class="text-center active col-md-4" colspan="3">
+                                                <span>담당자 : 한미선 팀장</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">[Hotel&Resort]</td>
+                                            <td class="text-center col-md-4" colspan="6">
+                                                <span>Dusit Thani</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">[기간]</td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <span>2017.07.27</span>
+                                            </td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <span>2017.07.30</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">[항공편]</td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">[체크인/아웃]</td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center active col-sm-2">CNT</th>
+                                            <th class="text-center active col-sm-2">영문이름</th>
+                                            <th class="text-center active col-sm-2">한글이름</th>
+                                            <th class="text-center active col-sm-1">구분</th>
+                                            <th class="text-center active col-sm-1">성별</th>
+                                            <th class="text-center active col-sm-2">생년월일</th>
+                                            <th class="text-center active col-sm-2">비고</th>
+                                        </tr>
+                                        <tr class="notice_table_tr">
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">YUNYUNKYOUNG</td>
+                                            <td class="text-center">윤윤경</td>
+                                            <td class="text-center">CHD</td>
+                                            <td class="text-center">M</td>
+                                            <td class="text-center">2017.05.30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr class="notice_table_tr">
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">YUNYUNKYOUNG</td>
+                                            <td class="text-center">윤윤경</td>
+                                            <td class="text-center">CHD</td>
+                                            <td class="text-center">M</td>
+                                            <td class="text-center">2017.05.30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr class="notice_table_tr">
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">YUNYUNKYOUNG</td>
+                                            <td class="text-center">윤윤경</td>
+                                            <td class="text-center">CHD</td>
+                                            <td class="text-center">M</td>
+                                            <td class="text-center">2017.05.30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr class="notice_table_tr">
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">YUNYUNKYOUNG</td>
+                                            <td class="text-center">윤윤경</td>
+                                            <td class="text-center">CHD</td>
+                                            <td class="text-center">M</td>
+                                            <td class="text-center">2017.05.30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr class="notice_table_tr">
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">YUNYUNKYOUNG</td>
+                                            <td class="text-center">윤윤경</td>
+                                            <td class="text-center">CHD</td>
+                                            <td class="text-center">M</td>
+                                            <td class="text-center">2017.05.30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr class="notice_table_tr">
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">YUNYUNKYOUNG</td>
+                                            <td class="text-center">윤윤경</td>
+                                            <td class="text-center">CHD</td>
+                                            <td class="text-center">M</td>
+                                            <td class="text-center">2017.05.30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-md-2" colspan="7">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right col-md-2" colspan="6">ROOM TOTAL : </td>
+                                            <td class="text-center col-md-2"><input type="text" class="form-control input-sm"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-sm-2" colspan="7">전달사항</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-md-2" colspan="7">
+                                                <textarea style="width: 100%; height: 100px;"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-sm-2" colspan="7">변경사항</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-md-2" colspan="7">
+                                                <textarea style="width: 100%; height: 100px;"></textarea>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',4);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 예약관리 – 예약상세 (환불정보 입력 레이어 팝업)  -->
+
+<div id="popup_tb_id5" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg" style="width: 500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off', 5);">×</button>
+                <h4 class="modal-title">환불정보 입력</h4>
+            </div>
+
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div  name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+                        <div class="row" style="text-align:center; overflow: auto; ">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                    <table class="table table-bordered font12_black  table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center active col-md-2">금액</td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">은행</td>
+                                            <td class="text-center col-md-4">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                            <td class="text-center active col-md-2">이름</td>
+                                            <td class="text-center col-md-4">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">계좌번호</td>
+                                            <td class="text-center col-md-4" colspan="3">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 5);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 예약관리 – 예약상세 (메모등록/수정 레이어 팝업)  -->
+
+<div id="popup_tb_id6" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg" style="width: 500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off', 6);">×</button>
+                <h4 class="modal-title">메모 등록</h4>
+            </div>
+
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div  name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+                        <div class="row" style="text-align:center; overflow: auto; ">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                    <table class="table table-bordered font12_black  table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center col-md-10">
+                                                <textarea style="width: 100%; height: 100px;"></textarea>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 6);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="" id="popup_frame_id"></div>
 

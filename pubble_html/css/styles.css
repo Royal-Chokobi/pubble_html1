@@ -323,6 +323,13 @@ table > tbody > tr > .table-top-line{
   line-height: 28px;
   text-indent: 5px;
 }
+.popup-span-title{
+  font-size: 20px;
+  font-weight: bold;
+  height: 60px;
+  display: block;
+  padding: 15px;
+}
 /*====================================================================================*/
 
 /* Demo list */
