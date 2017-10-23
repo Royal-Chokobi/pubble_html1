@@ -44,6 +44,17 @@
   margin-left: 4px;
   color: rgba(54, 54, 54, 1);
 }
+.btn_big_blue {
+  height: 70px;
+  width: 100px;
+  padding: 0 15px;
+  border: 1px solid #546672;
+  background: #546672;
+  cursor: pointer;
+  margin-left: 4px;
+  color: white;
+}
+.btn_big_blue:hover{color: white; background: #999999; border: 1px solid #999999;}
 .dropdown .btn_white {
   height: 30px;
   line-height: 28px;
@@ -163,6 +174,15 @@ select{
   background: url('../images/icon/nav_arrow_bottom.png') no-repeat #65B688 90% 50%;
   border-color: #65B688;
 }
+.top-button-asc{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-color: #32434d;
+  color: #32434d;
+  width: 125px;
+}
+.top-button-asc:hover{ border-color: grey;}
+.top-button-asc > span {margin-left: 5px;}
 .select-white-button{
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -171,6 +191,15 @@ select{
   min-width: 55px;
   background: url('../images/icon/nav_arrow_bottom.png') no-repeat #ccc 90% 50%;
   border-color: #ccc;
+}
+.select-grey-button{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: rgba(58, 75, 85, 0.86);
+  min-width: 125px;
+  background: url(../images/icon/nav_arrow_bottom.png) no-repeat #ddd 90% 50%;
+  border-color: #ddd;
 }
 .ui-datepicker-year{
   width: 65px;
@@ -330,6 +359,17 @@ table > tbody > tr > .table-top-line{
   display: block;
   padding: 15px;
 }
+.label-hotpink{ width: 47px; background-color: hotpink; }
+.label-hotred{ width: 47px; background-color: red; }
+.label-yellow{ width: 47px; background-color: orange; }
+.label-green{ width: 47px; background-color: green; }
+.label-grey{ width: 47px; background-color: grey; }
+.label-blue{ width: 47px; background-color: dodgerblue; }
+.label-black{ min-width: 47px; background-color: black; color: white;}
+.label-black:hover{color: #999999;}
+
+.border-line-rb{border-right: 1px solid white; border-bottom: 1px solid white;}
+.border-line-rt{border-right: 1px solid white; border-top: 1px solid white;}
 /*====================================================================================*/
 
 /* Demo list */

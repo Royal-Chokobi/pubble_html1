@@ -35,7 +35,19 @@
                 monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
             }); });
         });
+        
+        function select_Value(code_Num) {
+            var sh_id = "reservation_add"
+            sh_id+=code_Num;
+            var sh = document.getElementById(sh_id).value;
 
+            if(sh == "1"){
+                popup_onoff('on', 2);
+            }else if(sh == "2"){
+                popup_onoff('on', 3);
+            }
+        }
+        
         /** 팝업 on off 구분  **/
         function popup_onoff(onoff_type, popup_type_num) {
             var type_onoff = onoff_type;
@@ -63,6 +75,25 @@
                 alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
         }
+
+        /** 블랙리스트 **/
+        function blacklist_add(type) {
+            var div_id = "black_list_div";
+            var button_id = "blacklist_button_of";
+
+            if(type == "add"){
+                $("#"+div_id+"1").hide();
+                $("#"+button_id+"1").hide();
+                $("#"+div_id+"2").show();
+                $("#"+button_id+"2").show();
+            }else if(type == "dev"){
+                $("#"+div_id+"2").hide();
+                $("#"+button_id+"2").hide();
+                $("#"+div_id+"1").show();
+                $("#"+button_id+"1").show();
+            }
+        }
+
 
     </script>
 
@@ -299,11 +330,6 @@
                                                 <span data-icon="" style="color: green; margin-left: 3px; font-size: 15px;"></span><!-- 정상회원 -->
                                                 <span data-icon="!" style="color: red; margin-left: 3px; font-size: 15px;"></span><!-- 블랙리스트 -->
                                                 <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 1);">블랙리스트 등록</span>
-                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 2);">test2</span>
-                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 3);">test3</span>
-                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 4);">test4</span>
-                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 5);">test5</span>
-                                                <span class="label label-info" style="cursor:pointer; background-color: black; float: right;" onclick="javascript:popup_onoff('on', 6);">test6</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -460,7 +486,7 @@
                     <tr>
                         <td class="text-center col-sm-2 active">호텔 수배서</td>
                         <td class="text-left col-md-4" colspan="3">
-                            <span class="label label-info" style="cursor:pointer" >수배서작성</span>
+                            <span class="label label-info" style="cursor:pointer" onclick="javascript:popup_onoff('on', 4);">수배서작성</span>
                             <span class="label label-default" style="cursor:pointer" >수배서 파일 생성</span>
                             <a href="javascript:;">
                                 <i class="icon-file-excel"></i>
@@ -503,10 +529,10 @@
             <div class="col-sm-12 text-right">
                 <a href="javascript:;" class="btn btn-success">예약 정보 삭제</a>
                 <label class="checkbox-inline">
-                    <select class="btn btn-success select-green-button" >
+                    <select class="btn btn-success select-green-button" id="reservation_add1" onchange="select_Value('1');">
                         <option selected="selected">예약 추가</option>
-                        <option>직접 입력</option>
-                        <option>불러오기</option>
+                        <option value="1">직접 입력</option>
+                        <option value="2">불러오기</option>
                     </select>
                 </label>
                 <a href="javascript:;" class="btn btn-success">예약 정보 수정</a>
@@ -640,10 +666,10 @@
             <div class="col-sm-12 text-right">
                 <a href="javascript:;" class="btn btn-success">예약 정보 삭제</a>
                 <label class="checkbox-inline">
-                    <select class="btn btn-success select-green-button" >
+                    <select class="btn btn-success select-green-button" id="reservation_add2" onchange="select_Value('2');">
                         <option selected="selected">예약 추가</option>
-                        <option>직접 입력</option>
-                        <option>불러오기</option>
+                        <option value="1">직접 입력</option>
+                        <option value="2">불러오기</option>
                     </select>
                 </label>
                 <a href="javascript:;" class="btn btn-success">예약 정보 수정</a>
@@ -1327,7 +1353,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12 text-right">
-                <a href="javascript:;" class="btn btn-primary">환불정보 수정</a>
+                <a href="javascript:;" class="btn btn-primary" onclick="javascript:popup_onoff('on', 5);">환불정보 수정</a>
             </div>
         </div>
             <!-- 취소 / 환불정보 EN -->
@@ -1341,7 +1367,7 @@
                         <tr>
                             <td class="text-left col-sm-2 active" colspan="4">
                                 <h6 class="panel-title col-sm-11"><i class="icon-menu2"></i>업무진행 비공개 메모</h6>
-                                <div class="col-sm-1 control-label  text-left"><button type="button" class="btn btn-icon btn-info btn-xs" onclick="javascript:;">메모등록</button></div>
+                                <div class="col-sm-1 control-label  text-left"><button type="button" class="btn btn-icon btn-info btn-xs" onclick="javascript:popup_onoff('on', 6);">메모등록</button></div>
                             </td>
                         </tr>
                         <tr>
@@ -1415,7 +1441,7 @@
                         <tr>
                             <td class="text-left col-sm-2 active" colspan="4">
                                 <h6 class="panel-title col-sm-11"><i class="icon-menu2"></i>업무진행 공개 메모</h6>
-                                <div class="col-sm-1 control-label  text-left"><button type="button" class="btn btn-icon btn-info btn-xs" onclick="javascript:;">메모등록</button></div>
+                                <div class="col-sm-1 control-label  text-left"><button type="button" class="btn btn-icon btn-info btn-xs" onclick="javascript:popup_onoff('on', 6);">메모등록</button></div>
                             </td>
                         </tr>
                         <tr>
@@ -1549,7 +1575,7 @@
                 </div>
                 <div class="col-sm-6 text-right">
                     <input type="button" value="삭제" class="btn btn-warning" >
-                    <input type="button" value="예약취소" class="btn btn-danger" >
+                    <input type="button" value="예약취소" class="btn btn-danger" onclick="javascript:popup_onoff('on', 7);">
                 </div>
             </div>
         <!--버튼 라인 -->
@@ -1583,7 +1609,7 @@
                         <div class="row" style="text-align:center; overflow: auto; ">
                             <div class="col-sm-12">
                                 <div class="panel panel-default" style="border-style: none;">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12" id="black_list_div1">
                                         <span data-icon="!" style="color: red; font-size: 35px;"></span>
                                         <br/><br/>
                                         <span class="blacklist-pop-red">
@@ -1600,7 +1626,7 @@
                                             블랙리스트 목록에서 삭제가 가능합니다.
                                         </span>
                                     </div>
-                                    <div class="col-sm-12"  style="display: none;">
+                                    <div class="col-sm-12"  style="display: none;"  id="black_list_div2">
                                         <span data-icon="!" style="color: red; font-size: 35px;"></span>
                                         <br/><br/>
                                         <span class="blacklist-pop-red">
@@ -1630,15 +1656,17 @@
 
             </div>
 
-            <div class="modal-footer">
-                <a href="javascript:;"><span class="btn btn-primary">확인</span></a>
-                <a href="javascript:;"><span class="btn btn-primary">블랙리스트 등록</span></a>
+            <div class="modal-footer" id="blacklist_button_of1">
+                <a href="javascript:;" onclick="javascript:blacklist_add('add')"><span class="btn btn-primary" >블랙리스트 등록</span></a>
                 <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 1);">취소</button>
+            </div>
+            <div class="modal-footer" style="display: none;" id="blacklist_button_of2">
+                <a href="javascript:;" onclick="javascript:blacklist_add('dev')"><span class="btn btn-primary" >블랙리스트 취소</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 1);">확인</button>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- 예약관리 – 예약상세 (예약정보 수정, 예약추가 - 직접입력 팝업) -->
 
@@ -2415,6 +2443,147 @@
             <div class="modal-footer">
                 <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
                 <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 6);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 예약관리 – 예약상세 (예약 취소 레이어 팝업) -->
+
+<div id="popup_tb_id7" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',7);">×</button>
+                <h4 class="modal-title">예약 취소</h4>
+            </div>
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+                        <div class="row" style="width:99%; text-align:center; overflow: auto; ">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                    <table class="table table-bordered font12_black  table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-left col-sm-2 active" colspan="4">
+                                                <h6 class="panel-title col-sm-6">입금 내역이 존재합니다. 취소 정보를 입력해주세요.</h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">결제금액</td>
+                                            <td class="text-left col-sm-8 " colspan="3">
+                                                <label class="checkbox-inline">
+                                                    <span>한화 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm">
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <span>외화 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm">
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <span>카드결제 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm" style="width: 215px;">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">환불여부</td>
+                                            <td class="text-center col-md-8" colspan="3">
+                                                <label class="radio-inline" style="float: left;">
+                                                    <div class="choice"><span class=""><input type="radio" class="styled" checked="checked" name="pop_radio_group1"></span></div>
+                                                    환불없음
+                                                </label>
+                                                <label class="radio-inline" style="float: left;">
+                                                    <div class="choice"><span class=""><input type="radio" class="styled" name="pop_radio_group1"></span></div>
+                                                    전액환불
+                                                </label>
+                                                <label class="radio-inline" style="float: left;">
+                                                    <div class="choice"><span class=""><input type="radio" class="styled" name="pop_radio_group1"></span></div>
+                                                    패널티 제외 일부 환불
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">패널티(취소료)</td>
+                                            <td class="text-left col-sm-8 ">
+                                                <label class="checkbox-inline">
+                                                    <span>금액 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">환불액</td>
+                                            <td class="text-left col-sm-8 " colspan="3">
+                                                <label class="checkbox-inline">
+                                                    <span>한화 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm">
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <span>외화 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm">
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <span>카드결제 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm" style="width: 215px;">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">환불정보</td>
+                                            <td class="text-left col-sm-8 " colspan="3">
+                                                <label class="checkbox-inline">
+                                                    <span>이름 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm">
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <span>은행 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm">
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                    <span>계좌번호 : </span>
+                                                </label>
+                                                <label class="checkbox-inline" style="margin-left: 1px;">
+                                                    <input type="text" class="form-control input-sm" style="width: 215px;">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',7);">취소</button>
             </div>
         </div>
     </div>
