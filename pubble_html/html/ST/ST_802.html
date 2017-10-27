@@ -278,7 +278,7 @@
                             <a href="javascript:;" class="btn tb_btn_white">  출력 </a>
                             <a href="javascript:;" class="btn tb_btn_white">  숨김 </a>
                             <a href="javascript:;" class="btn tb_btn_white">  삭제 </a>
-                            <a href="javascript:;" class="btn tb_btn_white_right">항공사 등록</a>
+                            <a href="javascript:;" class="btn tb_btn_white_right" onclick="javascript:popup_onoff('on', 1);">항공사 등록</a>
                         </th>
                     </tr>
                     <tr>
@@ -357,115 +357,56 @@
 
 <!-- ================================  popup_st ================================  -->
 
-<!-- 예약관리 – 예약상세 (블랙리스트 안내 팝업)  -->
+<!--   항공사 등록 -->
 
 <div id="popup_tb_id1" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg" style="width: 500px;">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',1);">×</button>
-                <h4 class="modal-title">블랙리스트 목록</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off', 1);">×</button>
+                <h4 class="modal-title">항공사 등록</h4>
             </div>
 
-            <div class="modal-body with-padding" >
+            <div class="modal-body with-padding">
                 <div class="table-responsive">
-                    <div name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+                    <div  name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
 
                         <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
-
-                        <div class="row" style="width:99%; text-align:center; overflow: auto; ">
+                        <div class="row" style="text-align:center; overflow: auto; ">
                             <div class="col-sm-12">
                                 <div class="panel panel-default">
-
-                                        <span>
-                                            <table class="table table-bordered font12_black  table-condensed" >
-                                                <tbody>
-                                                <tr>
-                                                    <th class="active" colspan="8">
-                                                        <a href="javascript:;" class="btn tb_btn_white"> 삭제 </a>
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center active" rowspan="2"><input type="checkbox" class="styled" align="middle"></th>
-                                                    <th class="text-center active" rowspan="2">NO</th>
-                                                    <th class="text-center active" rowspan="2">이름</th>
-                                                    <th class="text-center active" rowspan="2">전화번호</th>
-                                                    <th class="text-center active" colspan="2">블랙리스트 등록 예약정보</th>
-                                                    <th class="text-center active" rowspan="2">등록자</th>
-                                                    <th class="text-center active" rowspan="2">등록일</th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center active">예약일</th>
-                                                    <th class="text-center active">리조트</th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center "><input type="checkbox" class="styled" align="middle"></th>
-                                                    <th class="text-center " >99999</th>
-                                                    <th class="text-center " >정설아</th>
-                                                    <th class="text-center " >01044423412</th>
-                                                    <th class="text-center " >2017.05.30 01:11:11</th>
-                                                    <th class="text-center " >KENSINGTON 사이판</th>
-                                                    <th class="text-center " >장채희 대리</th>
-                                                    <th class="text-center " >2017.05.30</th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center "><input type="checkbox" class="styled" align="middle"></th>
-                                                    <th class="text-center " >1</th>
-                                                    <th class="text-center " >정설아</th>
-                                                    <th class="text-center " >01044423412</th>
-                                                    <th class="text-center " >2017.05.30 01:11:11</th>
-                                                    <th class="text-center " >KENSINGTON 사이판</th>
-                                                    <th class="text-center " >장채희 대리</th>
-                                                    <th class="text-center " >2017.05.30</th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center "><input type="checkbox" class="styled" align="middle"></th>
-                                                    <th class="text-center " >1</th>
-                                                    <th class="text-center " >정설아</th>
-                                                    <th class="text-center " >01044423412</th>
-                                                    <th class="text-center " >2017.05.30 01:11:11</th>
-                                                    <th class="text-center " >KENSINGTON 사이판</th>
-                                                    <th class="text-center " >장채희 대리</th>
-                                                    <th class="text-center " >2017.05.30</th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center "><input type="checkbox" class="styled" align="middle"></th>
-                                                    <th class="text-center " >1</th>
-                                                    <th class="text-center " >정설아</th>
-                                                    <th class="text-center " >01044423412</th>
-                                                    <th class="text-center " >2017.05.30 01:11:11</th>
-                                                    <th class="text-center " >KENSINGTON 사이판</th>
-                                                    <th class="text-center " >장채희 대리</th>
-                                                    <th class="text-center " >2017.05.30</th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center "><input type="checkbox" class="styled" align="middle"></th>
-                                                    <th class="text-center " >1</th>
-                                                    <th class="text-center " >정설아</th>
-                                                    <th class="text-center " >01044423412</th>
-                                                    <th class="text-center " >2017.05.30 01:11:11</th>
-                                                    <th class="text-center " >KENSINGTON 사이판</th>
-                                                    <th class="text-center " >장채희 대리</th>
-                                                    <th class="text-center " >2017.05.30</th>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-center "><input type="checkbox" class="styled" align="middle"></th>
-                                                    <th class="text-center " >1</th>
-                                                    <th class="text-center " >정설아</th>
-                                                    <th class="text-center " >01044423412</th>
-                                                    <th class="text-center " >2017.05.30 01:11:11</th>
-                                                    <th class="text-center " >KENSINGTON 사이판</th>
-                                                    <th class="text-center " >장채희 대리</th>
-                                                    <th class="text-center " >2017.05.30</th>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </span>
-
+                                    <table class="table table-bordered font12_black  table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center active col-md-2">항공사 코드</td>
+                                            <td class="text-center col-md-8">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center active col-md-2">항공사 명</td>
+                                            <td class="text-center col-md-8">
+                                                <input type="text" class="form-control input-sm">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">출력 여부</td>
+                                            <td class="text-left col-sm-8 ">
+                                                <label class="radio-inline" style="float: left;">
+                                                    <div class="choice"><span class=""><input type="radio" class="styled" checked="checked" name="pop_radio_group3"></span></div>
+                                                    출력
+                                                </label>
+                                                <label class="radio-inline" style="float: left;">
+                                                    <div class="choice"><span class=""><input type="radio" class="styled" name="pop_radio_group3"></span></div>
+                                                    숨김
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-
                         <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
 
                     </div>
@@ -475,269 +416,7 @@
 
             <div class="modal-footer">
                 <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
-                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',1);">취소</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 예약관리 – 예약상세 (예약정보 수정, 예약추가 - 직접입력 팝업) -->
-
-<div id="popup_tb_id2" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',2);">×</button>
-                <h4 class="modal-title">예약등록</h4>
-            </div>
-
-            <div class="modal-body with-padding" style="height:700px">
-                <div class="table-responsive">
-                    <div name="modal_5_frame" width="100%" height="700px" frameborder="0" scrolling="auto" >
-
-                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
-
-                        <div class="row" style="width:99%; text-align:center; overflow: auto; height: 670px;">
-                            <div class="col-sm-12">
-                                <div class="panel panel-default">
-
-                                        <span>
-
-                                            <table class="table table-bordered font12_black  table-condensed" >
-                                                <tbody>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">예약자 이름</td>
-                                                    <td class="text-left" colspan="3">
-                                                        <input type="text" class="form-control input-sm" >
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">이메일</td>
-                                                    <td class="text-center col-md-4">
-                                                        <input type="text" class="form-control input-sm" >
-                                                    </td>
-                                                    <td class="text-center active col-md-2">연락처</td>
-                                                    <td class="text-center col-md-4">
-                                                        <input type="text" class="form-control input-sm" >
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">리조트</td>
-                                                    <td class="text-center col-md-4" colspan="3">
-                                                        <select class="popup_select_wd">
-                                                            <option selected="selected">리조트 선택</option>
-                                                            <option>A리조트</option>
-                                                            <option>B리조트</option>
-                                                            <option>C리조트</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">객실/상품</td>
-                                                    <td class="text-center col-md-4" colspan="3">
-                                                        <div class="popup-div-block">
-                                                            <select class="popup_select">
-                                                                <option selected="selected">객실 선택</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                            </select>
-                                                            <input type="button" class="btn btn-primary btn-xs" style="float: left;" value="추가">
-                                                        </div>
-                                                        <div class="popup-div-block">
-                                                            <select class="popup_select">
-                                                                <option selected="selected">객실 선택</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                            </select>
-                                                            <input type="button" class="btn btn-warning btn-xs" style="float: left;" value="삭제">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">숙박일</td>
-                                                     <td class="text-left col-md-4" colspan="3">
-                                                        <label class="checkbox-inline">
-                                                            <input type="text" class="form-control input-sm datepick_date" id="rm102c_date9" >
-                                                        </label>
-                                                        <label class="checkbox-inline" style="margin-left: 5px;">
-                                                            <select class="popup_select popup_day">
-                                                                <option selected="selected">1박</option>
-                                                                <option>2박</option>
-                                                                <option>10박</option>
-                                                                <option>15박</option>
-                                                            </select>
-                                                        </label>
-                                                        <label class="checkbox-inline" style="margin-left: 1px;">
-                                                            <input type="text" class="form-control input-sm datepick_date" id="rm102c_date10" >
-                                                        </label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">출국항공</td>
-                                                    <td class="text-center col-md-4">
-                                                         <label class="checkbox-inline">
-                                                            <select class="popup_select">
-                                                                <option selected="selected">항공선택</option>
-                                                                <option>대한항공</option>
-                                                                <option>아시아나</option>
-                                                                <option>제주항공</option>
-                                                            </select>
-                                                        </label>
-                                                        <label class="checkbox-inline">
-                                                            <input type="checkbox" class="styled" align="middle"> 현지이동
-                                                        </label>
-                                                    </td>
-                                                    <td class="text-center active col-md-2">도착항공</td>
-                                                    <td class="text-center col-md-4">
-                                                        <label class="checkbox-inline">
-                                                            <select class="popup_select">
-                                                                <option selected="selected">항공선택</option>
-                                                                <option>대한항공</option>
-                                                                <option>아시아나</option>
-                                                                <option>제주항공</option>
-                                                            </select>
-                                                        </label>
-                                                        <label class="checkbox-inline">
-                                                            <input type="checkbox" class="styled" align="middle"> 현지이동
-                                                        </label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">추가선택</td>
-                                                    <td class="text-center col-md-4" colspan="3">
-                                                        <table class="table table-bordered font12_black table-condensed">
-                                                            <colgroup>
-                                                                <col width="5%">
-                                                                <col width="30%">
-                                                                <col width="65%">
-                                                            </colgroup>
-                                                            <tbody>
-                                                                <tr class="notice_table_tr">
-                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
-                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
-                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
-                                                                </tr>
-                                                                <tr class="notice_table_tr">
-                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
-                                                                    <td class="text-center">괌 픽업/샌딩(여행사픽업/단독진행 아님)</td>
-                                                                    <td class="text-left">  성인 1인 $55, 아동 1인 $45 (왕복픽업, 크루즈, 스노클링, 낚세, 참치회, 음료 포함) / 오후타임만 가능</td>
-                                                                </tr>
-                                                                <tr class="notice_table_tr">
-                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
-                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
-                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
-                                                                </tr>
-                                                                <tr class="notice_table_tr">
-                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
-                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
-                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
-                                                                </tr>
-                                                                <tr class="notice_table_tr">
-                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
-                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
-                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
-                                                                </tr>
-                                                                <tr class="notice_table_tr">
-                                                                    <td class="text-center"><input type="checkbox" class="styled" align="middle"></td>
-                                                                    <td class="text-center">괌 시내관광 (섬투어)</td>
-                                                                    <td class="text-left"> 성인 1인 $10 (단독진행 불가, 픽업/샌딩과 함께 진행 가능)</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">여행인원</td>
-                                                    <td class="text-left col-md-4" colspan="3">
-                                                        <label class="checkbox-inline">성인</label>
-                                                        <label class="checkbox-inline">
-                                                            <select class="popup_select popup_day">
-                                                                <option selected="selected">1명</option>
-                                                                <option>2명</option>
-                                                                <option>3명</option>
-                                                            </select>
-                                                        </label>
-                                                        <label class="checkbox-inline">아동</label>
-                                                        <label class="checkbox-inline">
-                                                            <select class="popup_select popup_day">
-                                                                <option selected="selected">1명</option>
-                                                                <option>2명</option>
-                                                                <option>3명</option>
-                                                            </select>
-                                                        </label>
-                                                        <label class="checkbox-inline">유아</label>
-                                                        <label class="checkbox-inline">
-                                                            <select class="popup_select popup_day">
-                                                                <option selected="selected">1명</option>
-                                                                <option>2명</option>
-                                                                <option>3명</option>
-                                                            </select>
-                                                        </label>
-                                                        <br/>
-                                                        <br/>
-                                                        <table class="table table-bordered  font12_black  table-condensed">
-                                                            <tbody>
-                                                            <tr>
-                                                                <td class="text-center active col-sm-2">구분</td>
-                                                                <td class="text-center active col-sm-2">한글이름</td>
-                                                                <td class="text-center active col-sm-2">영문이름</td>
-                                                                <td class="text-center active col-sm-2">성별</td>
-                                                                <td class="text-center active col-sm-2">생년월일</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-center active col-sm-2">성인</td>
-                                                                <td class="col-sm-2">김동주</td>
-                                                                <td class="col-sm-2">KIMDONGJU</td>
-                                                                <td class="col-sm-2">
-                                                                    <select class="popup_select popup_day">
-                                                                        <option selected="selected">남</option>
-                                                                        <option>여</option>
-                                                                   </select>
-                                                                </td>
-                                                                <td class="col-sm-2">1980.12.12</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-center active col-sm-2">아동1</td>
-                                                                <td class="col-sm-2">이풍철</td>
-                                                                <td class="col-sm-2">LEEPOONGCHUL</td>
-                                                                <td class="col-sm-2">
-                                                                    <select class="popup_select popup_day">
-                                                                        <option selected="selected">남</option>
-                                                                        <option>여</option>
-                                                                   </select>
-                                                                </td>
-                                                                <td class="col-sm-2">2008.08.08</td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center active col-md-2">요청사항</td>
-                                                    <td class="text-center col-md-4" colspan="3">
-                                                        <textarea style="width: 100%; height: 150px;"></textarea>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </span>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="modal-footer">
-                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
-                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',2);">취소</button>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 1);">취소</button>
             </div>
         </div>
     </div>
