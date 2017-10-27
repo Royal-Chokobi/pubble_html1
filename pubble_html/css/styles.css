@@ -370,9 +370,13 @@ table > tbody > tr > .table-top-line{
 
 .border-line-rb{border-right: 1px solid white; border-bottom: 1px solid white;}
 .border-line-rt{border-right: 1px solid white; border-top: 1px solid white;}
-.top-menu-ui{
+.top-menu-ul{
+  background-color: rgba(240, 52, 149, 1);
   min-height: 40px;
   padding-left: 0px;
+  margin-bottom: 0px;
+  display: inline-block;
+  vertical-align: bottom;
   /*border-bottom: 1px solid rgb(44, 58, 66);*/
 }
 .top-menu-li{
@@ -388,9 +392,8 @@ table > tbody > tr > .table-top-line{
   background-color: rgb(44, 58, 66);
   color: white;
   min-width: 125px;
-  margin-top: 6px;
 }
-.top-menu-li > a:hover{background-color: rgba(240, 52, 149, 1); border-color: rgba(240, 52, 149, 1); color: white;}
+.top-menu-li > a:hover{background-color: rgba(240, 52, 149, 1); border: 1px solid rgba(240, 52, 149, 1); color: white;}
 .top-menu-li > .active{
   background-color: rgba(240, 52, 149, 1);
   border-color: rgba(240, 52, 149, 1);
@@ -411,6 +414,44 @@ table > tbody > tr > .table-top-line{
   font-size: 12px;
   font-weight: 600;
   line-height: 1.42857143;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.top-under-ul, .top-under-ul > li > ul{
+  margin-bottom: 0px;
+  padding-left: 0px;
+  min-height: 30px;
+}
+.top-under-li{
+  display: block;
+  float: left;
+}
+.top-under-li > ul > li{
+  display: block;
+  float: left;
+  min-width: 70px;
+  height: 30px;
+  background: rgba(50, 67, 77, 0.65);
+  color: white;
+}
+.top-under-li > ul > li > a{
+  border: 1px solid #999;
+  background-color: #ccc;
+  color: white;
+}
+.top-under-li > ul > li > a:hover{border: 1px solid rgba(0, 0, 0, 0.2); background: rgb(255, 140, 199); color: white;}
+.top-under-li > ul > li > .active{border: 1px solid rgba(0, 0, 0, 0.2); background: rgb(255, 105, 180); color: white;}
+.top-under-btn{
+  height:30px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  padding: 7px 16px 8px 16px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

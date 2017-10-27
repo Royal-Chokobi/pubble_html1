@@ -23,25 +23,10 @@
     <script>
         /** 상단 메뉴 **/
         $(document).ready(function(){
-            $(".top-menu-ui > li > a").click(function(){
-                $(".top-menu-ui > li > a").removeClass('active');
+            $(".top-menu-ul > li > a").click(function(){
+                $(".top-menu-ul > li > a").removeClass('active');
                 $(this).addClass('active');
             });
-        });
-
-        /** ======= 달력 ======**/
-        $(function() {
-            $('.datepick_date').each(function(){ $(this).datepicker({
-                dateFormat: 'yy-mm-dd',
-                //showOn: "button",
-                //buttonImage: "../images/cal.png",
-                //buttonImageOnly: false,
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                dayNamesMin: ["<font color=red>일</font>", "월", "화", "수", "목", "금", "<font color=blue>토</font>"],
-                monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-            }); });
         });
 
 
@@ -243,16 +228,11 @@
         <div class="row">
             <div class="col-sm-4 text-left">
                 <div class="block-inner">
-                    <ul class="top-menu-ui">
+                    <ul class="top-menu-ul">
                         <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">항공편</a></li>
                         <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">항공사</a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active" onclick="javascript:popup_onoff('on', 1);">지역</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active" >지역</a></li>
                     </ul>
-
-                 <!--   <a href="javascript:;" class="btn top-button-asc">항공사 전체</a>
-                    <a href="javascript:;" class="btn top-button-asc">출발 전체</a>
-                    <a href="javascript:;" class="btn top-button-asc">도착 전체</a>
-                    <a href="javascript:;" class="btn top-button-asc">출력/숨김 전체</a>-->
                 </div>
             </div>
         </div>
@@ -277,7 +257,7 @@
                             <a href="javascript:;" class="btn tb_btn_white">  출력 </a>
                             <a href="javascript:;" class="btn tb_btn_white">  숨김 </a>
                             <a href="javascript:;" class="btn tb_btn_white">  삭제 </a>
-                            <a href="javascript:;" class="btn tb_btn_white_right">지역 등록</a>
+                            <a href="javascript:;" class="btn tb_btn_white_right" onclick="javascript:popup_onoff('on', 1);">지역 등록</a>
                         </th>
                     </tr>
                     <tr>
