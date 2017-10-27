@@ -21,17 +21,13 @@
 
 
     <script>
-        function dt_search_menu() {
-            var class_nm =  $('#dt_search_icon').attr('class');;
-
-            if(class_nm == "icon-arrow-up2"){
-                $('#dt_search_icon').attr('class','icon-arrow-down2');
-                $('#dt_search_box').hide();
-            }else{
-                $('#dt_search_icon').attr('class','icon-arrow-up2');
-                $('#dt_search_box').show();
-            }
-        }
+        /** 상단 메뉴 **/
+        $(document).ready(function(){
+            $(".top-menu-ui > li > a").click(function(){
+                $(".top-menu-ui > li > a").removeClass('active');
+                $(this).addClass('active');
+            });
+        });
 
         /** ======= 달력 ======**/
         $(function() {
@@ -48,17 +44,6 @@
             }); });
         });
 
-        function select_Value(code_Num) {
-            var sh_id = "reservation_add"
-            sh_id+=code_Num;
-            var sh = document.getElementById(sh_id).value;
-
-            if(sh == "1"){
-                popup_onoff('on', 2);
-            }else if(sh == "2"){
-                popup_onoff('on', 3);
-            }
-        }
 
         /** 팝업 on off 구분  **/
         function popup_onoff(onoff_type, popup_type_num) {
@@ -88,23 +73,6 @@
             }
         }
 
-        /** 블랙리스트 **/
-        function blacklist_add(type) {
-            var div_id = "black_list_div";
-            var button_id = "blacklist_button_of";
-
-            if(type == "add"){
-                $("#"+div_id+"1").hide();
-                $("#"+button_id+"1").hide();
-                $("#"+div_id+"2").show();
-                $("#"+button_id+"2").show();
-            }else if(type == "dev"){
-                $("#"+div_id+"2").hide();
-                $("#"+button_id+"2").hide();
-                $("#"+div_id+"1").show();
-                $("#"+button_id+"1").show();
-            }
-        }
 
 
     </script>
@@ -169,9 +137,8 @@
 
             <!-- Main navigation -->
             <ul class="navigation">
-                <li class="has-ul active">
+                <li class="has-ul">
                     <a href="javascript:;" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
-                    <ul class="hidden-ul"></ul>
                 </li>
                 <li class="has-ul">
                     <a href="javascript:;" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
@@ -190,9 +157,9 @@
                         <li><a href="javascript:;">E-Mail 발송 내역</a></li>
                     </ul>
                 </li>
-                <li class="has-ul">
+                <li class="has-ul active">
                     <a href="javascript:;" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
-                    <ul class="hidden-ul">
+                    <ul class="active">
                         <li><a href="javascript:;">기본정보</a></li>
                         <li><a href="javascript:;">약관</a></li>
                         <li><a href="javascript:;">개인정보 취급방침</a></li>
@@ -200,7 +167,7 @@
                         <li><a href="javascript:;">예약 전 필독사항</a></li>
                         <li><a href="javascript:;">SMS 설정</a></li>
                         <li><a href="javascript:;">Mail 설정</a></li>
-                        <li><a href="javascript:;">항공편 관리</a></li>
+                        <li class="active"><a href="javascript:;">항공편 관리</a></li>
                     </ul>
                 </li>
                 <li class="has-ul">
@@ -260,7 +227,8 @@
         <div class="breadcrumb-line">
             <ul class="breadcrumb">
                 <li><a href="javascript:;">Home</a></li>
-                <li class="active">예약관리</li>
+                <li class="active">기본정보 설정</li>
+                <li class="active">항공편 관리</li>
             </ul>
 
             <div class="visible-xs breadcrumb-toggle">
@@ -270,289 +238,97 @@
         </div>
         <!-- /breadcrumbs line -->
 
-        <!-- 검색 라인 시작 -->
+        <!-- 상단 메뉴 -->
+
         <div class="row">
             <div class="col-sm-4 text-left">
-                <div>
-                    <a href="javascript:;" class="btn top-button-asc">사이트전체<span><i class="icon-arrow-down"></i></span></a>
-                    <a href="javascript:;" class="btn top-button-asc">담당자 전체<span><i class="icon-arrow-up"></i></span></a>
-                    <a href="javascript:;" class="btn top-button-asc">담당자 전체<span><i class="icon-arrow-down"></i></span></a>
-                    <a href="javascript:;" class="btn top-button-asc">업무 전체<span><i class="icon-arrow-up"></i></span></a>
-                </div>
-            </div>
-            <div class="col-sm-8 text-right">
-                <div>
-                    <div class="input-group">
-                        <label class="checkbox-inline">
-                            <a href="javascript:;" class="btn label-black" style="width: 100%;"  onclick="javascript:popup_onoff('on', 1);">블랙리스트 목록</a>
-                        </label>
-                        <label class="checkbox-inline" style="margin-left: 5px;">
-                            <input type="text" class="form-control autocomplete text-danger ui-autocomplete-input" placeholder="이름/휴대폰/이메일" >
-                        </label>
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary btn-icon" type="button" ><i class="icon-search3"></i></button>
-                        </span>
-                        <span class="input-group-btn">
-                            <a href="javascript:;" class="btn btn-default" style="height: 34px;" onclick="javascript:dt_search_menu();">상세<span><i class="icon-arrow-down2" id="dt_search_icon"></i></span></a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" id="dt_search_box" style="display: none;">
-            <div class="col-sm-12 text-left">
                 <div class="block-inner">
-                <table class="table table-bordered  font12_black  table-condensed">
-                    <tbody>
-                    <tr>
-                        <td class="col-sm-2" style="border-right: 1px solid white; border-bottom: 1px solid white;">
-                            <label class="checkbox-inline" style="width: 45px;">예약자</label>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm">
-                            </label>
-                        </td>
-                        <td class="col-sm-2" style="border-right: 1px solid white; border-bottom: 1px solid white;">
-                            <label class="checkbox-inline">사이트</label>
-                            <label class="checkbox-inline">
-                                <select class="popup_select">
-                                    <option selected="selected">A</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </label>
-                        </td>
-                        <td class="col-sm-3" style="border-right: 1px solid white; border-bottom: 1px solid white;">
-                            <label class="checkbox-inline">접수일</label>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date" id="rm102c_date1">
-                            </label>
-                            <span> - </span>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date" id="rm102c_date2">
-                            </label>
-                        </td>
-                        <td class="col-sm-3" style="border-right: 1px solid white; border-bottom: 1px solid white;">
-                            <label class="checkbox-inline">예약금<br/>입금일 </label>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date"  id="rm102c_date3">
-                            </label>
-                            <span> - </span>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date"  id="rm102c_date4">
-                            </label>
-                        </td>
-                        <td class="col-sm-1" rowspan="2">
-                            <label class="checkbox-inline">
-                                <input type="button" class="btn btn_big_blue" value="검색">
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-sm-2" style="border-right: 1px solid white; border-top: 1px solid white;">
-                            <label class="checkbox-inline">진행상태</label>
-                            <label class="checkbox-inline">
-                                <select class="popup_select">
-                                    <option selected="selected">A</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </label>
-                        </td>
-                        <td class="col-sm-2" style="border-right: 1px solid white; border-top: 1px solid white;">
-                            <label class="checkbox-inline">담당자</label>
-                            <label class="checkbox-inline">
-                                <select class="popup_select">
-                                    <option selected="selected">A</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </label>
-                        </td>
-                        <td class="col-sm-3" style="border-right: 1px solid white; border-top: 1px solid white;">
-                            <label class="checkbox-inline">출발일</label>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date" id="rm102c_date5">
-                            </label>
-                            <span> - </span>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date" id="rm102c_date6">
-                            </label>
-                        </td>
-                        <td class="col-sm-3" style="border-right: 1px solid white; border-top: 1px solid white;">
-                            <label class="checkbox-inline">잔금<br/>입금일 </label>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date" id="rm102c_date7">
-                            </label>
-                            <span> - </span>
-                            <label class="checkbox-inline">
-                                <input type="text" class="form-control input-sm datepick_date" id="rm102c_date8">
-                            </label>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                    <ul class="top-menu-ui">
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">항공편</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">항공사</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active">지역</a></li>
+                    </ul>
+
+                 <!--   <a href="javascript:;" class="btn top-button-asc">항공사 전체</a>
+                    <a href="javascript:;" class="btn top-button-asc">출발 전체</a>
+                    <a href="javascript:;" class="btn top-button-asc">도착 전체</a>
+                    <a href="javascript:;" class="btn top-button-asc">출력/숨김 전체</a>-->
                 </div>
             </div>
         </div>
-        <!-- 검색 라인 끝 -->
+
+        <!-- 상단 메뉴 끝 -->
 
         <!-- Table line -->
         <div class="panel panel-default">
             <div class="table-responsive">
                 <table class="table table-bordered font12_black table-condensed">
+                    <colgroup>
+                        <col width="10%"/>
+                        <col width="10%"/>
+                        <col width="20%"/>
+                        <col width="40%"/>
+                        <col width="10%"/>
+                        <col width="10%"/>
+                    </colgroup>
                     <thead>
                     <tr>
-                        <th class="active" colspan="13">
-                            <select class="btn select-grey-button">
-                                <option selected="selected">담당자 변경</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select>
-                            <select class="btn select-grey-button">
-                                <option selected="selected">진행상태 변경</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select>
-                            <a href="javascript:;" class="btn tb_btn_white_right" onclick="javascript:popup_onoff('on', 2);">  예약등록 </a>
-                            <a href="javascript:;" class="btn tb_btn_white_right" onclick="javascript:popup_onoff('on', 2);">  예약복사 </a>
+                        <th class="text-left active" colspan="6">
+                            <a href="javascript:;" class="btn tb_btn_white">  출력 </a>
+                            <a href="javascript:;" class="btn tb_btn_white">  숨김 </a>
+                            <a href="javascript:;" class="btn tb_btn_white">  삭제 </a>
+                            <a href="javascript:;" class="btn tb_btn_white_right">지역 등록</a>
                         </th>
                     </tr>
                     <tr>
                         <th class="text-center active"><input type="checkbox" class="styled" align="middle"></th>
-                        <th class="text-center active"><a href="javascript:;">R/N</a></th>
-                        <th class="text-center active"><a href="javascript:;">예약일<span><i class="icon-arrow-down2"></i></span><span><i class="icon-arrow-up2"></i></span></a></th>
-                        <th class="text-center active">리조트</th>
-                        <th class="text-center active">객실/상품</th>
-                        <th class="text-center active"><a href="javascript:;">체크인(기간)</a></th>
-                        <th class="text-center active">출발</th>
-                        <th class="text-center active">예약자</th>
-                        <th class="text-center active">인원</th>
-                        <th class="text-center active">금액</th>
-                        <th class="text-center active">담당자</th>
-                        <th class="text-center active" style="width:230px;">진행상태</th>
-                        <th class="text-center active" style="width:60px;">진행여부</th>
+                        <th class="text-center active">No</th>
+                        <th class="text-center active">코드</th>
+                        <th class="text-center active">지역명</th>
+                        <th class="text-center active">관리</th>
+                        <th class="text-center active">출력/숨김</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="notice_table_tr">
+                    <tr style="cursor:pointer">
                         <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
-                        <td class="text-center" >4332</td>
-                        <td class="text-center" >2017-07-24<br>10:49:47</td>
-                        <td class="text-center" >J-PARK</td>
-                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
-                        <td class="text-center" >2017-08-25<br>(3박)</td>
-                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
-                        <td class="text-center" >류혜영</td>
-                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
-                        <td class="text-center text-success" >935</td>
-                        <td class="text-center" >박소정 실장</td>
-                        <td class="text-center">
-                            <span class="label label-danger">접수</span>
-                            <span class="label label-danger">견적</span>
-                            <span class="label label-danger">계약금</span>
-                            <span class="label label-danger">확정</span>
-                            <span class="label label-danger">잔금</span>
-                        </td>
-                        <td class="text-center" >
-                            <span class="label label-blue">완료</span>
-                            <span class="label label-hotred">정산</span>
-                        </td>
+                        <td class="text-center" >1</td>
+                        <td class="text-center">KE</td>
+                        <td class="text-center" >인천</td>
+                        <td class="text-center"><a href="javascript:;" class="ico_admin">관리</a></td>
+                        <td class="text-center"><a href="javascript:;"><i class="icon-eye" style="color: #999999;"></i></a></td>
                     </tr>
-                    <tr class="notice_table_tr">
+                    <tr style="cursor:pointer">
                         <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
-                        <td class="text-center" >4332</td>
-                        <td class="text-center" >2017-07-24<br>10:49:47</td>
-                        <td class="text-center" >J-PARK</td>
-                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
-                        <td class="text-center" >2017-08-25<br>(3박)</td>
-                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
-                        <td class="text-center" >류혜영</td>
-                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
-                        <td class="text-center text-success" >935</td>
-                        <td class="text-center" >박소정 실장</td>
-                        <td class="text-center">
-                            <span class="label label-danger">접수</span>
-                            <span class="label label-danger">견적</span>
-                            <span class="label label-default">계약금</span>
-                            <span class="label label-default">확정</span>
-                            <span class="label label-default">잔금</span>
-                        </td>
-                        <td class="text-center" >
-                            <span class="label label-blue">완료</span>
-                            <span class="label label-grey">미정산</span>
-                        </td>
+                        <td class="text-center" >1</td>
+                        <td class="text-center">KE</td>
+                        <td class="text-center" >인천</td>
+                        <td class="text-center"><a href="javascript:;" class="ico_admin">관리</a></td>
+                        <td class="text-center"><a href="javascript:;"><i class="icon-eye" style="color: #999999;"></i></a></td>
                     </tr>
-                    <tr class="notice_table_tr">
+                    <tr style="cursor:pointer">
                         <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
-                        <td class="text-center" >4332</td>
-                        <td class="text-center" >2017-07-24<br>10:49:47</td>
-                        <td class="text-center" >J-PARK</td>
-                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
-                        <td class="text-center" >2017-08-25<br>(3박)</td>
-                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
-                        <td class="text-center" >류혜영</td>
-                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
-                        <td class="text-center text-success" >935</td>
-                        <td class="text-center" >박소정 실장</td>
-                        <td class="text-center">
-                            <span class="label label-danger">접수</span>
-                            <span class="label label-danger">견적</span>
-                            <span class="label label-default">계약금</span>
-                            <span class="label label-default">확정</span>
-                            <span class="label label-default">잔금</span>
-                        </td>
-                        <td class="text-center" >
-                            <span class="label label-green">진행</span>
-                        </td>
+                        <td class="text-center" >1</td>
+                        <td class="text-center">KE</td>
+                        <td class="text-center" >인천</td>
+                        <td class="text-center"><a href="javascript:;" class="ico_admin">관리</a></td>
+                        <td class="text-center"><a href="javascript:;"><i class="icon-eye" style="color: #999999;"></i></a></td>
                     </tr>
-                    <tr class="notice_table_tr">
+                    <tr style="cursor:pointer">
                         <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
-                        <td class="text-center" >4332</td>
-                        <td class="text-center" >2017-07-24<br>10:49:47</td>
-                        <td class="text-center" >J-PARK</td>
-                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
-                        <td class="text-center" >2017-08-25<br>(3박)</td>
-                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
-                        <td class="text-center" >류혜영</td>
-                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
-                        <td class="text-center text-success" >935</td>
-                        <td class="text-center" >박소정 실장</td>
-                        <td class="text-center">
-                            <span class="label label-danger">접수</span>
-                            <span class="label label-danger">견적</span>
-                            <span class="label label-default">계약금</span>
-                            <span class="label label-default">확정</span>
-                            <span class="label label-default">잔금</span>
-                        </td>
-                        <td class="text-center" >
-                            <span class="label label-yellow">취소</span>
-                        </td>
+                        <td class="text-center" >1</td>
+                        <td class="text-center">KE</td>
+                        <td class="text-center" >인천</td>
+                        <td class="text-center"><a href="javascript:;" class="ico_admin">관리</a></td>
+                        <td class="text-center"><a href="javascript:;"><i class="icon-eye" style="color: #999999;"></i></a></td>
                     </tr>
-                    <tr class="notice_table_tr">
+                    <tr style="cursor:pointer">
                         <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
-                        <td class="text-center" >4332</td>
-                        <td class="text-center" >2017-07-24<br>10:49:47</td>
-                        <td class="text-center" >J-PARK</td>
-                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
-                        <td class="text-center" >2017-08-25<br>(3박)</td>
-                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
-                        <td class="text-center" >류혜영</td>
-                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
-                        <td class="text-center text-success" >935</td>
-                        <td class="text-center" >박소정 실장</td>
-                        <td class="text-center">
-                            <span class="label label-danger">접수</span>
-                            <span class="label label-danger">견적</span>
-                            <span class="label label-default">계약금</span>
-                            <span class="label label-default">확정</span>
-                            <span class="label label-default">잔금</span>
-                        </td>
-                        <td class="text-center" >
-                            <span class="label label-hotpink">출발</span>
-                        </td>
+                        <td class="text-center" >1</td>
+                        <td class="text-center">KE</td>
+                        <td class="text-center" >인천</td>
+                        <td class="text-center"><a href="javascript:;" class="ico_admin">관리</a></td>
+                        <td class="text-center"><a href="javascript:;"><i class="icon-eye" style="color: #999999;"></i></a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -564,29 +340,6 @@
 
         <!-- 페이징 라인 시작 -->
 
-        <div class="row">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-8 text-center">
-                <ul class="pagination">
-                    <li class="disabled"><a href="javascript:;">←</a></li>
-                    <li class="active"><a href="javascript:;">1</a></li>
-                    <li><a href="javascript:;">2</a></li>
-                    <li><a href="javascript:;">3</a></li>
-                    <li><a href="javascript:;">4</a></li>
-                    <li><a href="javascript:;">5</a></li>
-                    <li><a href="javascript:;">6</a></li>
-                    <li><a href="javascript:;">7</a></li>
-                    <li><a href="javascript:;">8</a></li>
-                    <li><a href="javascript:;">9</a></li>
-                    <li><a href="javascript:;">10</a></li>
-                    <li><a href="javascript:;">→</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-2 text-right">
-            </div>
-        </div>
-        <br>
         <!--페이징 라인 끝 -->
 
 
