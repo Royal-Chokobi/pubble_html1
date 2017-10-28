@@ -290,6 +290,16 @@ table > tbody > tr > .table-top-line{
   padding: 2px;
   padding-left: 5px;
 }
+.label-txtsm-box{
+  width: 180px;
+  /*min-width: 263px;
+  max-width: 310px;*/
+  height: 34px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  padding: 2px;
+  padding-left: 5px;
+}
 .span-days{
   width: 80px;
   display: block;
@@ -301,6 +311,12 @@ table > tbody > tr > .table-top-line{
   display: block;
   float: left;
   line-height: 22px;
+}
+.span-txt-sm{
+  width: 180px;
+  display: block;
+  float: left;
+  line-height: 27px;
 }
 .span-money-red{
   color: #e94343;
@@ -314,6 +330,18 @@ table > tbody > tr > .table-top-line{
   clear: both;
   font-weight: 600;
   color: #e94343;
+}
+.div-box-inline{
+  margin-top: 10px;
+  /* padding: 10px; */
+  border: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+.label-inline{
+  padding-left: 0;
+  list-style: none;
+  margin-left: 10px;
 }
 .label-big-txt-box > .span-tx-card{color: #000}
 .label-big-txt-box{
