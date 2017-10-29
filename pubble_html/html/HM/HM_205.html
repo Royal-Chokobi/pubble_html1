@@ -231,25 +231,26 @@
             <div class="col-sm-6 text-left">
                 <div class="block-inner">
                     <ul class="top-menu-ul">
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active">예약 정보 관리</a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">리조트 정보 관리</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">예약 정보 관리</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active">리조트 정보 관리</a></li>
                         <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">사이트 정보 관리</a></li>
                     </ul>
                     <ul class="top-under-ul">
                         <li class="top-under-li li_node_0">
-                            <ul class="">
+                            <ul class="hidden-ul">
                                 <li><a href="javascript:;" class="top-under-btn ">예약관리</a></li>
                                 <li><a href="javascript:;" class="top-under-btn ">시즌관리</a></li>
-                                <li><a href="javascript:;" class="top-under-btn active">예약안내문 관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">예약안내문 관리</a></li>
                                 <li><a href="javascript:;" class="top-under-btn ">이메일 안내문 관리</a></li>
                             </ul>
                         </li>
                         <li class="top-under-li li_node_1">
-                            <ul class=" hidden-ul">
-                                <li><a href="javascript:;" class="top-under-btn">객실관리</a></li>
+                            <ul class=" ">
+                                <li><a href="javascript:;" class="top-under-btn ">객실관리</a></li>
                                 <li><a href="javascript:;" class="top-under-btn ">리조트 소개</a></li>
                                 <li><a href="javascript:;" class="top-under-btn ">레스토랑</a></li>
                                 <li><a href="javascript:;" class="top-under-btn ">부대시설</a></li>
+                                <li><a href="javascript:;" class="top-under-btn active">워터파크</a></li>
                             </ul>
                         </li>
                         <li class="top-under-li li_node_2">
@@ -270,137 +271,42 @@
 
 
         <!-- Table line -->
-
         <div class="panel panel-default">
-            <div class="panel-heading"><h6 class="panel-title"><i class="icon-books"></i>예약안내문</h6></div>
-            <div class="panel-body">
-                <div class="form-group col-sm-7">
-
-                    <h6 class="panel-title"><strong class="label label-warning">A</strong> 여행지/여행일정 하단 안내메시지 </h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm"  style="width:100%; height:100px;">
-- 숙박일수는 한국 출발일부터 한국 도착일까지로 계산됩니다. (현지이동 제외)
-- PIC는 기본 3박이상부터 투숙가능합니다.
-- 객실요금은 체크인 첫날 기준으로 투숙기간 동일하게 적용됩니다.
-- 주간항공편:  Check-in 15시, Check-out 낮 12시
-- 야간항공편:  Check-in 익일새벽, Check-out 00시
-- 현지이동시 : 체크인 15시, 체크아웃 낮 12시
-
-※ Late Check-out, Early Check-in 불가합니다
-                          </textarea>
-                    </div>
-
-                    <h6 class="panel-title"><strong class="label label-warning">B</strong> 인원선택 우측 안내메시지</h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm" style="width:100%; height:100px;">
-- 총 투숙인원 수를 입력해 주세요.
-- 성인/아동/유아 기준은 체크인날짜 기준입니다.
-  (아동 : 만2세 ~ 12세 미만 / 유아 : 만2세 미만)
--2017년 출발기준
-* 2005년 생일 지나면 성인입니다.
-* 2015년 생일 지나면 아동입니다.
-
-- 객실+골드카드 견적으로 진행됩니다.
-                          </textarea>
-                    </div>
-
-                    <h6 class="panel-title"><strong class="label label-warning">C</strong> 객실선택 우측 안내메시지</h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm" style="width:100%; height:100px;">
-- 한 객실에는 정원은 성인2+아동2 입니다.
-- 객실당 최대 5인까지 투숙 가능합니다. (추가인원에 대해 비용발생)
-* 사이판PIC는 최대 5인 투숙시 1인은 24개월미만 유아만 가능.
-- 성인은 최대 3인까지 1객실 사용이 가능하며, 추가비용이 발생합니다.
-                          </textarea>
-                    </div>
-
-                    <h6 class="panel-title"><strong class="label label-warning">D</strong> 인원선택/객실선택 하단 안내메시지</h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm" style="width:100%; height:100px;">
-★ 괌 PIC 1객실 정원 안내★
-- 성인2+아동2 숙박가능
-- 성인1+아동3 숙박가능
-- 성인2+아동3 숙박가능 : 엑스트라베드 + 아동 1인 아동 골드카드 추가
-- 성인3+아동1 숙박가능 : 엑스트라베드 + 성인 1인 골드카드 추가
-- 성인3+아동2 숙박가능 : 엑스트라베드 + 성인 1인 골드카드 추가 + 아동 1인 골드카드 추가
-- 성인3+아동2+유아2 숙박불가
-- 성인3+아동3 숙박불가
-- 성인 4 숙박불가
-
-★ 사이판 PIC 1객실 정원 안내★
-- 성인2+아동2 숙박가능
-- 성인1+아동3 숙박가능
-- 성인2+아동2+유아1 숙박가능 (유아 만 25개월 미만)
-- 성인3+아동1 숙박가능 : 성인 1인 엑스트라베드+골드카드 추가
-- 성인2+아동3 숙박불가
-- 성인3+아동2 숙박불가
-- 성인3+아동2+유아2 숙박불가
-- 성인3+아동3 숙박불가
-- 성인 4 숙박불가
-                            </textarea>
-                    </div>
-
-                    <h6 class="panel-title"><strong class="label label-warning">E</strong> 항공설정 하단 안내메시지</h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm"  style="width:100%; height:100px;">
-항공 출,도착시간은 항공사에 의해 변경되오니, 이용하시는 "항공편명"으로 선택 부탁드립니다.
-
-※ 항공편수가 다른 경우 식사 추가비용이 발생 할 수 있습니다.(새벽출발 - 낮 12:00 체크아웃 또는 낮 15:00 체크인 - 새벽체크아웃)
-※ 야간 항공편 체크인 후 타 호텔로 이동, 타호텔에서 이동 후 야간항공편 체크아웃의 경우 '$100 NOON차지'가 발생됩니다.
-※ 타 호텔에서 이동시 현지이동으로 선택 부탁드립니다.
-                          </textarea>
-                    </div>
-
-                    <h6 class="panel-title"><strong class="label label-warning">F</strong> 요청사항 하단 안내메시지</h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm" style="width:100%; height:100px;">
-- 객실+골드카드(전일정식사)로 안내된 견적입니다.
-- 실버카드(조식)로 진행을 원하시면 요청사항에 기입 부탁드립니다. (브론즈카드 예약은 불가합니다.)
-
-※ 픽업서비스는 호텔에서 나오는 픽업이 아닌 여행사 픽업입니다.
-* 다른 고객님과 합류하여 투숙 호텔로 모셔다 드리기 때문에 공항 상황에 따라 빨리 나오시더라도 기다려야 하는 상황이 발생할 수 있습니다.
-* 출발 일주일 전까지 신청가능/ 영업일 기준 일주일 전 취소시 환불처리 되지 않습니다.
-
-
-*옵션관광*
-* 사이판 옵션투어는 홈페이지 https://booking.naver.com/booking/5/bizes/91293 에서 확인 및 예약 가능합니다.
-* 사이판 야간항공편 이용시 미팅,샌딩 편도당 $5 추가비용 발생합니다.
-(예) 왕복 야간항공편 이용 : 기존 성인 $20, 아동 $10 → 성인 $30, 아동 $20
-       편도 야간항공편 이용 : 기존 성인 $20, 아동 $10 → 성인 $25, 아동 $15
-                          </textarea>
-                    </div>
-
-                    <h6 class="panel-title"><strong class="label label-warning">G</strong> 예약금액 하단 취소/환불규정 안내메세지</h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm" style="width:100%; height:100px;">
-  ※ 취소/환불 규정
-  - 숙발일 기준 31일 전 : 전액 환불
-  - 숙발일 기준 30일 전 : 1박 요금 부과
-  - 숙발일 기준 14일 전 : 100% 전액 패널티 부과
-  * 토, 일요일 및 법정공휴일의 경우 해당일이 지난 정상영업일 기준으로 취소
-                          </textarea>
-                    </div>
-                </div>
-                <div class="col-sm-5 text-right">
-                    <img src="../../images/images_file/messageinfo.png">
-                </div>
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="4">
+                            <h6 class="panel-title col-sm-6">워터파크</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <textarea style="width: 100%; height: 550px;"></textarea>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-
         <!-- Table line -->
-
         <div class="row">
             <div class="col-sm-12 text-center">
                 <a href="javascript:;" class="btn btn-primary">저장</a>
             </div>
         </div>
 
-
     </div></div>
     <!-- //page content -->
 </div>
 
 <!-- //page container -->
+
+
+<!-- ================================  popup_st ================================  -->
+
+
+<!--popup 끝-->
 
 
 </body>

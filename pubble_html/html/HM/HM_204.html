@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../css/icons.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+
+    <script>
+        /** 상단 메뉴 **/
+        $(document).ready(function(){
+
+            $(".top-menu-ul > li > a").mouseover(function(){
+                var li_node = "li_node_";
+                li_node += $(".top-menu-ul > li > a").index(this);
+
+                $("ul.top-under-ul > li > ul").addClass('hidden-ul');
+                $("li."+li_node +" > ul").removeClass('hidden-ul');
+            });
+
+            $("li.top-under-li > ul > li > a").click(function(){
+
+                $("li.top-under-li > ul > li> a").removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $("li.top-under-li > ul").mouseleave(function(){
+
+                $( "li.top-under-li > ul > li > a.active " ).each(function() {
+                    var li_node = "li_node_";
+                    li_node +=$( this ).parents(".top-under-li").index();
+
+                    $("ul.top-under-ul > li > ul").addClass('hidden-ul');
+                    $("li."+li_node +" > ul").removeClass('hidden-ul');
+                    /*console.log( index + ": " + $( this ).text() );*/
+                });
+
+            });
+
+            /*$(".top-menu-ul > li > a").click(function(){
+                            $(".top-menu-ul > li > a").removeClass('active');
+                            $(this).addClass('active');
+                            var li_node = "li_node_";
+                            li_node += $(".top-menu-ul > li > a").index(this);
+
+                            $("ul.top-under-ul > li > ul").addClass('hidden-ul');
+                            $("li."+li_node +" > ul").removeClass('hidden-ul');
+                        });*/
+
+        });
+
+        /** 팝업 on off 구분  **/
+        function popup_onoff(onoff_type, popup_type_num) {
+            var type_onoff = onoff_type;
+            var type_number = popup_type_num*1;
+            var pop_id = "popup_tb_id" + type_number;
+
+            select_popup_list(type_onoff, pop_id);
+        }
+
+        /** 팝업 **/
+        function select_popup_list(type_onoff, pop_id) {
+            if(type_onoff == "on"){
+
+                document.body.classList.add( 'modal-open' );
+                $("#popup_frame_id").addClass( 'modal-backdrop fade in' );
+                $('#'+pop_id).addClass( 'modal fade in' ).css("display", "block");
+
+            }else if(type_onoff == "off"){
+
+                $( '#'+pop_id ).removeClass( 'modal fade in' ).css("display", "none");
+                $( '#popup_frame_id' ).removeClass( 'modal-backdrop fade in' );
+                document.body.classList.remove( 'modal-open' );
+
+            }else{
+                alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+        }
+
+    </script>
+
+</head>
+
+<body marginwidth="0" marginheight="0" >
+
+<!-- ================================  TOP_bar 시작되는 곳 ================================ -->
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <h1 style="width: 280px; line-height: normal;"><a class="hotelin-title" href="javascript:;"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <strong> 2017년 09월 30일 (토) </strong>  </a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <strong> SMS 발송가능 : 1,636건 </strong>
+                </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="javascript:;"  class="btn btn_white">  신규예약 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="javascript:;"  class="btn btn_white">  예약문의 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="javascript:;"  class="btn btn_white">  1:1문의 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <p><a href="javascript:;"  class="btn btn_logout">  Log out </a></p>
+            </li>
+
+        </ul>
+    </div>
+<!-- /TOP_bar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================  Sidebar 시작되는 곳 ================================  -->
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+
+            <!-- User dropdown -->
+            <div class="user-menu dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<div class="user-info">
+                    </div>-->
+                    <strong class="user-info">Home</strong>
+                </a>
+            </div>
+            <!-- /user dropdown -->
+
+
+            <!-- Main navigation -->
+            <ul class="navigation">
+                <li class="has-ul ">
+                    <a href="javascript:;" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
+                    <ul class="hidden-ul"></ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사내게시판</a></li>
+                        <li><a href="javascript:;">공지사항</a></li>
+                        <li><a href="javascript:;">문의 및 답변</a></li>
+                        <li><a href="javascript:;">예약 1:1 문의</a></li>
+                        <li><a href="javascript:;">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">SMS 발송 내역</a></li>
+                        <li><a href="javascript:;">E-Mail 발송 내역</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">기본정보</a></li>
+                        <li><a href="javascript:;">약관</a></li>
+                        <li><a href="javascript:;">개인정보 취급방침</a></li>
+                        <li><a href="javascript:;">취소/환불 규정</a></li>
+                        <li><a href="javascript:;">예약 전 필독사항</a></li>
+                        <li><a href="javascript:;">SMS 설정</a></li>
+                        <li><a href="javascript:;">Mail 설정</a></li>
+                        <li><a href="javascript:;">항공편 관리</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon5"><span><strong>허브사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">허브페이지 관리</a></li>
+                        <li><a href="javascript:;">팝업관리</a></li>
+                        <!--<li><a href="javascript:;">회사소개</a></li>-->
+                    </ul>
+                </li>
+                <li class="has-ul active">
+                    <a href="javascript:;" class="navi_a_icon6"><span><strong>호텔사이트 관리</strong></span> </a>
+                    <ul class="active">
+                        <li class="active"><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon7"><span><strong>정산 및 운영관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사용자 관리</a></li>
+                        <li><a href="javascript:;">업무 관리</a></li>
+                        <li><a href="javascript:;">정산 관리</a></li>
+                        <li><a href="javascript:;">매출 통계</a></li>
+                        <li><a href="javascript:;">접속 통계</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                  </li>-->
+            </ul>
+            <!-- /main navigation -->
+
+        </div>
+
+    </div>
+
+
+    <!-- /sidebar 끝-->
+
+
+    <!-- ================================ Page content 부분 시작 ================================ -->
+
+    <div class="page-content"><div class="page-content-inner">
+
+        <div class="page-header">
+
+        </div>
+
+
+        <!-- Breadcrumbs line -->
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="javascript:;">Home</a></li>
+                <li class="active">호텔사이트 관리</li>
+            </ul>
+
+            <div class="visible-xs breadcrumb-toggle">
+                <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+            </div>
+
+        </div>
+        <!-- /breadcrumbs line -->
+
+        <!-- 상단 메뉴 -->
+
+        <div class="row">
+            <div class="col-sm-6 text-left">
+                <div class="block-inner">
+                    <ul class="top-menu-ul">
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">예약 정보 관리</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active">리조트 정보 관리</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn ">사이트 정보 관리</a></li>
+                    </ul>
+                    <ul class="top-under-ul">
+                        <li class="top-under-li li_node_0">
+                            <ul class="hidden-ul">
+                                <li><a href="javascript:;" class="top-under-btn ">예약관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">시즌관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">예약안내문 관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">이메일 안내문 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-under-li li_node_1">
+                            <ul class=" ">
+                                <li><a href="javascript:;" class="top-under-btn ">객실관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">리조트 소개</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">레스토랑</a></li>
+                                <li><a href="javascript:;" class="top-under-btn active">부대시설</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-under-li li_node_2">
+                            <ul class=" hidden-ul">
+                                <li><a href="javascript:;" class="top-under-btn">기본정보 관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">스크립트 관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">팝업관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">메인 디자인 관리</a></li>
+                                <li><a href="javascript:;" class="top-under-btn ">서브 디자인 관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 상단 메뉴 끝 -->
+
+
+        <!-- Table line -->
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered font12_black table-condensed">
+                    <colgroup>
+                        <col width="5%"/>
+                        <col width="5%"/>
+                        <col width="10%"/>
+                        <col width="20%"/>
+                        <col width="50%"/>
+                        <col width="5%"/>
+                        <col width="5%"/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th colspan="8">
+                            <span>
+                                <img src="../../images/images_file/ico_arr_uup.png" alt="1"  style="cursor:pointer;" height="30">
+                                <img src="../../images/images_file/ico_arr_up.png" alt="2"  style="cursor:pointer;" height="30">
+                                <img src="../../images/images_file/ico_arr_down.png" alt="3"  style="cursor:pointer;" height="30">
+                                <img src="../../images/images_file/ico_arr_ddown.png" alt="4"  style="cursor:pointer;" height="30">
+                            </span>
+                            <a href="javascript:;"  class="btn tb_btn_white">  출력 </a>
+                            <a href="javascript:;"  class="btn tb_btn_white">  숨김 </a>
+                            <a href="javascript:;"  class="btn tb_btn_white">  삭제 </a>
+                            <a href="javascript:;"  class="btn tb_btn_white_right" onclick="javascript:popup_onoff('on',1);">  부대시설 등록 </a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text-center active"><input type="checkbox" class="styled" align="middle"></th>
+                        <th class="text-center active">노출<br/>순위</th>
+                        <th class="text-center active">시설 명</th>
+                        <th class="text-center active">대표이미지</th>
+                        <th class="text-center active">상세정보</th>
+                        <th class="text-center active">관리</th>
+                        <th class="text-center active">출력/숨김</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >99999</td>
+                        <td class="text-center" >디럭스룸</td>
+                        <td class="text-center" ><img src="../../images/images_file/noimg.gif" class="img_class" width="250" height="150"></td>
+                        <td class="text-left" >
+                            ﻿﻿﻿﻿﻿7~10층에 위치하고 있으며 깔끔하면서도 실용성이 가미된 객실입니다.슈페리어보다 조금 더 사이즈가 큰 침대가 구비되어 잇어 어린이를 동반한 가족여행에 더욱 적합합니다.
+                            View: 오션뷰 7-10층 | Bed type: 더블/싱글베드 | Size: 32㎡
+                        </td>
+                        <td class="text-center" ><a href="javascript:;" class="ico_admin">관리</a></td>
+                        <td class="text-center" >
+                            <a href="javascript:;"><i class="icon-eye" style="color: #999999;"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >2</td>
+                        <td class="text-center" >슈페리어룸</td>
+                        <td class="text-center" ><img src="../../images/images_file/noimg.gif" class="img_class" width="250" height="150"></td>
+                        <td class="text-left" >
+                            7~10층에 위치하고 있으며 깔끔하면서도 실용성이 가미된 객실입니다.슈페리어보다 조금 더 사이즈가 큰 침대가 구비되어 잇어 어린이를 동반한 가족여행에 더욱 적합합니다.
+                        </td>
+                        <td class="text-center" ><a href="javascript:;" class="ico_admin">관리</a></td>
+                        <td class="text-center" >
+                            <a href="javascript:;"><i class="icon-eye-blocked" style="color: #999999;"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" class="styled" align="middle"></td>
+                        <td class="text-center" >3</td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ><img src="../../images/images_file/noimg.gif" class="img_class" width="250" height="150"></td>
+                        <td class="text-left" ></td>
+                        <td class="text-center" ></td>
+                        <td class="text-center" ></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Table line -->
+
+        <div class="row">
+            <div class="col-sm-12 text-center"></div>
+        </div>
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+
+<!-- ================================  popup_st ================================  -->
+
+
+<!-- 예약관리 – 예약상세 (예약정보 수정, 예약추가 - 직접입력 팝업) -->
+
+<div id="popup_tb_id1" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',1);">×</button>
+                <h4 class="modal-title">부대시설 등록</h4>
+            </div>
+
+            <div class="modal-body with-padding" style="height:700px">
+                <div class="table-responsive">
+                    <div name="modal_5_frame" width="100%" height="700px" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+
+                        <div class="row" style="width:99%; text-align:center; overflow: auto; height: 670px;">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+
+                                        <span>
+
+                                            <table class="table table-bordered font12_black  table-condensed" >
+                                                <tbody>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">상호명</td>
+                                                    <td class="text-center col-md-4">
+                                                        <input type="text" class="form-control input-sm" >
+                                                    </td>
+                                                    <td class="text-center active col-md-2">Type</td>
+                                                    <td class="text-center col-md-4">
+                                                        <input type="text" class="form-control input-sm" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">Location</td>
+                                                    <td class="text-center col-md-4">
+                                                        <input type="text" class="form-control input-sm" >
+                                                    </td>
+                                                    <td class="text-center active col-md-2">Inquiry</td>
+                                                    <td class="text-center col-md-4">
+                                                        <input type="text" class="form-control input-sm" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">간략설명</td>
+                                                    <td class="text-center col-md-4" colspan="3">
+                                                        <textarea style="width: 100%; height: 150px;"></textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">대표사진</td>
+                                                    <td class="text-left" colspan="3">
+                                                        <div class="col-sm-12 text-left">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" style="border:0" class="styled"> 삭제&nbsp;-&nbsp;
+                                                                <a href="javascript:;">
+                                                                    <i class="icon-image"></i>
+                                                                    <span class="text-left">이미지파일(jpark_cebu_4094_060624).jpg</span>
+                                                                </a>
+                                                                <br/><br/>
+                                                            </label>
+                                                            <div class="uploader">
+                                                                <input type="file" class="form-control input-sm input-wide">
+                                                                <input type="button" class="btn btn-primary btn-xs" style="float: right;" value="등록">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">상세설명</td>
+                                                    <td class="text-center col-md-4" colspan="3">
+                                                        <textarea style="width: 100%; height: 350px;"></textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">출력여부</td>
+                                                    <td class="text-left" colspan="3">
+                                                        <label class="checkbox-inline">
+                                                            <input type="radio" class="styled" checked="checked" name="radio_type_group1">출력
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="radio" class="styled"  name="radio_type_group1">숨김
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',1);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="" id="popup_frame_id"></div>
+
+<!--popup 끝-->
+
+
+</body>
+
+</html>

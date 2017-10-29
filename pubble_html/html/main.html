@@ -188,13 +188,41 @@
     <div class="page-content"><div class="page-content-inner" style="height: 3000px;">
 
 
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 
         <script>
-            $( function() {
-                $( "#draggable" ).draggable();
-            } );
+
+            google.charts.load("current", {packages:['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+                var test1 = new Array();
+
+                for(var i= 1; i<=12; i++){
+                    test1[i]=[i+'월', 3500000, 'color: #76A7FA', 2500000];
+                }
+
+                var data = google.visualization.arrayToDataTable([
+                    ['Month', 'won', { role: 'style' }, { role: 'annotation' } ],
+                ]);
+
+
+                var options = {
+                    height: 400,
+                    bar: {groupWidth: '75%'},
+                    legend: { position: 'none' },
+                };
+
+                var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_styles'));
+                chart.draw(data, options);
+            }
+
         </script>
+        <div id="columnchart_styles"></div>
+
 
         <div style="width: 300px; height: 300px; right: 50px; top: 50%; position: fixed;" id="draggable" >
             <div class="sidebar-content">
