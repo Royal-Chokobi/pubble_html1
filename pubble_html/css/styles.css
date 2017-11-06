@@ -400,7 +400,7 @@ table > tbody > tr > .table-top-line{
 .border-line-rb{border-right: 1px solid white; border-bottom: 1px solid white;}
 .border-line-rt{border-right: 1px solid white; border-top: 1px solid white;}
 .top-menu-ul{
-  background-color: rgba(240, 52, 149, 1);
+  /*background-color: rgba(240, 52, 149, 1);*/
   min-height: 40px;
   padding-left: 0px;
   margin-bottom: 0px;
@@ -411,15 +411,17 @@ table > tbody > tr > .table-top-line{
 .top-menu-li{
   display: block;
   float: left;
+  background-color: rgb(44, 58, 66);
  /* background-color: rgba(240, 52, 149, 1);
   border-color: rgba(240, 52, 149, 1);*/
-  min-height: 40px;
+  height: 45px;
 }
 
 .top-menu-li > a{
   border-color: rgb(44, 58, 66);
   background-color: rgb(44, 58, 66);
   color: white;
+  height: 45px;
   min-width: 125px;
 }
 .top-menu-li > a:hover{background-color: rgba(240, 52, 149, 1); border: 1px solid rgba(240, 52, 149, 1); color: white;}
@@ -427,7 +429,8 @@ table > tbody > tr > .table-top-line{
   background-color: rgba(240, 52, 149, 1);
   border-color: rgba(240, 52, 149, 1);
   color: white;
-  height: 40px;
+  height: 45px;
+  margin-bottom: 0px;
   margin-top: 0px;
 }
 .top-menu-btn {
@@ -442,7 +445,7 @@ table > tbody > tr > .table-top-line{
   padding: 7px 16px 8px 16px;
   font-size: 12px;
   font-weight: 600;
-  line-height: 1.42857143;
+  line-height: 2.42857143;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -486,6 +489,9 @@ table > tbody > tr > .table-top-line{
   -ms-user-select: none;
   user-select: none;
 }
+
+.div-padding{padding: 5px;}
+
 /*====================================================================================*/
 
 /* Demo list */
