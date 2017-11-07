@@ -199,32 +199,188 @@
         </div>
         <!-- /breadcrumbs line -->
 
+<script>
+
+   /* function scrollX() {
+        document.all.mainDisplayRock.scrollLeft = document.all.bottomLine.scrollLeft;
+        document.all.topLine.scrollLeft = document.all.bottomLine.scrollLeft;
+    }*/
+
+    function test123() {
+
+        var select_val = $('#select_tb_list1').val()*1;
+        var hd_th = "";
+        var bd_tr = "";
+
+        $("#tr_th_list > th").remove();
+        $("#tr_body_list > tr").remove();
+
+        switch(select_val){
+            case 1:
+                gride_default_data(hd_th, bd_tr);
+                break;
+            case 2:
+                gride_year_data(hd_th, bd_tr);
+                break;
+            case 3:
+                gride_month_data(hd_th, bd_tr);
+                break;
+        }
+
+    }
+    
+    function gride_default_data(hd_th, bd_tr) {
+
+        /** 예문 데이터 **/
+        var ex_data = new Array();
+        ex_data[0] = ['허브', '598 ', '364', '3,948', '16,920', '16,582', '3,678', '349'];
+        ex_data[1] = ['PIC 괌', '1598 ', '564', '4,948', '26,920', '136,582', '13,678', '2,349'];
+        /** 예문 데이터 **/
+
+        $("#sh_cols").attr("colspan", "8");
+        $("#th_cols").attr("colspan", "7");
+
+        if($("#tr_th_list > th").size() == 0){
+
+            hd_th = "<th class='text-center active'>오늘</th>" +
+                "<th class='text-center active'>어제</th>" +
+                "<th class='text-center active'>1주</th>" +
+                "<th class='text-center active'>당월</th>" +
+                "<th class='text-center active'>전월</th>" +
+                "<th class='text-center active'>최대</th>" +
+                "<th class='text-center active'>최소</th>";
+
+            $("#tr_th_list").append(hd_th);
+
+            for(var i=0; i < ex_data.length; i++){
+                bd_tr += "<tr class='notice_table_tr'>";
+                for(var j=0; j < ex_data[i].length; j++){
+                    bd_tr += "<td class='text-right' >" + ex_data[i][j] + "</td>";
+                }
+                bd_tr += "</tr>"
+            }
+
+            $("#tr_body_list").append(bd_tr);
+        }
+
+
+    }
+
+    function gride_year_data(hd_th, bd_tr) {
+        /** 예문 데이터 **/
+        var ex_data = new Array();
+        ex_data[0] = ['허브', '108,258 ', '16,920', '16,582', '18442.8', '21556.6', '3,678', '349', '999', '999', '1,999', '0', '0', '0'];
+        ex_data[1] = ['PIC 괌', '108,258 ', '16,920', '16,582', '18442.8', '21556.6', '3,678', '349', '999', '999', '1,999', '0', '0', '0'];
+        ex_data[2] = ['PIC 사이판', '108,258 ', '16,920', '16,582', '18442.8', '21556.6', '3,678', '349', '999', '999', '1,999', '0', '0', '0'];
+        /** 예문 데이터 **/
+
+        $("#sh_cols").attr("colspan", "14");
+        $("#th_cols").attr("colspan", "13");
+
+        if($("#tr_th_list > th").size() == 0){
+
+            hd_th = "<th class='text-center active'>합계</th>";
+            for(var i=1; i<13; i++){
+                hd_th += "<th class='text-center active'>"+i+"</th>";
+            }
+
+            $("#tr_th_list").append(hd_th);
+
+
+            for(var i=0; i < ex_data.length; i++){
+                bd_tr += "<tr class='notice_table_tr'>";
+                for(var j=0; j < ex_data[i].length; j++){
+                    bd_tr += "<td class='text-right' >" + ex_data[i][j] + "</td>";
+                }
+                bd_tr += "</tr>"
+            }
+
+            $("#tr_body_list").append(bd_tr);
+        }
+    }
+
+    function gride_month_data(hd_th, bd_tr) {
+        /** 예문 데이터 **/
+        var ex_data = new Array();
+        ex_data = ['허브', 'PIC 괌', 'PIC 사이판'];
+
+
+        /** 예문 데이터 **/
+
+        $("#sh_cols").attr("colspan", "8");
+        $("#th_cols").attr("colspan", "7");
+
+        var day_account = new Date(2017, 11, 0).getDate();
+
+        if($("#tr_th_list > th").size() == 0){
+
+            /** 테이블 헤더 출력 부분 **/
+
+            hd_th ="<th style='padding: 0px; margin: 0px;'><div class='gride_tb_list' style='overflow: hidden;' id='tb_hd_div'><table class='table table-bordered font12_black table-condensed '>";
+
+            hd_th += "<tr><td class='text-center active' style='min-width: 100px;'>합계</td>";
+
+            for(var i=1; i <= day_account; i++){
+                hd_th += "<td class='text-center active' style='min-width: 100px;'>"+i+"</td>";
+            }
+
+            hd_th +="</tr></table></div></th>";
+
+            $("#tr_th_list").append(hd_th);
+
+
+            /** 테이블 데이터 출력 부분 **/
+
+            bd_tr += "<tr class='notice_table_tr'>"
+                  + "<td style='padding: 0px; margin: 0px; vertical-align: top; '>"
+                  + "<div class='gride_tb_list'><table class='table table-bordered font12_black table-condensed '>";
+
+                for(var i=0; i < ex_data.length; i++){
+                    bd_tr += "<tr><td class='text-right' style='min-width: 150px;'>" + ex_data[i] + "</td></tr>";
+                }
+
+            bd_tr += "</table></div>"
+                  + "</td>"
+                  + "<td style='padding: 0px; margin: 0px; vertical-align: top;'>"
+                  + "<div class='gride_tb_list' id='td_data_div' onscroll='tb_scroll_X();'><table class='table table-bordered font12_black table-condensed '>";
+
+                for(var i=0; i < ex_data.length; i++){
+                    bd_tr += "<tr>";
+                    for(var j=0; j <= day_account; j++){
+                        bd_tr += "<td class='text-right' style='min-width: 100px;'>" + j + "</td>";
+                    }
+                    bd_tr += "</tr>";
+                }
+            bd_tr += "</table></div>"
+                  + "</td>"
+                  + "</tr>";
+
+            $("#tr_body_list").append(bd_tr);
+        }
+    }
+
+   function tb_scroll_X() {
+       document.all.tb_hd_div.scrollLeft = document.all.td_data_div.scrollLeft;
+   }
+
+
+</script>
         <!-- Table line -->
         <div class="panel panel-default">
             <div class="table-responsive">
                 <table class="table table-bordered font12_black table-condensed">
-                    <colgroup>
-                        <col width="10%"/>
-                        <col width="10%"/>
-                        <col width="10%"/>
-                        <col width="10%"/>
-                        <col width="10%"/>
-                        <col width="10%"/>
-                        <col width="40%"/>
-                    </colgroup>
                     <thead>
                     <tr>
-                        <td class="text-left col-sm-2 active" colspan="7">
+                        <td class="text-left col-sm-2 active" id="sh_cols" colspan="9">
                             <div class="col-sm-8 text-left">
                                 <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>사이트 요약</h6>
                             </div>
                             <div class="col-sm-4 text-right">
                                 <label class="checkbox-inline">
-                                    <select class="popup_select popup_day">
-                                        <option selected="selected">요약보기</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
+                                    <select class="popup_select popup_day" id="select_tb_list1" >
+                                        <option selected="selected" value="1">요약보기</option>
+                                        <option value="2">월별보기</option>
+                                        <option value="3">일별보기</option>
                                     </select>
                                     <select class="popup_select popup_day">
                                         <option selected="selected">2017</option>
@@ -238,39 +394,18 @@
                                         <option>3</option>
                                     </select>
                                 </label>
-                                <a href="javascript:;" class="btn tb_btn_white_right">검색</a>
+                                <a href="javascript:;" class="btn tb_btn_white_right" onclick="test123();">검색</a>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <th class="text-center active">담당자</th>
-                        <th class="text-center active">시간</th>
-                        <th class="text-center active">구분</th>
-                        <th class="text-center active">업무</th>
-                        <th class="text-center active">예약자</th>
-                        <th class="text-center active">사이트</th>
-                        <th class="text-center active">상세내용</th>
+                        <th class="text-center active" rowspan="2">사이트</th>
+                        <th class="text-center active" id="th_cols" colspan="7">방문자 수</th>
+                    </tr>
+                    <tr id="tr_th_list">
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="notice_table_tr">
-                        <td class="text-center" >한미선 팀장</td>
-                        <td class="text-center" >2017.06.26 15:30:31</td>
-                        <td class="text-center" >예약관리</td>
-                        <td class="text-center" >가격정보 저장</td>
-                        <td class="text-center" >HYATT 사이판</td>
-                        <td class="text-center" >배재석</td>
-                        <td class="text-left" >수배서 발송 - OK (lindachung@hotmail.co.kr, 신규예약(호텔인_한미선팀장)9/10-913(3N4D) 배재석 외 스탠다드룸)</td>
-                    </tr>
-                    <tr class="notice_table_tr">
-                        <td class="text-center" >한미선 팀장</td>
-                        <td class="text-center" >2017.06.26 15:30:31</td>
-                        <td class="text-center" >예약관리</td>
-                        <td class="text-center" >가격정보 저장</td>
-                        <td class="text-center" >HYATT 사이판</td>
-                        <td class="text-center" >배재석</td>
-                        <td class="text-left" >수배서 발송 - OK (lindachung@hotmail.co.kr, 신규예약(호텔인_한미선팀장)9/10-913(3N4D) 배재석 외 스탠다드룸)</td>
-                    </tr>
+                    <tbody id="tr_body_list" >
                     </tbody>
                 </table>
             </div>

@@ -492,6 +492,15 @@ table > tbody > tr > .table-top-line{
 
 .div-padding{padding: 5px;}
 
+.gride_tb_list{
+  overflow: auto;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  max-width: 1457px;
+  overflow-y: hidden;
+}
+
 /*====================================================================================*/
 
 /* Demo list */
