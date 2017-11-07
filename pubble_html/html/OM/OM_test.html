@@ -149,10 +149,9 @@
                 /** 테이블 헤더 출력 부분 **/
                 hd_th ="<th style='padding: 0px; margin: 0px;'>"
                      + "<div class='gride_tb_list' style='overflow: hidden;' id='tb_hd_div'><table class='table table-bordered font12_black table-condensed ' style='border: none;'>"
-                     + "<tr><td class='text-center active' style='min-width: 100px;'>합계</td>";
 
                 for(var i=1; i <= day_account; i++){
-                    hd_th += "<td class='text-center active' style='min-width: 100px;'>"+i+"</td>";
+                    hd_th += "<td class='text-center active' style='min-width: 50px;'>"+i+"</td>";
                 }
                 hd_th +="</tr></table></div></th>";
 
@@ -171,8 +170,8 @@
 
                 for(var i=0; i < ex_data.length; i++){
                     bd_tr += "<tr>";
-                    for(var j=0; j <= day_account; j++){
-                        bd_tr += "<td class='text-right' style='min-width: 100px;'>" + ex_data[i][j+1] + "</td>";
+                    for(var j=1; j <= day_account; j++){
+                        bd_tr += "<td class='text-right' style='min-width: 50px;'>" + ex_data[i][j] + "</td>";
                     }
                     bd_tr += "</tr>";
                 }
