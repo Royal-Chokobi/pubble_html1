@@ -11,21 +11,18 @@
     <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
     <link href="../../css/styles.css" rel="stylesheet" type="text/css">
     <link href="../../css/icons.css" rel="stylesheet" type="text/css">
-
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
-
-
 
     <script type="text/javascript" src="../../js/plugins/application.js"></script>
     <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
 
     <!-- END :  기존 사용 CSS 및 JS -->
 
-
 </head>
 
 <body marginwidth="0" marginheight="0" >
+
 
 <!-- ================================  TOP_bar 시작되는 곳 ================================ -->
 <div class="navbar navbar-inverse" role="navigation">
@@ -99,7 +96,7 @@
                 <li class="has-ul active">
                     <a href="javascript:;" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
                     <ul class="active">
-                        <li ><a href="javascript:;">SMS 발송 내역</a></li>
+                        <li><a href="javascript:;">SMS 발송 내역</a></li>
                         <li class="active"><a href="javascript:;">E-Mail 발송 내역</a></li>
                     </ul>
                 </li>
@@ -146,9 +143,9 @@
                         <li><a href="javascript:;">접속 통계</a></li>
                     </ul>
                 </li>
-              <!--  <li>
-                    <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
-                </li>-->
+                <!--  <li>
+                      <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                  </li>-->
             </ul>
             <!-- /main navigation -->
 
@@ -184,119 +181,116 @@
         </div>
         <!-- /breadcrumbs line -->
 
-        <!-- 검색 라인 시작 -->
-        <div class="row">
-                <div class="col-sm-4 text-left">
-                    <div class="block-inner">
-                        <select class="popup_select row_select">
-                            <option selected="selected">사이트전체</option>
-                            <option>HYATT 사이판</option>
-                            <option>J-PARK</option>
-                            <option>KENSINGTON 사이판</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-8 text-right">
-                    <div class="block-inner">
-                        <div class="input-group">
-                            <label class="checkbox-inline" >
-                                <input type="text" class="form-control autocomplete text-danger ui-autocomplete-input" placeholder="이름/휴대폰" >
-                            </label>
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary btn-icon" type="button" ><i class="icon-search3"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <!-- 검색 라인 끝 -->
-
-
         <!-- Table line -->
+
         <div class="panel panel-default">
             <div class="table-responsive">
-                <table class="table table-bordered font12_black table-condensed">
-                    <colgroup>
-                        <col width="5%"/>
-                        <col width="8%"/>
-                        <col width="8%"/>
-                        <col width="5%"/>
-                        <col width="12%"/>
-                        <col width="42%"/>
-                        <col width="10%"/>
-                        <col width="5%"/>
-                        <col width="5%"/>
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th class="text-center active">NO</th>
-                        <th class="text-center active">사이트</th>
-                        <th class="text-center active">구분</th>
-                        <th class="text-center active">예약자</th>
-                        <th class="text-center active">이메일</th>
-                        <th class="text-center active">제목</th>
-                        <th class="text-center active">전송일자</th>
-                        <th class="text-center active">첨부파일</th>
-                        <th class="text-center active">전송결과</th>
-                    </tr>
-                    </thead>
+                <table class="table table-bordered font12_black  table-condensed">
                     <tbody>
-                    <tr class="notice_table_tr">
-                        <td class="text-center" >99999</td>
-                        <td class="text-center" >HYATT 사이판</td>
-                        <td class="text-center" >수배서발송</td>
-                        <td class="text-center" >정설아</td>
-                        <td class="text-center" >dlwjdvy0123@naver.com</td>
-                        <td class="text-left" >신규예약(호텔인_송민아과장)7/27-7/30(3N4D) NOON 이우락외3 두짓타니 클럽룸온니</td>
-                        <td class="text-center" >2017.06.21 16:51:40</td>
-                        <td class="text-center" ><a href="javascript:;"><i class="icon-file-check"></i></a></td>
-                        <td class="text-center" ><span class="font12_red">Fail</span></td>
+                    <tr>
+                        <td class="text-center active col-md-2">발송일시</td>
+                        <td class="text-left col-md-4"> 2017.06.27 19:45:45 </td>
+                        <td class="text-center active col-md-2">발송구분</td>
+                        <td class="text-left col-md-4">고객관리</td>
                     </tr>
-                    <tr class="notice_table_tr">
-                        <td class="text-center" >99999</td>
-                        <td class="text-center" >HYATT 사이판</td>
-                        <td class="text-center" >수배서발송</td>
-                        <td class="text-center" >정설아</td>
-                        <td class="text-center" >dlwjdvy0123@naver.com</td>
-                        <td class="text-left" >신규예약(호텔인_송민아과장)7/27-7/30(3N4D) NOON 이우락외3 두짓타니 클럽룸온니</td>
-                        <td class="text-center" >2017.06.21 16:51:40</td>
-                        <td class="text-center" ><a href="javascript:;"><i class="icon-file-check"></i></a></td>
-                        <td class="text-center" ><span class="font12_black">OK</span></td>
+                    <tr>
+                        <td class="text-center active col-md-2">보내는 사람</td>
+                        <td class="text-left col-md-4">호텔인 (hotelin.m3@gmail.com)</td>
+                        <td class="text-center active col-md-2">받는 사람</td>
+                        <td class="text-left col-md-4">최영진 (chojyj@ssym.com) </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">제목</td>
+                        <td class="text-left col-md-10" colspan="3">(호텔인) 세부 제이파크 바우처 입니다. </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">첨부파일</td>
+                        <td class="text-left col-md-10" colspan="3">
+                            <a href="javascript:;">
+                                <i class="icon-image2"></i>
+                                <span class="text-left">0.40098500_1498012789.png</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">내용</td>
+                        <td class="text-left col-md-10" colspan="3">
+                            <div contentEditable="true" style="width: 100%; height: 500px; overflow: auto;">
+                                <div class="col-sm-12">
+                                    <img src="../../images/images_file/st_img3.png" />
+                                </div>
+                                <div class="col-sm-12 ">
+                                    <div class="col-sm-7">
+                                        <table class="table table-bordered  font12_black  table-condensed ">
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-left col-sm-2 active" colspan="4">
+                                                    <h6 class="panel-title col-sm-6"><i class="icon-book2"></i>예약자정보</h6>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" colspan="4">PIC괌 – 디럭스룸 가든뷰(A상품)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center col-sm-2 active">신청일</td>
+                                                <td class="text-left col-sm-4">2017.12.12</td>
+                                                <td class="text-center col-sm-2 active">접수번호</td>
+                                                <td class="text-left col-sm-4">1233-3123</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center col-sm-2 active">여행기간</td>
+                                                <td class="text-left col-sm-4">2017-11-25 ~ 2017-11-28 (3박4일)</td>
+                                                <td class="text-center col-sm-2 active">예상금액</td>
+                                                <td class="text-left col-sm-4">2,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left" colspan="4">예약진행 현황은 하단 예약정보 바로가기 연결 또는 홈페이지의 예약조회 페이지를 통해 언제든지 확인 가능합니다</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12" style="margin-top: 15px;">
+                                    <img src="../../images/images_file/st_img4.png" />
+                                </div>
+                                <div class="col-sm-12">
+                                    예약금은 현금입금으로만 진행됩니다.<br/>
+                                    잔금은예약번호 확정 후 잔금안내 당일 현금 살 때 (최초) 환율로 적용됩니다.<br/>
+                                    입금 확인은 호텔인 업무시간 내에 확인 가능하며, 이후 입금은 익일 진행됩니다.<br/>
+                                    별도의 바우처는 없으며, 여권으로 체크인 할 수 있습니다.<br/>
+                                    ※ 호텔 컴펌넘버는 잔금과 함께 안내드립니다.<br/>
+                                    ※ 예약에 문제가 있을 경우에는 별도 연락드립니다.<br/>
+                                </div>
+                                <div class="col-sm-12">
+                                    <img src="../../images/images_file/st_img5.png" />
+                                </div>
+                                <div class="col-sm-12 text-center">
+                                    <a href="javascript:;" class="btn btn-primary">호텔인 바로가기</a>
+                                    <a href="javascript:;" class="btn btn-default">예약정보 바로가기</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">발송결과</td>
+                        <td class="text-left col-md-10" colspan="3">OK</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
+
         </div>
 
         <!-- Table line -->
 
-        <!-- 페이징 라인 시작 -->
+        <!--버튼 라인 -->
 
-        <div class="row">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-8 text-center">
-                <ul class="pagination">
-                    <li class="disabled"><a href="javascript:;">←</a></li>
-                    <li class="active"><a href="javascript:;">1</a></li>
-                    <li><a href="javascript:;">2</a></li>
-                    <li><a href="javascript:;">3</a></li>
-                    <li><a href="javascript:;">4</a></li>
-                    <li><a href="javascript:;">5</a></li>
-                    <li><a href="javascript:;">6</a></li>
-                    <li><a href="javascript:;">7</a></li>
-                    <li><a href="javascript:;">8</a></li>
-                    <li><a href="javascript:;">9</a></li>
-                    <li><a href="javascript:;">10</a></li>
-                    <li><a href="javascript:;">→</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-2 text-right">
-            </div>
+        <div class="btn-toolbar  text-center">
+            <button type="button" class="btn btn-primary">저장</button>
+            <button type="button" class="btn btn-warning">취소</button>
         </div>
-        <br>
-        <!--페이징 라인 끝 -->
-
+        <br/>
+        <!--버튼 라인 -->
 
 
     </div></div>
@@ -304,7 +298,6 @@
 </div>
 
 <!-- //page container -->
-
 
 </body>
 

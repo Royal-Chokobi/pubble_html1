@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../css/icons.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="../../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+</head>
+
+<body marginwidth="0" marginheight="0" >
+
+
+<!-- ================================  TOP_bar 시작되는 곳 ================================ -->
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <h1 style="width: 280px; line-height: normal;"><a class="hotelin-title" href="javascript:;"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> 2017년 09월 30일 (토) </strong>  </a>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> SMS 발송가능 : 1,636건 </strong>
+            </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  신규예약 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  예약문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  1:1문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <p><a href="javascript:;"  class="btn btn_logout">  Log out </a></p>
+        </li>
+
+    </ul>
+</div>
+<!-- /TOP_bar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================  Sidebar 시작되는 곳 ================================  -->
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+
+            <!-- User dropdown -->
+            <div class="user-menu dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<div class="user-info">
+                    </div>-->
+                    <strong class="user-info">Home</strong>
+                </a>
+            </div>
+            <!-- /user dropdown -->
+
+
+            <!-- Main navigation -->
+            <ul class="navigation">
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li ><a href="javascript:;">사내게시판</a></li>
+                        <li><a href="javascript:;">공지사항</a></li>
+                        <li><a href="javascript:;">문의 및 답변</a></li>
+                        <li><a href="javascript:;">예약 1:1 문의</a></li>
+                        <li><a href="javascript:;">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul active">
+                    <a href="javascript:;" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                    <ul class="active">
+                        <li><a href="javascript:;">SMS 발송 내역</a></li>
+                        <li class="active"><a href="javascript:;">E-Mail 발송 내역</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul ">
+                    <a href="javascript:;" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">기본정보</a></li>
+                        <li><a href="javascript:;">약관</a></li>
+                        <li><a href="javascript:;">개인정보 취급방침</a></li>
+                        <li><a href="javascript:;">취소/환불 규정</a></li>
+                        <li><a href="javascript:;">예약 전 필독사항</a></li>
+                        <li ><a href="javascript:;">SMS 설정</a></li>
+                        <li><a href="javascript:;">Mail 설정</a></li>
+                        <li><a href="javascript:;">항공편 관리</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon5"><span><strong>허브사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">허브페이지 관리</a></li>
+                        <li><a href="javascript:;">팝업관리</a></li>
+                        <!--<li><a href="javascript:;">회사소개</a></li>-->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon6"><span><strong>호텔사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <!--
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        -->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon7"><span><strong>정산 및 운영관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사용자 관리</a></li>
+                        <li><a href="javascript:;">업무 관리</a></li>
+                        <li><a href="javascript:;">정산 관리</a></li>
+                        <li><a href="javascript:;">매출 통계</a></li>
+                        <li><a href="javascript:;">접속 통계</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                  </li>-->
+            </ul>
+            <!-- /main navigation -->
+
+        </div>
+
+    </div>
+
+
+    <!-- /sidebar 끝-->
+
+
+    <!-- ================================ Page content 부분 시작 ================================ -->
+
+    <div class="page-content"><div class="page-content-inner">
+
+        <div class="page-header">
+
+        </div>
+
+
+        <!-- Breadcrumbs line -->
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="javascript:;">Home</a></li>
+                <li class="active">SMS/Mail발송내역</li>
+                <li class="active">Mail 발송 내역</li>
+            </ul>
+
+            <div class="visible-xs breadcrumb-toggle">
+                <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+            </div>
+
+        </div>
+        <!-- /breadcrumbs line -->
+
+        <!-- Table line -->
+
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-center active col-md-2">발송일시</td>
+                        <td class="text-left col-md-4"> 2017.06.27 19:45:45 </td>
+                        <td class="text-center active col-md-2">발송구분</td>
+                        <td class="text-left col-md-4">고객관리</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">보내는 사람</td>
+                        <td class="text-left col-md-4">호텔인 (hotelin.m3@gmail.com)</td>
+                        <td class="text-center active col-md-2">받는 사람</td>
+                        <td class="text-left col-md-4">최영진 (chojyj@ssym.com) </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">제목</td>
+                        <td class="text-left col-md-10" colspan="3">(호텔인) 세부 제이파크 바우처 입니다. </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">첨부파일</td>
+                        <td class="text-left col-md-10" colspan="3">
+                            <a href="javascript:;">
+                                <i class="icon-image2"></i>
+                                <span class="text-left">0.40098500_1498012789.png</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">내용</td>
+                        <td class="text-left col-md-10" colspan="3">
+                            <div contentEditable="true" style="width: 100%; height: 500px; overflow: auto;">
+                                <div class="col-sm-8 ">
+                                    <table class="table table-bordered  font12_black  table-condensed ">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center col-sm-12" colspan="2">
+                                                <h3 class="col-sm-12">견적서</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 " rowspan="2"><span class="font12_red"><h4>DUSIT THANI</h4></span> </td>
+                                            <td class="text-left col-sm-10">담당자 : 송민아 과장 ( 연락처 : 070-5099-6012 / 이메일 : hotelin.m3@gmail.com )</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left col-sm-10">입금안내 : 920301-01-622067 / 국민은행 / 박소정(호텔인)</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered  font12_black  table-condensed " style="margin-top: 15px;">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-left col-sm-2 " colspan="4">
+                                                <h6 class="panel-title col-sm-6"><i class="icon-bookmark2"></i>고객 정보</h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">고객명</td>
+                                            <td class="text-left col-sm-10" colspan="3">박빛하</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">연락처</td>
+                                            <td class="text-left col-sm-4">010-4137-2406</td>
+                                            <td class="text-center col-sm-2 active">이메일 주소</td>
+                                            <td class="text-left col-sm-4">oforyouo@naver.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">요청사항</td>
+                                            <td class="text-left col-sm-10" colspan="3">1. 전자레인지 추가 부탁드립니다. 2. 가급적 높은층으로 부탁드립니다.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered  font12_black  table-condensed " style="margin-top: 15px;">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-left col-sm-2 " colspan="4">
+                                                <h6 class="panel-title col-sm-6"><i class="icon-bookmark2"></i>여행정보</h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">리조트</td>
+                                            <td class="text-left col-sm-4">DUSIT THANI</td>
+                                            <td class="text-center col-sm-2 active">룸타입</td>
+                                            <td class="text-left col-sm-4">디럭스 오션프론트룸()</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">여행일정</td>
+                                            <td class="text-left col-sm-10" colspan="3">2017.07.20 ~ 2017.07.24 (4박5일)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">여행인원</td>
+                                            <td class="text-left col-sm-10" colspan="3">성인:2명 / 유아:1명</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">출국항공</td>
+                                            <td class="text-left col-sm-4">진에어 LJ641 (인천-오전출발)</td>
+                                            <td class="text-center col-sm-2 active">귀국항공</td>
+                                            <td class="text-left col-sm-4">진에어 LJ642 (인천)</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered  font12_black  table-condensed " style="margin-top: 15px;">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-left col-sm-2 " colspan="2">
+                                                <h6 class="panel-title col-sm-6"><i class="icon-bookmark2"></i>가격정보</h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">객실요금</td>
+                                            <td class="text-left col-sm-10" >$1,240</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-2 active">총경비</td>
+                                            <td class="text-left col-sm-10" >$1,240</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered  font12_black  table-condensed " style="margin-top: 15px;">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-left col-sm-2 " >
+                                                <h6 class="panel-title col-sm-6"><i class="icon-bookmark2"></i>안내사항</h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left" style="white-space: pre-line;" >
+                                                    * 체크인 : 주간 비행편 - 15:00 (NOON)체크인 야간 비행편 - 새벽 체크인 
+                                                    * 체크아웃 :주간 비행편 - 낮 12:00 (NOON)체크아웃야간 비행편 - 새벽체크아웃※
+                                                    항공편수(체크인/체크아웃 시간)가 다른경우 추가비용이 발생될 수 있습니다.  
+                                                    담당자에게 꼭 확인 부탁드립니다.
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-8 " style="white-space: pre-line;">
+                                    안녕하세요 박빛하고객님.호텔인 괌 예약센터 입니다.문의주신 일정의 견적안내드리겠습니다
+                                    요청하신 물품은 호텔에 요청 넣어드리오나 100% 개런티 불가입니다.
+                                    재고에 따라 제공되지 않을 수 있으니 참고 부탁드립니다.
+                                    ▶호텔 -  괌 두짓타니▶인원 -  성인2명, 유아1명▶일정 - 7/20 - 7/24
+                                    (낮 3시 체크인 - 낮 12시 체크아웃)▶박수 - 4박5일▶객실 - 디럭스 오션프론트룸▶항공 - 인천  LJ641 ↔ 괌 LJ642(개별진행)
+                                    (현지 타호텔에서의 이동, 타호텔로의 이동시 견적이 변동될 수 있으며, 꼭 말씀해주셔야 합니다.)
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center active col-md-2">발송결과</td>
+                        <td class="text-left col-md-10" colspan="3">OK</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- Table line -->
+
+        <!--버튼 라인 -->
+
+        <div class="btn-toolbar  text-center">
+            <button type="button" class="btn btn-primary">저장</button>
+            <button type="button" class="btn btn-warning">취소</button>
+        </div>
+        <br/>
+        <!--버튼 라인 -->
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+</body>
+
+</html>
