@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../css/icons.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="../../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+    <script type="text/javascript">
+        /** 팝업 on off 구분  **/
+        function popup_onoff(type_c) {
+            var type_onoff = type_c;
+
+            if(type_onoff == "on"){
+
+                document.body.classList.add( 'modal-open' );
+                $("#popup_frame_id").addClass( 'modal-backdrop fade in' );
+                $("#popup_tb_id").addClass( 'modal fade in' ).css("display", "block");
+
+            }else if(type_onoff == "off"){
+
+                $( '#popup_tb_id' ).removeClass( 'modal fade in' ).css("display", "none");
+                $( '#popup_frame_id' ).removeClass( 'modal-backdrop fade in' );
+                document.body.classList.remove( 'modal-open' );
+
+            }else{
+                alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+        }
+
+
+    </script>
+
+</head>
+
+<body marginwidth="0" marginheight="0">
+
+<!-- ================================  TOP_bar 시작되는 곳 ================================ -->
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <h1 style="width: 280px; line-height: normal;"><a class="hotelin-title" href="javascript:;"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> 2017년 09월 30일 (토) </strong>  </a>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> SMS 발송가능 : 1,636건 </strong>
+            </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  신규예약 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  예약문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  1:1문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white" onclick="javascript:popup_onoff('on');">  정보수정 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <p><a href="javascript:;"  class="btn btn_logout">  Log out </a></p>
+        </li>
+
+    </ul>
+</div>
+<!-- /TOP_bar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================  Sidebar 시작되는 곳 ================================  -->
+<style>
+
+</style>
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+
+            <!-- User dropdown -->
+            <div class="user-menu dropdown ">
+                <a href="javascript:;" class="dropdown-toggle active" data-toggle="dropdown">
+                    <!--<div class="user-info">
+                    </div>-->
+                    <strong class="user-info ">Home</strong>
+                </a>
+            </div>
+            <!-- /user dropdown -->
+
+
+            <!-- Main navigation -->
+            <ul class="navigation">
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사내게시판</a></li>
+                        <li><a href="javascript:;">공지사항</a></li>
+                        <li><a href="javascript:;">문의 및 답변</a></li>
+                        <li><a href="javascript:;">예약 1:1 문의</a></li>
+                        <li><a href="javascript:;">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">SMS 발송 내역</a></li>
+                        <li><a href="javascript:;">E-Mail 발송 내역</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">기본정보</a></li>
+                        <li><a href="javascript:;">약관</a></li>
+                        <li><a href="javascript:;">개인정보 취급방침</a></li>
+                        <li><a href="javascript:;">취소/환불 규정</a></li>
+                        <li><a href="javascript:;">예약 전 필독사항</a></li>
+                        <li><a href="javascript:;">SMS 설정</a></li>
+                        <li><a href="javascript:;">Mail 설정</a></li>
+                        <li><a href="javascript:;">항공편 관리</a></li>
+                    </ul>
+                </li>
+                <li class=" has-ul">
+                    <a href="javascript:;" class="navi_a_icon5"><span><strong>허브사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li ><a href="javascript:;">허브페이지 관리</a></li>
+                        <li><a href="javascript:;">팝업관리</a></li>
+                        <!--<li><a href="javascript:;">회사소개</a></li>-->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon6"><span><strong>호텔사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <!--
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        -->
+                    </ul>
+                </li>
+                <li class="has-ul ">
+                    <a href="javascript:;" class="navi_a_icon7"><span><strong>정산 및 운영관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li ><a href="javascript:;">사용자 관리</a></li>
+                        <li ><a href="javascript:;">업무 관리</a></li>
+                        <li ><a href="javascript:;">정산 관리</a></li>
+                        <li ><a href="javascript:;">매출 통계</a></li>
+                        <li><a href="javascript:;">접속 통계</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                  </li>-->
+            </ul>
+            <!-- /main navigation -->
+
+        </div>
+
+    </div>
+
+    <!-- /sidebar 끝-->
+
+
+    <!-- ================================ Page content 부분 시작 ================================ -->
+
+    <div class="page-content"><div class="page-content-inner">
+
+        <div class="page-header">
+            <div class="text-left">
+                <div class="block-inner">
+                    <ul class="top-menu-ul">
+                        <li class="top-menu-li"><a href="javascript:;" class="" ><img src="../../images/images_file/ico_arr_up.png" alt="2" style="cursor:pointer;" height="30"></a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active" style="width: 200px;">PIC 괌</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                        <div>
+                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Breadcrumbs line -->
+
+        <!-- /breadcrumbs line -->
+
+
+        <!-- Table line -->
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered font12_black table-condensed">
+                    <thead>
+                    <tr>
+                        <th class="text-center active" colspan="6">
+                            <div class="col-sm-12 text-left">
+                                <div class="block-inner">
+                                    <ul class="top-menu-ul">
+                                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active">문의 및 답변</a></li>
+                                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn">예약 1:1 문의</a></li>
+                                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn">사내 공지사항</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="notice_table_tr">
+                        <td class="text-center">88888</td>
+                        <td class="text-center">HYATT 사이판</td>
+                        <td class="text-left">견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다.</td>
+                        <td class="text-center"><span class="label label-danger">미답변</span></td>
+                        <td class="text-center">서인정</td>
+                        <td class="text-center">2017.06.27</td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center">1</td>
+                        <td class="text-center">HYATT 사이판</td>
+                        <td class="text-left">견적요청 합니다.</td>
+                        <td class="text-center"><span class="label label-default">답변완료</span></td>
+                        <td class="text-center">서인정</td>
+                        <td class="text-center">2017.06.27</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Table line -->
+
+        <!-- 페이징 라인 시작 -->
+
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+        </div>
+        <br>
+        <!--페이징 라인 끝 -->
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+
+<!-- ================================  popup_st ================================  -->
+
+<div id="popup_tb_id" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off');">×</button>
+                <h4 class="modal-title">정보수정</h4>
+            </div>
+
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div id="modal_5_frame" name="modal_5_frame" width="100%"  frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+
+                        <div class="row" style="width:99%; text-align:center; overflow: auto; ">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+
+                                        <span>
+
+                                            <table class="table table-bordered font12_black  table-condensed" >
+                                                <tbody>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">ID</td>
+                                                    <td class="text-left " colspan="3">
+                                                        <label class="checkbox-inline "  style="width: 287px;">
+                                                            <input type="text" class="form-control input-sm ">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">이름</td>
+                                                    <td class="text-left col-md-4" >
+                                                        <input type="text" class="form-control input-sm ">
+                                                    </td>
+                                                    <td class="text-center active col-md-2">게시판 작성명</td>
+                                                    <td class="text-left col-md-4">
+                                                        <input type="text" class="form-control input-sm ">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">전화 번호</td>
+                                                    <td class="text-left col-md-4" >
+                                                        <input type="text" class="form-control input-sm ">
+                                                    </td>
+                                                    <td class="text-center active col-md-2">휴대폰 번호</td>
+                                                    <td class="text-left col-md-4">
+                                                        <input type="text" class="form-control input-sm ">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">비밀번호</td>
+                                                    <td class="text-left col-md-4" >
+                                                        <input type="password" class="form-control input-sm ">
+                                                    </td>
+                                                    <td class="text-center active col-md-2">비밀번호 확인</td>
+                                                    <td class="text-left col-md-4">
+                                                        <input type="password" class="form-control input-sm ">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">이메일 발송 이름</td>
+                                                    <td class="text-left " colspan="3">
+                                                        <label class="checkbox-inline "  style="width: 287px;">
+                                                            <input type="text" class="form-control input-sm ">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">이메일 주소</td>
+                                                    <td class="text-left col-md-4" >
+                                                        <input type="text" class="form-control input-sm ">
+                                                    </td>
+                                                    <td class="text-center active col-md-2">이메일 비밀번호</td>
+                                                    <td class="text-left col-md-4">
+                                                        <input type="password" class="form-control input-sm ">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">은행명</td>
+                                                    <td class="text-left " colspan="3">
+                                                        <label class="checkbox-inline "  style="width: 287px;">
+                                                            <input type="text" class="form-control input-sm ">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">예금주</td>
+                                                    <td class="text-left col-md-4" >
+                                                        <input type="text" class="form-control input-sm ">
+                                                    </td>
+                                                    <td class="text-center active col-md-2">계좌번호</td>
+                                                    <td class="text-left col-md-4">
+                                                        <input type="text" class="form-control input-sm ">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center active col-md-2">관리등급</td>
+                                                    <td class="text-center col-md-4" colspan="3">
+                                                        <label class="radio-inline" style="float: left;">
+                                                            <input type="radio" checked="checked" name="radio_print_group1" >
+                                                            최고등급
+                                                        </label>
+                                                        <label class="radio-inline" style="float: left;">
+                                                            <input type="radio" name="radio_print_group1">
+                                                            일반관리자
+                                                        </label>
+                                                        <label class="radio-inline" style="float: left;">
+                                                            <input type="radio" name="radio_print_group1">
+                                                            직원
+                                                        </label>
+                                                        <label class="radio-inline" style="float: left;">
+                                                            <input type="radio" name="radio_print_group1">
+                                                            외주
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;"><span class="btn btn-primary">저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off');">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="" id="popup_frame_id"></div>
+
+<!--popup 끝-->
+
+</body>
+
+</html>

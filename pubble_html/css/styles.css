@@ -587,7 +587,10 @@ table > tbody > tr > .table-top-line{
   position: absolute;
 }
 
-
+.sidebar > .sidebar-content > .user-menu >.active{
+  background-color: rgba(240, 52, 149, 1);
+  border-color: rgba(240, 52, 149, 1);
+}
 
 
 

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../css/icons.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="../../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {packages:['corechart']});
+
+        window.onload = function() {
+            search_dataList();
+        }
+
+        function search_dataList() {
+
+            var select_val = $('#select_tb_year').val()*1;
+            $("#chart_datalist > div").remove();
+
+            $("#chart_datalist").append("<div id='chart_div'></div>");
+
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('string', '월');
+            data.addColumn('number', '금액(원)');
+
+            switch(select_val){
+                case 2017:
+                    for(var i = 1; i <13; i++){
+                        data.addRows([
+                            [i+"월", i*15000]
+                        ]);
+                    }
+                    break;
+                case 2016:
+                    for(var i = 1; i <13; i++){
+                        data.addRows([
+                            [i+"월", i*25000]
+                        ]);
+                    }
+                    break;
+                case 2015:
+                    for(var i = 1; i <13; i++){
+                        data.addRows([
+                            [i+"월", i*35000]
+                        ]);
+                    }
+                    break;
+            }
+
+            drawChart(data);
+        }
+
+        function drawChart(data) {
+
+            // 그래프 옵션
+            var options = {
+                title : '매출 그래프(원)', // 제목
+               /* width : 1150, // 가로 px */
+                height : 400, // 세로 px
+                bar : {
+                    groupWidth : '70%' // 그래프 너비 설정 %
+                },
+                legend : {
+                    position : 'none' // 항목 표시 여부 (현재 설정은 안함)
+                }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+
+    </script>
+
+</head>
+
+<body marginwidth="0" marginheight="0">
+
+<!-- ================================  TOP_bar 시작되는 곳 ================================ -->
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <h1 style="width: 280px; line-height: normal;"><a class="hotelin-title" href="javascript:;"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> 2017년 09월 30일 (토) </strong>  </a>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <strong> SMS 발송가능 : 1,636건 </strong>
+            </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  신규예약 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  예약문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <a href="javascript:;"  class="btn btn_white">  1:1문의 6건 </a>
+        </li>
+        <li class="dropdown btn_wt">
+            <p><a href="javascript:;"  class="btn btn_logout">  Log out </a></p>
+        </li>
+
+    </ul>
+</div>
+<!-- /TOP_bar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================  Sidebar 시작되는 곳 ================================  -->
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+
+            <!-- User dropdown -->
+            <div class="user-menu dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<div class="user-info">
+                    </div>-->
+                    <strong class="user-info">Home</strong>
+                </a>
+            </div>
+            <!-- /user dropdown -->
+
+
+            <!-- Main navigation -->
+            <ul class="navigation">
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon1"><span><strong>예약관리</strong></span> </a>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon2"><span><strong>게시판 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">사내게시판</a></li>
+                        <li><a href="javascript:;">공지사항</a></li>
+                        <li><a href="javascript:;">문의 및 답변</a></li>
+                        <li><a href="javascript:;">예약 1:1 문의</a></li>
+                        <li><a href="javascript:;">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon3"><span><strong>SMS/Mail 발송내역</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">SMS 발송 내역</a></li>
+                        <li><a href="javascript:;">E-Mail 발송 내역</a></li>
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon4"><span><strong>기본정보 설정</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li><a href="javascript:;">기본정보</a></li>
+                        <li><a href="javascript:;">약관</a></li>
+                        <li><a href="javascript:;">개인정보 취급방침</a></li>
+                        <li><a href="javascript:;">취소/환불 규정</a></li>
+                        <li><a href="javascript:;">예약 전 필독사항</a></li>
+                        <li><a href="javascript:;">SMS 설정</a></li>
+                        <li><a href="javascript:;">Mail 설정</a></li>
+                        <li><a href="javascript:;">항공편 관리</a></li>
+                    </ul>
+                </li>
+                <li class=" has-ul">
+                    <a href="javascript:;" class="navi_a_icon5"><span><strong>허브사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <li ><a href="javascript:;">허브페이지 관리</a></li>
+                        <li><a href="javascript:;">팝업관리</a></li>
+                        <!--<li><a href="javascript:;">회사소개</a></li>-->
+                    </ul>
+                </li>
+                <li class="has-ul">
+                    <a href="javascript:;" class="navi_a_icon6"><span><strong>호텔사이트 관리</strong></span> </a>
+                    <ul class="hidden-ul">
+                        <!--
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        <li><a href="javascript:;">메뉴1</a></li>
+                        -->
+                    </ul>
+                </li>
+                <li class="has-ul active">
+                    <a href="javascript:;" class="navi_a_icon7"><span><strong>정산 및 운영관리</strong></span> </a>
+                    <ul class="has-ul active">
+                        <li ><a href="javascript:;">사용자 관리</a></li>
+                        <li ><a href="javascript:;">업무 관리</a></li>
+                        <li ><a href="javascript:;">정산 관리</a></li>
+                        <li class="active"><a href="javascript:;">매출 통계</a></li>
+                        <li><a href="javascript:;">접속 통계</a></li>
+                    </ul>
+                </li>
+                <!--  <li>
+                      <a href="javascript:;" class="navi_a_icon8"><span>로그아웃</span> <i class="icon-exit"></i></a>
+                  </li>-->
+            </ul>
+            <!-- /main navigation -->
+
+        </div>
+
+    </div>
+
+    <!-- /sidebar 끝-->
+
+
+    <!-- ================================ Page content 부분 시작 ================================ -->
+
+    <div class="page-content"><div class="page-content-inner">
+
+        <div class="page-header">
+
+        </div>
+
+
+        <!-- Breadcrumbs line -->
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="javascript:;">Home</a></li>
+                <li class="active">정산 및 운영관리</li>
+                <li class="active">매출 통계</li>
+            </ul>
+
+            <div class="visible-xs breadcrumb-toggle">
+                <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+            </div>
+
+        </div>
+        <!-- /breadcrumbs line -->
+
+
+        <!-- Table line -->
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 " colspan="8">
+                            <div class="col-sm-6 text-left">
+                                <label class="checkbox-inline">
+                                    <select class="popup_select row_select">
+                                        <option selected="selected">사이트 전체</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                    <a href="javascript:;" class="btn tb_btn_white_right">1년</a>
+                                    <a href="javascript:;" class="btn tb_btn_white_right">6개월</a>
+                                    <a href="javascript:;" class="btn tb_btn_white_right">3개월</a>
+                                    <a href="javascript:;" class="btn tb_btn_white_right">1개월</a>
+                                </label>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <label class="checkbox-inline">
+                                    <select class="popup_select popup_day" style="width: 110px;" >
+                                        <option selected="selected" >2017년</option>
+                                        <option >2016년</option>
+                                        <option >2015년</option>
+                                    </select>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left: 0px;">
+                                    <select class="popup_select popup_day" style="width: 110px;" >
+                                        <option selected="selected" >6월</option>
+                                        <option >7월</option>
+                                        <option >8월</option>
+                                    </select>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left: 5px;">
+                                    <span> - </span>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left: 5px;">
+                                    <select class="popup_select popup_day" style="width: 110px;" >
+                                        <option selected="selected" >2017년</option>
+                                        <option >2016년</option>
+                                        <option >2015년</option>
+                                    </select>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left: 0px;">
+                                    <select class="popup_select popup_day" style="width: 110px;" >
+                                        <option selected="selected" >7월</option>
+                                        <option >8월</option>
+                                        <option >9월</option>
+                                    </select>
+                                </label>
+                                <a href="javascript:;" class="btn tb_btn_white_right" >검색</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="8">
+                            <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>요약</h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center col-sm-2 active" colspan="4">예약</td>
+                        <td class="text-center col-sm-2 active" colspan="4">매출</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center  active">예약접수</td>
+                        <td class="text-center  active">진행중</td>
+                        <td class="text-center  active">취소</td>
+                        <td class="text-center  active">완료</td>
+                        <td class="text-center  active">완료<br/>(정산/미정산)</td>
+                        <td class="text-center  active">총 결제</td>
+                        <td class="text-center  active">정산</td>
+                        <td class="text-center  active">호텔인 수익</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center  ">175건</td>
+                        <td class="text-center  ">55건</td>
+                        <td class="text-center  ">22건</td>
+                        <td class="text-center  ">98건</td>
+                        <td class="text-center  ">8건<br/>(6건/2건)</td>
+                        <td class="text-center  ">\ 159,000,000</td>
+                        <td class="text-center  ">\ 145,000,000</td>
+                        <td class="text-center  ">\ 14,000,000</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left font12_red " colspan="8">
+                            ※ 예약 : 예약 접수일 기준<br/>
+                            ※ 매출 : 출발일, 정산 완료 건 기준
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active">
+                            <div class="col-sm-8 text-left">
+                                <h6 class="panel-title col-sm-6"><i class="icon-menu2"></i>매출 그래프</h6>
+                            </div>
+                            <div class="col-sm-4 text-right">
+                                <label class="checkbox-inline">
+                                    <select class="popup_select popup_day" id="select_tb_year">
+                                        <option selected="selected" value="2017">2017년</option>
+                                        <option value="2016">2016년</option>
+                                        <option value="2015">2015년</option>
+                                    </select>
+                                </label>
+                                <a href="javascript:;" class="btn tb_btn_white_right" onclick="search_dataList();">검색</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" id="chart_datalist">
+                            <div id="chart_div"></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Table line -->
+
+        <!-- 페이징 라인 시작 -->
+
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+        </div>
+        <br>
+        <!--페이징 라인 끝 -->
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+
+</body>
+
+</html>
