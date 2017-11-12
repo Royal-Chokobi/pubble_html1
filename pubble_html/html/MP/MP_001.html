@@ -42,6 +42,72 @@
             }
         }
 
+        window.onload = function() {
+            top_menu_li();
+            window.addEventListener('resize', width_menu_li);
+        }
+
+
+        function top_menu_li(){
+            $(".top_menu_class > .top-menu-ul > li > a").css("width", "200px");
+            var m_width = $(".top_menu_class > .top-menu-ul").width();
+            var num_col = Math.floor((m_width -30)/ 200)+1;
+            var li_con = $(".top_menu_class > .top-menu-ul > li").length;
+            var a_class = $(".top_menu_class > .top-menu-ul > a").attr("class");
+
+            if(a_class == "li_open"){
+                $(".top_menu_class > .top-menu-ul > a").attr("class", "li_close");
+                $(".top_menu_class > .top-menu-ul > a > img").attr("src", "../../images/images_file/ico_arr_up.png");
+
+                for(var i=num_col; i <= li_con; i++ ){
+                    $(".top_menu_class > .top-menu-ul > li:nth-child("+i+")").show();
+                }
+            }else{
+                $(".top_menu_class > .top-menu-ul > a").attr("class", "li_open");
+                $(".top_menu_class > .top-menu-ul > a > img").attr("src", "../../images/images_file/ico_arr_down.png");
+
+                for(var i=num_col; i <= li_con; i++ ){
+                    $(".top_menu_class > .top-menu-ul > li:nth-child("+i+")").hide();
+                }
+            }
+        }
+
+        function width_menu_li(){
+            var a_class = $(".top_menu_class > .top-menu-ul > a").attr("class");
+            var m_width = $(".top_menu_class > .top-menu-ul").width();
+            var num_col = Math.floor((m_width -30)/ 200)+1;
+            var li_con = $(".top_menu_class > .top-menu-ul > li").length;
+
+            if(a_class == "li_open"){
+                for(var i=num_col; i <= li_con; i++ ){
+                    $(".top_menu_class > .top-menu-ul > li:nth-child("+i+")").hide();
+                }
+            }
+
+        }
+
+        function case_change(num){
+            switch(num){
+                case 1:
+                    $("#case_ch").attr("colspan", "6");
+                    $(".case2").css('display', 'none');
+                    $(".case3").css('display', 'none');
+                    $(".case1").show();
+                    break;
+                case 2:
+                    $("#case_ch").attr("colspan", "6");
+                    $(".case1").css('display', 'none');
+                    $(".case3").css('display', 'none');
+                    $(".case2").show();
+                    break;
+                case 3:
+                    $("#case_ch").attr("colspan", "4");
+                    $(".case1").css('display', 'none');
+                    $(".case2").css('display', 'none');
+                    $(".case3").show();
+                    break;
+            }
+        }
 
     </script>
 
@@ -193,24 +259,29 @@
 
         <div class="page-header">
             <div class="text-left">
-                <div class="block-inner">
+                <div class="block-inner top_menu_class">
                     <ul class="top-menu-ul">
-                        <li class="top-menu-li"><a href="javascript:;" class="" ><img src="../../images/images_file/ico_arr_up.png" alt="2" style="cursor:pointer;" height="30"></a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active" style="width: 200px;">PIC 괌</a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                        <div>
-                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                            <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" style="width: 200px;">PIC 사이판</a></li>
-                        </div>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active" >PIC 괌</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn">PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn" >PIC 사이판</a></li>
+                        <a href="javascript:;" class="li_close" onclick="top_menu_li()" style="float: left;"><img src="../../images/images_file/ico_arr_up.png" alt="2" style="cursor:pointer;" height="30"></a>
                     </ul>
                 </div>
             </div>
@@ -220,48 +291,266 @@
         <!-- Breadcrumbs line -->
 
         <!-- /breadcrumbs line -->
-
-
+        <div class="page-header" style="margin-bottom: 5px;">
+            <div class="col-sm-12 text-right" style="padding: 0px;">
+                    <div class="input-group">
+                        <label class="checkbox-inline">
+                            예약 신청자 조회
+                        </label>
+                        <label class="checkbox-inline" style="margin-left: 5px;">
+                            <input type="text" class="form-control autocomplete text-danger ui-autocomplete-input" placeholder="이름/휴대폰/이메일">
+                        </label>
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary btn-icon" type="button"><i class="icon-search3"></i></button>
+                        </span>
+                    </div>
+            </div>
+        </div>
         <!-- Table line -->
+
         <div class="panel panel-default">
             <div class="table-responsive">
                 <table class="table table-bordered font12_black table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center active" colspan="6">
-                            <div class="col-sm-12 text-left">
-                                <div class="block-inner">
-                                    <ul class="top-menu-ul">
-                                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn active">문의 및 답변</a></li>
-                                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn">예약 1:1 문의</a></li>
-                                        <li class="top-menu-li"><a href="javascript:;" class="top-menu-btn">사내 공지사항</a></li>
-                                    </ul>
+                        <th class="text-center" id="case_ch" colspan="6" style="padding: 0px;">
+                            <div class="main_notice_sel">
+                                <div class="col-sm-4 text-center" style="padding: 0px;">
+                                    <span class="label main_tb_btn ">
+                                        <a href="javascript:;" onclick="case_change(1)">문의 및 답변</a>
+                                        <a class="case1" href="javascript:;">
+                                            <span style="float: right">More ></span>
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="col-sm-4 text-center" style="padding: 0px;">
+                                    <span class="label main_tb_btn">
+                                        <a href="javascript:;" onclick="case_change(2)">예약 1:1 문의</a>
+                                        <a class="case2" href="javascript:;" style="display: none;">
+                                            <span style="float: right">More ></span>
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="col-sm-4 text-center" style="padding: 0px;">
+                                    <span class="label main_tb_btn">
+                                        <a href="javascript:;" onclick="case_change(3)">사내 공지사항</a>
+                                        <a class="case3" href="javascript:;" style="display: none;">
+                                            <span style="float: right">More ></span>
+                                        </a>
+                                    </span>
                                 </div>
                             </div>
                         </th>
                     </tr>
                     </thead>
+
                     <tbody>
-                    <tr class="notice_table_tr">
-                        <td class="text-center">88888</td>
-                        <td class="text-center">HYATT 사이판</td>
-                        <td class="text-left">견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다.</td>
-                        <td class="text-center"><span class="label label-danger">미답변</span></td>
-                        <td class="text-center">서인정</td>
-                        <td class="text-center">2017.06.27</td>
+                        <tr class="notice_table_tr case1">
+                            <td style="padding: 0px;">
+                                <table class="table table-bordered font12_black table-condensed">
+                                    <tr class="notice_table_tr">
+                                        <td class="text-center">88888</td>
+                                        <td class="text-center">HYATT 사이판</td>
+                                        <td class="text-left">견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다.</td>
+                                        <td class="text-center"><span class="label label-danger">미답변</span></td>
+                                        <td class="text-center">서인정</td>
+                                        <td class="text-center">2017.06.27</td>
+                                    </tr>
+                                    <tr class="notice_table_tr">
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">HYATT 사이판</td>
+                                        <td class="text-left">견적요청 합니다.</td>
+                                        <td class="text-center"><span class="label label-default">답변완료</span></td>
+                                        <td class="text-center">서인정</td>
+                                        <td class="text-center">2017.06.27</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="notice_table_tr case2" style="display: none;">
+                            <td style="padding: 0px;">
+                                <table class="table table-bordered font12_black table-condensed">
+                                    <tr class="notice_table_tr">
+                                        <td class="text-center">88888</td>
+                                        <td class="text-center">HYATT 사이판</td>
+                                        <td class="text-left">견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다.</td>
+                                        <td class="text-center"><span class="label label-danger">미답변</span></td>
+                                        <td class="text-center">서인정</td>
+                                        <td class="text-center">2017.06.27</td>
+                                    </tr>
+                                    <tr class="notice_table_tr">
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">HYATT 사이판</td>
+                                        <td class="text-left">견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다.</td>
+                                        <td class="text-center"><span class="label label-default">답변완료</span></td>
+                                        <td class="text-center">서인정</td>
+                                        <td class="text-center">2017.06.27</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="notice_table_tr case3" style="display: none;">
+                            <td style="padding: 0px;">
+                                <table class="table table-bordered font12_black table-condensed">
+                                    <tr class="notice_table_tr">
+                                        <td class="text-center">88888</td>
+                                        <td class="text-left">견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다.</td>
+                                        <td class="text-center">서인정</td>
+                                        <td class="text-center">2017.06.27</td>
+                                    </tr>
+                                    <tr class="notice_table_tr">
+                                        <td class="text-center">88888</td>
+                                        <td class="text-left">견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다. 견적요청 합니다.</td>
+                                        <td class="text-center">서인정</td>
+                                        <td class="text-center">2017.06.27</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered  font12_black  table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="text-left col-sm-2 active" colspan="10">
+                            <div class="col-sm-8 text-left">
+                                <h6 class="panel-title col-sm-6">업무 진행 현황</h6>
+                            </div>
+                        </td>
                     </tr>
-                    <tr class="notice_table_tr">
-                        <td class="text-center">1</td>
-                        <td class="text-center">HYATT 사이판</td>
-                        <td class="text-left">견적요청 합니다.</td>
-                        <td class="text-center"><span class="label label-default">답변완료</span></td>
-                        <td class="text-center">서인정</td>
-                        <td class="text-center">2017.06.27</td>
+                    <tr>
+                        <td class="text-center  active" rowspan="2">접수</td>
+                        <td class="text-center  active" rowspan="2">견적</td>
+                        <td class="text-center  active" rowspan="2">계약금</td>
+                        <td class="text-center  active" rowspan="2">대기</td>
+                        <td class="text-center  active" rowspan="2">확정</td>
+                        <td class="text-center  active" rowspan="2">완료</td>
+                        <td class="text-center  active" rowspan="2">취소처리<br/>(오늘)</td>
+                        <td class="text-center  active" colspan="3">출발 예정</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center  active">오늘</td>
+                        <td class="text-center  active">내일</td>
+                        <td class="text-center  active">모래</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
+                        <td class="text-center  ">1건</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered font12_black table-condensed">
+                    <thead>
+                    <tr>
+                        <th class="active" colspan="13">
+                            <div class="col-sm-8 text-left">
+                                <h6 class="panel-title col-sm-6">신규 예약 신청</h6>
+                            </div>
+                            <div class="col-sm-4 text-right">
+                                <label class="checkbox-inline">
+                                    <select class="popup_select ">
+                                        <option selected="selected">담당자 변경</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left: 15px;">
+                                    <select class="popup_select " >
+                                        <option selected="selected">진행상태 변경</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text-center active"><input type="checkbox" align="middle"></th>
+                        <th class="text-center active">R/N</th>
+                        <th class="text-center active">예약일</th>
+                        <th class="text-center active">리조트</th>
+                        <th class="text-center active">객실/상품</th>
+                        <th class="text-center active">체크인(기간)</th>
+                        <th class="text-center active">출발</th>
+                        <th class="text-center active">예약자</th>
+                        <th class="text-center active">인원</th>
+                        <th class="text-center active">금액</th>
+                        <th class="text-center active">담당자</th>
+                        <th class="text-center active" style="width:230px;">진행상태</th>
+                        <th class="text-center active" style="width:60px;">진행여부</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" align="middle"></td>
+                        <td class="text-center" >4332</td>
+                        <td class="text-center" >2017-07-24<br>10:49:47</td>
+                        <td class="text-center" >J-PARK</td>
+                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
+                        <td class="text-center" >2017-08-25<br>(3박)</td>
+                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
+                        <td class="text-center" >류혜영</td>
+                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
+                        <td class="text-center text-success" >935</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center">
+                            <span class="label label-danger">접수</span>
+                            <span class="label label-default">견적</span>
+                            <span class="label label-default">계약금</span>
+                            <span class="label label-default">확정</span>
+                            <span class="label label-default">잔금</span>
+                        </td>
+                        <td class="text-center" >
+                            <span class="label label-blue">진행</span>
+                        </td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" align="middle"></td>
+                        <td class="text-center" >4332</td>
+                        <td class="text-center" >2017-07-24<br>10:49:47</td>
+                        <td class="text-center" >J-PARK</td>
+                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
+                        <td class="text-center" >2017-08-25<br>(3박)</td>
+                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
+                        <td class="text-center" >류혜영</td>
+                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
+                        <td class="text-center text-success" >935</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center">
+                            <span class="label label-danger">접수</span>
+                            <span class="label label-default">견적</span>
+                            <span class="label label-default">계약금</span>
+                            <span class="label label-default">확정</span>
+                            <span class="label label-default">잔금</span>
+                        </td>
+                        <td class="text-center" >
+                            <span class="label label-grey">미지정</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
 
         <!-- Table line -->
 
