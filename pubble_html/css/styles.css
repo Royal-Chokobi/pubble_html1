@@ -603,7 +603,14 @@ table > tbody > tr > .table-top-line{
 .main_tb_btn:hover{background-color: #f7f7f7;}
 .main_tb_btn > a{color: black;}
 .main_tb_btn > a > span{color: rgb(88, 172, 250);}
-/*.main_notice_sel > div > .active{background-color: #ccc;*/}
+/*.main_notice_sel > div > .active{background-color: #ccc;}*/
+.pop-menu-li{
+  display: block;
+  float: left;
+  background-color: rgb(44, 58, 66);
+  /* background-color: rgba(240, 52, 149, 1);
+   border-color: rgba(240, 52, 149, 1);*/
+}
 /*====================================================================================*/
 
 /* Demo list */
