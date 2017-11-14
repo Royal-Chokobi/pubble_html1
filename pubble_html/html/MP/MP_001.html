@@ -550,6 +550,129 @@
             </div>
         </div>
 
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["timeline"]});
+            google.charts.setOnLoadCallback(timeline_create);
+
+            function timeline_create(){
+
+                var data_array = new Array();
+                for(var i = 0; i < 25 ; i++ ){
+                    data_array[i] = ['허브'+i, Math.floor(Math.random() * 10) + 1, 15];
+                }
+                for(var i = 25; i < 50 ; i++ ){
+                    data_array[i] = ['허브'+i, 15, (30-(Math.floor(Math.random() * 9) + 1))];
+                }
+
+
+                Math.floor(Math.random() * 15) + 1
+
+                $('#scheduler_div > div').remove();
+
+                var dataTable = new google.visualization.DataTable();
+                var chart = new google.visualization.Timeline( document.getElementById('scheduler_div'));
+                dataTable.addColumn({ type: 'string', id: 'Term' });
+                dataTable.addColumn({ type: 'string', id: 'Name' });
+                dataTable.addColumn({ type: 'date', id: 'Start' });
+                dataTable.addColumn({ type: 'date', id: 'End' });
+
+                var day_account = new Date($('#select_tb_year').val()*1, $('#select_tb_month').val()*1, 0).getDate();
+                var select_year = $('#select_tb_year').val()*1;
+                var select_month = $('#select_tb_month').val()*1-1;
+
+                for(var i=0; i<50; i++){
+                    dataTable.addRows([
+                        [ '스케줄', data_array[i][0],  new Date(select_year, select_month, data_array[i][1] ),  new Date(select_year, select_month, data_array[i][2] ) ]
+                    ]);
+                }
+
+                dataTable.addRows([
+                    [ 'hidden_data', '',  new Date(select_year, select_month, 1 ),  new Date(select_year, select_month, day_account ) ]
+                ]);
+
+                var options = {
+                    timeline: { showRowLabels: false }
+                    ,height:40
+                };
+
+                chart.draw(dataTable, options);
+
+                change_data_style();
+
+
+
+            }
+
+            function change_data_style(){
+
+                var day_English =  ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                var day_Korea =  ['월', '화' , '수', '목', '금',  '토', '일'];
+
+                for(var i = 0 ; i < 7; i++){
+                    $('g > text').each(function() {
+
+                        var text = $(this).text();
+                        $(this).text(text.replace(day_English[i], day_Korea[i]));
+
+                    });
+                }
+
+                $('.scheduler_class > div > div > div > div').css('position', 'relative');
+                $('.scheduler_class > div > div > div > div').css('overflow-y', 'hidden');
+
+
+                var timeline_height= $('.scheduler_class > div > div > div > div > svg').height();
+                $('.scheduler_class > div > div > div > div > svg').css('height', (timeline_height-40)+"px");
+                $('.scheduler_class').css('height', timeline_height+"px");
+                $('.scheduler_class > div > div > div > div').css('height', timeline_height+"px");
+
+            }
+
+            window.onload = function() {
+                window.addEventListener('resize', timeline_create);
+            }
+
+
+        </script>
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-bordered font12_black table-condensed">
+                    <thead>
+                    <tr>
+                        <td class="text-left col-sm-2 active" id="sh_cols" colspan="8">
+                            <div class="col-sm-8 text-left">
+                                <h6 class="panel-title col-sm-6">스케줄</h6>
+                            </div>
+                            <div class="col-sm-4 text-right">
+                                <label class="checkbox-inline">
+                                    <select class="popup_select popup_day" id="select_tb_year">
+                                        <option selected="selected" value="2017">2017년</option>
+                                        <option value="2016">2016년</option>
+                                        <option value="2015">2015년</option>
+                                    </select>
+                                </label>
+                                <label class="checkbox-inline" style="margin-left: 5px;">
+                                    <select class="popup_select popup_day" id="select_tb_month">
+                                        <option selected="selected" value="6">6월</option>
+                                        <option value="1">1월</option>
+                                        <option value="2">2월</option>
+                                        <option value="3">3월</option>
+                                    </select>
+                                </label>
+                                <a href="javascript:;" class="btn tb_btn_white_right" onclick="timeline_create();">검색</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center ">
+                            <div id="scheduler_div" class="scheduler_class" style="max-width: 1580px;"></div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
 
         <!-- Table line -->
