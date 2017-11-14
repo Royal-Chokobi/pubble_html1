@@ -611,6 +611,44 @@ table > tbody > tr > .table-top-line{
   /* background-color: rgba(240, 52, 149, 1);
    border-color: rgba(240, 52, 149, 1);*/
 }
+
+.state_bar_st{
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 0px solid rgba(255, 255, 255, 0);
+}
+.state_bar_md{
+  margin-left: -5px;
+  border-radius: 0px;
+  border: 0px solid rgba(255, 255, 255, 0);
+}
+.state_bar_ed{
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  margin-left: -5px;
+  border: 0px solid rgba(255, 255, 255, 0);
+}
+.state_div_bar{
+  width: 240px;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+.step_1{ background: linear-gradient(to right, #d9534f, #ab47bc, #999, #999 40%);}
+.step_2{ background: linear-gradient(to right, #d9534f, #ab47bc, #999, #999 70%);}
+.step_3{ background: linear-gradient(to right, #d9534f, #ab47bc, #999 , #999 105%);}
+.step_4{ background: linear-gradient(to right, #d9534f, #ab47bc, #999 , #999 140%);}
+.step_5{ background: linear-gradient(to right, #d9534f, #ab47bc, #5e97f5 , #999 150%);}
+
+
 /*====================================================================================*/
 
 /* Demo list */
