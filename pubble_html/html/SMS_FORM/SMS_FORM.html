@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!-- ST :  기존 사용 CSS 및 JS -->
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../css/icons.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/application.js"></script>
+    <script type="text/javascript" src="../../js/plugins/forms/uniform.min.js"></script>
+
+    <!-- END :  기존 사용 CSS 및 JS -->
+
+
+    <script>
+
+        /** 팝업 on off 구분  **/
+        function popup_onoff(onoff_type, popup_type_num) {
+            var type_onoff = onoff_type;
+            var type_number = popup_type_num*1;
+            var pop_id = "popup_tb_id" + type_number;
+
+            select_popup_list(type_onoff, pop_id);
+        }
+
+        /** 팝업 **/
+        function select_popup_list(type_onoff, pop_id) {
+            if(type_onoff == "on"){
+
+                document.body.classList.add( 'modal-open' );
+                $("#popup_frame_id").addClass( 'modal-backdrop fade in' );
+                $('#'+pop_id).addClass( 'modal fade in' ).css("display", "block");
+
+            }else if(type_onoff == "off"){
+
+                $( '#'+pop_id ).removeClass( 'modal fade in' ).css("display", "none");
+                $( '#popup_frame_id' ).removeClass( 'modal-backdrop fade in' );
+                document.body.classList.remove( 'modal-open' );
+
+            }else{
+                alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+        }
+
+        $(function () {
+            $('.remaining').each(function () {
+                var $maxcount = $('.max_byte_count', this);
+                var $count = $('.byte_count', this);
+                var $input = $("#sms_content");
+
+                var maximumByte = $maxcount.text() * 1;
+                var update = function () {
+                    var before = $count.text() * 1;
+                    var str_len = $input.val().length;
+                    var cbyte = 0;
+                    var li_len = 0;
+                    for (i = 0; i < str_len; i++) {
+                        var ls_one_char = $input.val().charAt(i);
+                        if (escape(ls_one_char).length > 4) {
+                            cbyte += 2; //한글이면 2를 더한다
+                        } else {
+                            cbyte++; //한글아니면 1을 다한다
+                        }
+                        if (cbyte <= maximumByte) {
+                            li_len = i + 1;
+                        }
+                    }
+                    if (parseInt(cbyte) > parseInt(maximumByte)) {
+                        alert('허용된 글자수가 초과되었습니다.');
+                        var str = $input.val();
+                        var str2 = $input.val().substr(0, li_len);
+                        $input.val(str2);
+                        var cbyte = 0;
+                        for (i = 0; i < $input.val().length; i++) {
+                            var ls_one_char = $input.val().charAt(i);
+                            if (escape(ls_one_char).length > 4) {
+                                cbyte += 2; //한글이면 2를 더한다
+                            } else {
+                                cbyte++; //한글아니면 1을 다한다
+                            }
+                        }
+                    }
+                    $count.text(cbyte);
+                };
+                $input.bind('input keyup keydown paste change', function () {
+                    setTimeout(update, 0)
+                });
+                update();
+            });
+        });
+
+    </script>
+
+</head>
+
+<body marginwidth="0" marginheight="0" >
+
+<!-- ================================  TOP_bar 시작되는 곳 ================================ -->
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <h1 style="width: 280px; line-height: normal;"><a class="hotelin-title" href="javascript:;"><span>HOTELIN</span></a>&nbsp;<span style="font-size: 20px;">Administrator</span></h1>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <strong> 2017년 09월 30일 (토) </strong>  </a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <strong> SMS 발송가능 : 1,636건 </strong>
+                </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="javascript:;"  class="btn btn_white">  신규예약 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="javascript:;"  class="btn btn_white">  예약문의 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <a href="javascript:;"  class="btn btn_white">  1:1문의 6건 </a>
+            </li>
+            <li class="dropdown btn_wt">
+                <p><a href="javascript:;"  class="btn btn_logout">  Log out </a></p>
+            </li>
+
+        </ul>
+    </div>
+<!-- /TOP_bar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+
+    <!-- ================================ Page content 부분 시작 ================================ -->
+
+    <div class="page-content"><div class="page-content-inner">
+
+        <div class="page-header">
+
+        </div>
+
+
+        <!-- Table line -->
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <div style="margin-right: 300px;margin-top: 300px;">
+                    <a href="javascript:;" class="btn tb_btn_white_right" onclick="javascript:popup_onoff('on', 1);">  문자전송 폼 </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table line
+
+                밑에 팝업 부분이 SMS전송 폼입니다.
+         -->
+
+
+
+    </div></div>
+    <!-- //page content -->
+</div>
+
+<!-- //page container -->
+
+
+
+
+
+
+<!-- ================================  popup_st ================================  -->
+
+<div id="popup_tb_id1" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off',1);">×</button>
+                <h4 class="modal-title">SMS 발송</h4>
+            </div>
+
+            <div class="modal-body with-padding" >
+                <div class="table-responsive">
+                    <div name="modal_4_frame" width="width:100%; height:395px" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+
+                        <div class="row" >
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title"><span data-icon=""></span>SMS 발송</h6>
+                                    </div>
+                                    <table class="table table-bordered  font12_black  table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center col-sm-5 active">받는번호</td>
+                                            <td class="text-left col-sm-7">
+                                                <input type="text" class="form-control input-sm" >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center col-sm-5 active">보내는번호</td>
+                                            <td class="text-left col-sm-7">
+                                                <input type="text" class="form-control input-sm" >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-center" style="padding:10px;">
+                                                <table width="175" height="234" border="0" cellpadding="0" cellspacing="0" background="../../images/forms/sms_phone.gif" align="center">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td height="55">&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top">
+                                                            <table width="110" height="100" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td height="100" align="center" valign="top" class="sms">
+                                                                        <textarea name="sms_content" rows="8" wrap="VIRTUAL" id="sms_content" style="width:100%;height:124px;background:#ccff00;border:0px;overflow:hidden;font-size:9pt"></textarea>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="50" align="center" valign="top">
+                                                            <table width="100%" border="0" cellpadding="4">
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td align="center" valign="bottom">
+                                                                        <span class="remaining">
+                                                                            <span class="byte_count">0</span>/<span class="max_byte_count">2000</span>byte
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" height="3"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="javascript:;" ><span class="btn btn-primary">전송</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off',1);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="" id="popup_frame_id"></div>
+
+<!--popup 끝-->
+
+
+</body>
+
+</html>

@@ -111,6 +111,88 @@
 
     </script>
 
+    <!-- 차트 부분 -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["timeline"]});
+        google.charts.setOnLoadCallback(timeline_create);
+        function timeline_create(){
+
+            var data_array = new Array();
+
+            for(var i = 0; i < 36 ; i++ ){
+                data_array[i] = ['허브'+i, Math.floor(Math.random() * 10) + 1, 12]; //가상 데이터 형식 ['호텔명', 시작 일, 종료 일]
+            }
+
+            $('#scheduler_div > div').remove();
+
+            var dataTable = new google.visualization.DataTable();
+            var chart = new google.visualization.Timeline( document.getElementById('scheduler_div'));
+            dataTable.addColumn({ type: 'string', id: 'Term' });
+            dataTable.addColumn({ type: 'string', id: 'Name' });
+            dataTable.addColumn({ type: 'date', id: 'Start' });
+            dataTable.addColumn({ type: 'date', id: 'End' });
+
+            var day_account = new Date($('#select_tb_year').val()*1, $('#select_tb_month').val()*1, 0).getDate();
+            var select_year = $('#select_tb_year').val()*1;
+            var select_month = $('#select_tb_month').val()*1-1;
+
+            for(var i=0; i<36; i++){
+                dataTable.addRows([
+                    [ "스케줄", data_array[i][0]  ,new Date(select_year, select_month, data_array[i][1] ),  new Date(select_year, select_month, data_array[i][2] ) ]
+                    //실제 데이터 ['스케줄(고정값)', '호텔명', 시작일(년,월,일), 종료일(년,월,일)] 호텔명과 일수만 변경하면 됨.
+                ]);
+            }
+
+            dataTable.addRows([
+                [ 'hidden_data', '', new Date(select_year, select_month, 1 ),  new Date(select_year, select_month, day_account ) ] //히든 데이터
+            ]);
+
+            var options = {
+                timeline: { showRowLabels: false }
+                ,height:40
+            };
+
+            chart.draw(dataTable, options);
+
+            change_data_style();
+
+
+
+        }
+
+        function change_data_style(){ //스타일 잡아주는 function
+
+            var day_English =  ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            var day_Korea =  ['월', '화' , '수', '목', '금',  '토', '일'];
+
+            for(var i = 0 ; i < 7; i++){
+                $('g > text').each(function() {
+
+                    var text = $(this).text();
+                    $(this).text(text.replace(day_English[i], day_Korea[i]));
+
+                });
+            }
+
+            $('.scheduler_class > div > div > div > div').css('position', 'relative');
+            $('.scheduler_class > div > div > div > div').css('overflow-y', 'hidden');
+
+
+            var timeline_height= $('.scheduler_class > div > div > div > div > svg').height();
+            $('.scheduler_class > div > div > div > div > svg').css('height', (timeline_height-40)+"px");
+            $('.scheduler_class').css('height', timeline_height+"px");
+            $('.scheduler_class > div > div > div > div').css('height', timeline_height+"px");
+
+        }
+
+        window.onload = function() {
+            window.addEventListener('resize', timeline_create);
+        }
+
+
+    </script>
 </head>
 
 <body marginwidth="0" marginheight="0">
@@ -512,35 +594,13 @@
                         <td class="text-center text-success" >935</td>
                         <td class="text-center" >박소정 실장</td>
                         <td class="text-center">
-                            <span class="label label-danger state_bar_st">접수</span>
-                            <span class="label label-default state_bar_md">견적</span>
-                            <span class="label label-default state_bar_md">계약금</span>
-                            <span class="label label-default state_bar_md">확정</span>
-                            <span class="label label-default state_bar_ed">잔금</span>
-                            <br/><br/>
-                            <span class="label label-danger state_bar_st">접수</span>
-                            <span class="label label-danger state_bar_md">견적</span>
-                            <span class="label label-default state_bar_md">계약금</span>
-                            <span class="label label-default state_bar_md">확정</span>
-                            <span class="label label-default state_bar_ed">잔금</span>
-                            <br/><br/>
-                            <span class="label label-danger state_bar_st">접수</span>
-                            <span class="label label-danger state_bar_md">견적</span>
-                            <span class="label label-danger state_bar_md">계약금</span>
-                            <span class="label label-default state_bar_md">확정</span>
-                            <span class="label label-default state_bar_ed">잔금</span>
-                            <br/><br/>
-                            <span class="label label-danger state_bar_st">접수</span>
-                            <span class="label label-danger state_bar_md">견적</span>
-                            <span class="label label-danger state_bar_md">계약금</span>
-                            <span class="label label-danger state_bar_md">확정</span>
-                            <span class="label label-default state_bar_ed">잔금</span>
-                            <br/><br/>
-                            <span class="label label-danger state_bar_st">접수</span>
-                            <span class="label label-danger state_bar_md">견적</span>
-                            <span class="label label-danger state_bar_md">계약금</span>
-                            <span class="label label-danger state_bar_md">확정</span>
-                            <span class="label label-danger state_bar_ed">잔금</span>
+                            <div class="state_div_bar step_1">
+                                <span class="label ">접수</span>
+                                <span class="label ">견적</span>
+                                <span class="label ">계약금</span>
+                                <span class="label ">확정</span>
+                                <span class="label ">잔금</span>
+                            </div>
                         </td>
                         <td class="text-center" >
                             <span class="label label-blue">진행</span>
@@ -559,14 +619,6 @@
                         <td class="text-center text-success" >935</td>
                         <td class="text-center" >박소정 실장</td>
                         <td class="text-center">
-                            <div class="state_div_bar step_1">
-                                <span class="label ">접수</span>
-                                <span class="label ">견적</span>
-                                <span class="label ">계약금</span>
-                                <span class="label ">확정</span>
-                                <span class="label ">잔금</span>
-                            </div>
-                            <br/><br/>
                             <div class="state_div_bar step_2" >
                                 <span class="label ">접수</span>
                                 <span class="label ">견적</span>
@@ -574,7 +626,24 @@
                                 <span class="label ">확정</span>
                                 <span class="label ">잔금</span>
                             </div>
-                            <br/><br/>
+                        </td>
+                        <td class="text-center" >
+                            <span class="label label-grey">미지정</span>
+                        </td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" align="middle"></td>
+                        <td class="text-center" >4332</td>
+                        <td class="text-center" >2017-07-24<br>10:49:47</td>
+                        <td class="text-center" >J-PARK</td>
+                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
+                        <td class="text-center" >2017-08-25<br>(3박)</td>
+                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
+                        <td class="text-center" >류혜영</td>
+                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
+                        <td class="text-center text-success" >935</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center">
                             <div class="state_div_bar step_3" >
                                 <span class="label ">접수</span>
                                 <span class="label ">견적</span>
@@ -582,7 +651,24 @@
                                 <span class="label ">확정</span>
                                 <span class="label ">잔금</span>
                             </div>
-                            <br/><br/>
+                        </td>
+                        <td class="text-center" >
+                            <span class="label label-grey">미지정</span>
+                        </td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" align="middle"></td>
+                        <td class="text-center" >4332</td>
+                        <td class="text-center" >2017-07-24<br>10:49:47</td>
+                        <td class="text-center" >J-PARK</td>
+                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
+                        <td class="text-center" >2017-08-25<br>(3박)</td>
+                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
+                        <td class="text-center" >류혜영</td>
+                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
+                        <td class="text-center text-success" >935</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center">
                             <div class="state_div_bar step_4" >
                                 <span class="label ">접수</span>
                                 <span class="label ">견적</span>
@@ -590,7 +676,24 @@
                                 <span class="label ">확정</span>
                                 <span class="label ">잔금</span>
                             </div>
-                            <br/><br/>
+                        </td>
+                        <td class="text-center" >
+                            <span class="label label-grey">미지정</span>
+                        </td>
+                    </tr>
+                    <tr class="notice_table_tr">
+                        <td class="text-center" ><input type="checkbox" align="middle"></td>
+                        <td class="text-center" >4332</td>
+                        <td class="text-center" >2017-07-24<br>10:49:47</td>
+                        <td class="text-center" >J-PARK</td>
+                        <td class="text-center" >막탄 스윗룸 가든뷰<br><font color="#58ACFA">(풀보드 패밀리 (2017.06.01-2017.11.30) )</font></td>
+                        <td class="text-center" >2017-08-25<br>(3박)</td>
+                        <td class="text-center text-primary" >PM<br/><span class="text-warning">(현지이동)</span></td>
+                        <td class="text-center" >류혜영</td>
+                        <td class="text-center text-defalut " >성인:1명<br>아동:1명</td>
+                        <td class="text-center text-success" >935</td>
+                        <td class="text-center" >박소정 실장</td>
+                        <td class="text-center">
                             <div class="state_div_bar step_5" >
                                 <span class="label ">접수</span>
                                 <span class="label ">견적</span>
@@ -608,92 +711,6 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-        <script type="text/javascript">
-            google.charts.load("current", {packages:["timeline"]});
-            google.charts.setOnLoadCallback(timeline_create);
-
-            function timeline_create(){
-
-                var data_array = new Array();
-                for(var i = 0; i < 25 ; i++ ){
-                    data_array[i] = ['허브'+i, Math.floor(Math.random() * 10) + 1, 15];
-                }
-                for(var i = 25; i < 50 ; i++ ){
-                    data_array[i] = ['허브'+i, 15, (30-(Math.floor(Math.random() * 9) + 1))];
-                }
-
-
-                Math.floor(Math.random() * 15) + 1
-
-                $('#scheduler_div > div').remove();
-
-                var dataTable = new google.visualization.DataTable();
-                var chart = new google.visualization.Timeline( document.getElementById('scheduler_div'));
-                dataTable.addColumn({ type: 'string', id: 'Term' });
-                dataTable.addColumn({ type: 'string', id: 'Name' });
-                dataTable.addColumn({ type: 'date', id: 'Start' });
-                dataTable.addColumn({ type: 'date', id: 'End' });
-
-                var day_account = new Date($('#select_tb_year').val()*1, $('#select_tb_month').val()*1, 0).getDate();
-                var select_year = $('#select_tb_year').val()*1;
-                var select_month = $('#select_tb_month').val()*1-1;
-
-                for(var i=0; i<50; i++){
-                    dataTable.addRows([
-                        [ '스케줄', data_array[i][0],  new Date(select_year, select_month, data_array[i][1] ),  new Date(select_year, select_month, data_array[i][2] ) ]
-                    ]);
-                }
-
-                dataTable.addRows([
-                    [ 'hidden_data', '',  new Date(select_year, select_month, 1 ),  new Date(select_year, select_month, day_account ) ]
-                ]);
-
-                var options = {
-                    timeline: { showRowLabels: false }
-                    ,height:40
-                };
-
-                chart.draw(dataTable, options);
-
-                change_data_style();
-
-
-
-            }
-
-            function change_data_style(){
-
-                var day_English =  ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-                var day_Korea =  ['월', '화' , '수', '목', '금',  '토', '일'];
-
-                for(var i = 0 ; i < 7; i++){
-                    $('g > text').each(function() {
-
-                        var text = $(this).text();
-                        $(this).text(text.replace(day_English[i], day_Korea[i]));
-
-                    });
-                }
-
-                $('.scheduler_class > div > div > div > div').css('position', 'relative');
-                $('.scheduler_class > div > div > div > div').css('overflow-y', 'hidden');
-
-
-                var timeline_height= $('.scheduler_class > div > div > div > div > svg').height();
-                $('.scheduler_class > div > div > div > div > svg').css('height', (timeline_height-40)+"px");
-                $('.scheduler_class').css('height', timeline_height+"px");
-                $('.scheduler_class > div > div > div > div').css('height', timeline_height+"px");
-
-            }
-
-            window.onload = function() {
-                window.addEventListener('resize', timeline_create);
-            }
-
-
-        </script>
         <div class="panel panel-default">
             <div class="table-responsive">
                 <table class="table table-bordered font12_black table-condensed">

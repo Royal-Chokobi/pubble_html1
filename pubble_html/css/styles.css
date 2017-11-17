@@ -642,11 +642,11 @@ table > tbody > tr > .table-top-line{
   border-top-right-radius: 18px;
   border-bottom-right-radius: 18px;
 }
-.step_1{ background: linear-gradient(to right, #d9534f, #ab47bc, #999, #999 40%);}
-.step_2{ background: linear-gradient(to right, #d9534f, #ab47bc, #999, #999 70%);}
-.step_3{ background: linear-gradient(to right, #d9534f, #ab47bc, #999 , #999 105%);}
-.step_4{ background: linear-gradient(to right, #d9534f, #ab47bc, #999 , #999 140%);}
-.step_5{ background: linear-gradient(to right, #d9534f, #ab47bc, #5e97f5 , #999 150%);}
+.step_1{ background: linear-gradient(to right, rgb(214, 92, 79), rgb(214, 92, 79),  #999 30%);}
+.step_2{ background: linear-gradient(to right,  rgb(214, 92, 79), rgb(214, 92, 79), rgb(214, 92, 79),rgba(240, 153, 13, 1),rgba(240, 153, 13, 1),#999, #999 55%);}
+.step_3{ background: linear-gradient(to right,rgb(214, 92, 79),rgb(214, 92, 79),rgb(214, 92, 79),rgb(240, 153, 13),rgb(240, 153, 13), rgba(118, 208, 42, 1), rgba(118, 208, 42, 1) ,rgb(153, 153, 153),#999, #999 83%);}
+.step_4{ background: linear-gradient(to right,rgb(214, 92, 79),rgb(214, 92, 79),rgb(214, 92, 79),rgb(240, 153, 13),rgb(240, 153, 13), rgb(240, 153, 13),rgba(118, 208, 42, 1),rgba(118, 208, 42, 1), rgb(17, 207, 210),rgb(17, 206, 210) ,#11ced2, #999 85%);}
+.step_5{ background: linear-gradient(to right,rgb(214, 92, 79),rgb(214, 92, 79),rgb(214, 92, 79),rgb(240, 153, 13),rgb(240, 153, 13), rgb(240, 153, 13),rgba(118, 208, 42, 1),rgba(118, 208, 42, 1), rgb(17, 207, 210),rgb(17, 206, 210) ,#11ced2, #1e90ff 85%);}
 
 
 /*====================================================================================*/
