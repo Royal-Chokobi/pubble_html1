@@ -463,7 +463,7 @@ table > tbody > tr > .table-top-line{
 .top-under-li > ul > li{
   display: block;
   float: left;
-  min-width: 70px;
+ /* min-width: 70px;*/
   height: 30px;
   background: rgba(50, 67, 77, 0.65);
   color: white;
@@ -506,7 +506,8 @@ table > tbody > tr > .table-top-line{
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url(../images/login_img/7.jpg);
+ /* background-image: url(../images/login_img/7.jpg);*/
+  min-height: 740px;
   background-size: 100%;
 }
 .login_topimg{
@@ -648,7 +649,18 @@ table > tbody > tr > .table-top-line{
 .step_4{ background: linear-gradient(to right,rgb(214, 92, 79),rgb(214, 92, 79),rgb(214, 92, 79),rgb(240, 153, 13),rgb(240, 153, 13), rgb(240, 153, 13),rgba(118, 208, 42, 1),rgba(118, 208, 42, 1), rgb(17, 207, 210),rgb(17, 206, 210) ,#11ced2, #999 85%);}
 .step_5{ background: linear-gradient(to right,rgb(214, 92, 79),rgb(214, 92, 79),rgb(214, 92, 79),rgb(240, 153, 13),rgb(240, 153, 13), rgb(240, 153, 13),rgba(118, 208, 42, 1),rgba(118, 208, 42, 1), rgb(17, 207, 210),rgb(17, 206, 210) ,#11ced2, #1e90ff 85%);}
 
-
+.bg_img_change{ list-style-type: none; margin: 0; padding: 0; }
+.bg_img_change li { margin: 3px 3px 3px 0; padding: 1px; float: left; width:150px; height:100px; font-size: 4em; text-align: center; }
+.bg_img_change li > div  { width:150px; height:100px; }
+.bg_img_change li > div > img { width:150px; height:100px; }
+.left_main_img1 > img{width: 100%;}
+.line_block{
+  display: block;
+  width: 100%;
+  border: 2px dashed #999;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 /*====================================================================================*/
 
 /* Demo list */
