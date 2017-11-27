@@ -109,7 +109,44 @@
                 update();
             });
         });
+        /** 팝업 on off 구분  **/
+        function popup_onoff(onoff_type, popup_type_num) {
+            var type_onoff = onoff_type;
+            var type_number = popup_type_num*1;
+            var pop_id = "popup_tb_id" + type_number;
 
+            select_popup_list(type_onoff, pop_id);
+        }
+
+
+        function select_popup_list(type_onoff, pop_id) {
+            if(type_onoff == "on"){
+
+                document.body.classList.add( 'modal-open' );
+                $("#popup_frame_id").addClass( 'modal-backdrop fade in' );
+                $('#'+pop_id).addClass( 'modal fade in' ).css("display", "block");
+
+            }else if(type_onoff == "off"){
+
+                $( '#'+pop_id ).removeClass( 'modal fade in' ).css("display", "none");
+                $( '#popup_frame_id' ).removeClass( 'modal-backdrop fade in' );
+                document.body.classList.remove( 'modal-open' );
+
+            }else{
+                alert("ㅠ.ㅠ_____OTL....ERROR!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+        }
+
+        /** 섬네일  **/
+        var uploadFile = $('.fileBox .uploadBtn');
+        uploadFile.on('change', function(){
+            if(window.FileReader){
+                var filename = $(this)[0].files[0].name;
+            } else {
+                var filename = $(this).val().split('/').pop().split('\\').pop();
+            }
+            $(this).siblings('.fileName').val(filename);
+        });
     </script>
 
 </head>
@@ -444,26 +481,88 @@
                             <td class="text-center  col-sm-12" >
                                 <div class="col-sm-3" style="text-align: left;">
                                     <strong class="label label-warning">5</strong><br/>
-                                   <img src="../../images/login_img/5.jpg" width="150px;">
-                                    <span class="label label-info" style="cursor:pointer;">수정</span>
+                                   <img src="../../images/images_file/img_sp.gif" width="150px;" height="120px;">
+                                    <span class="label label-info" style="cursor:pointer;" onclick="javascript:popup_onoff('on', 1);">수정</span>
                                     <span class="label label-warning" style="cursor:pointer;">삭제</span>
                                 </div>
                                 <div class="col-sm-3" style="text-align: left;">
                                     <strong class="label label-warning">6</strong><br/>
-                                   <img src="../../images/login_img/5.jpg" width="150px;">
+                                    <img src="../../images/images_file/img_sp.gif" width="150px;" height="120px;">
+                                    <span class="label label-info" style="cursor:pointer;" onclick="javascript:popup_onoff('on', 1);">수정</span>
+                                    <span class="label label-warning" style="cursor:pointer;">삭제</span>
                                 </div>
                                 <div class="col-sm-3" style="text-align: left;">
                                     <strong class="label label-warning">7</strong><br/>
-                                   <img src="../../images/login_img/5.jpg" width="150px;">
+                                    <img src="../../images/images_file/img_sp.gif" width="150px;" height="120px;">
+                                    <span class="label label-info" style="cursor:pointer;" onclick="javascript:popup_onoff('on', 1);">수정</span>
+                                    <span class="label label-warning" style="cursor:pointer;">삭제</span>
                                 </div>
                                 <div class="col-sm-3" style="text-align: left;">
                                     <strong class="label label-warning">8</strong><br/>
-                                   <img src="../../images/login_img/5.jpg" width="150px;">
+                                    <img src="../../images/images_file/img_sp.gif" width="150px;" height="120px;">
+                                    <span class="label label-info" style="cursor:pointer;" onclick="javascript:popup_onoff('on', 1);">수정</span>
+                                    <span class="label label-warning" style="cursor:pointer;">삭제</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12 active" >
+                                <div class="col-sm-6" style="text-align: left;">
+                                    <label class="checkbox-inline" >
+                                        Main 이미지 등록(최대 5개)
+                                        <button class="btn btn-primary btn-xs" type="button">사진등록</button>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12" >
+                                <script>
+                                    $( function() {
+                                        $( "#sortable1" ).sortable();
+                                        $( "#sortable1" ).disableSelection();
+                                    } );
+                                </script>
+                                <div class="col-sm-12" style="text-align: left;">
+                                    <strong class="label label-warning">4</strong><span class="text-warning">(이미지를 드래그해서 순서를 변경할 수 있습니다.)</span>
+                                    <ul class="bg_img_change" id="sortable1">
+                                        <li class="ui-state-default">
+                                            <div >
+                                                <img src="../../images/login_img/5.jpg" >
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/login_img/6.jpg">
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/login_img/7.jpg" >
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/login_img/9.jpg" >
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/login_img/10.jpg" >
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>
                         </tbody>
                     </table>
+
+
+
+
+
+
                     <h6 class="panel-title"><strong class="label label-warning">A</strong> 여행지/여행일정 하단 안내메시지 </h6>
                     <div class="col-sm-12">
 
@@ -510,6 +609,65 @@
 
 <!-- //page container -->
 
+<!-- ================================  popup_st ================================  -->
+
+<div id="popup_tb_id1" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:popup_onoff('off', 1);">×</button>
+                <h4 class="modal-title">  섬네일 사진 등록</h4>
+            </div>
+
+            <div class="modal-body with-padding">
+                <div class="table-responsive">
+                    <div name="modal_5_frame" width="100%" frameborder="0" scrolling="auto" >
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 시작 부분 -->
+                        <div class="row" style="text-align:center; overflow: auto; ">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default" style="border-style: none;">
+                                    <div class="col-sm-12" >
+                                        <img src="../../images/images_file/img_sp.gif" width="150px;" height="120px;">
+                                    </div>
+                                    <div class="col-sm-12" >
+                                        <div class="fileBox">
+                                        <input type="text" class="fileName" readonly="readonly">
+                                        <label for="uploadBtn" class="btn_file">찾아보기</label>
+                                        <input type="file" id="uploadBtn" class="uploadBtn">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12" >
+                                        <label class="checkbox-inline">
+                                            <span>링크 : </span>
+                                        </label>
+                                        <label class="checkbox-inline" style="margin-left: 5px;">
+                                            <input type="text" class="form-control input-sm" style="width: 212px;">
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 여기서 부터 데이터가 들어갈 div 끝 부분 -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer" id="blacklist_button_of1">
+                <a href="javascript:;" ><span class="btn btn-primary" >저장</span></a>
+                <button class="btn btn-warning" data-dismiss="modal" onclick="javascript:popup_onoff('off', 1);">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="" id="popup_frame_id"></div>
+
+<!--popup 끝-->
 
 </body>
 

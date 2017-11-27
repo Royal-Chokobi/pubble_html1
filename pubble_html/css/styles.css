@@ -661,6 +661,12 @@ table > tbody > tr > .table-top-line{
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.fileBox{margin-top: 10px;}
+.fileBox .fileName{display:inline-block;width:166px;height:30px;padding-left:10px;line-height:30px;border:1px solid #aaa;background-color:#fff;}
+.fileBox .btn_file{display:inline-block;width:80px;height:30px;line-height:30px;text-align:center;background-color: #546672;color: white;}
+.fileBox input[type="file"] {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
 /*====================================================================================*/
 
 /* Demo list */
