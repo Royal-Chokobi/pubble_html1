@@ -63,52 +63,7 @@
 
         });
 
-        $(function () {
-            $('.remaining').each(function () {
-                var $maxcount = $('.max_byte_count', this);
-                var $count = $('.byte_count', this);
-                var $input = $("#sms_content");
 
-                var maximumByte = $maxcount.text() * 1;
-                var update = function () {
-                    var before = $count.text() * 1;
-                    var str_len = $input.val().length;
-                    var cbyte = 0;
-                    var li_len = 0;
-                    for (i = 0; i < str_len; i++) {
-                        var ls_one_char = $input.val().charAt(i);
-                        if (escape(ls_one_char).length > 4) {
-                            cbyte += 2; //한글이면 2를 더한다
-                        } else {
-                            cbyte++; //한글아니면 1을 다한다
-                        }
-                        if (cbyte <= maximumByte) {
-                            li_len = i + 1;
-                        }
-                    }
-                    if (parseInt(cbyte) > parseInt(maximumByte)) {
-                        alert('허용된 글자수가 초과되었습니다.');
-                        var str = $input.val();
-                        var str2 = $input.val().substr(0, li_len);
-                        $input.val(str2);
-                        var cbyte = 0;
-                        for (i = 0; i < $input.val().length; i++) {
-                            var ls_one_char = $input.val().charAt(i);
-                            if (escape(ls_one_char).length > 4) {
-                                cbyte += 2; //한글이면 2를 더한다
-                            } else {
-                                cbyte++; //한글아니면 1을 다한다
-                            }
-                        }
-                    }
-                    $count.text(cbyte);
-                };
-                $input.bind('input keyup keydown paste change', function () {
-                    setTimeout(update, 0)
-                });
-                update();
-            });
-        });
         /** 팝업 on off 구분  **/
         function popup_onoff(onoff_type, popup_type_num) {
             var type_onoff = onoff_type;
@@ -385,18 +340,13 @@
                                         </select>
                                     </label>
                                     <label class="checkbox-inline" style="margin-left: 5px; width: 215px;">
-                                        <input type="text" class="form-control " id="sms_content">
+                                        <input type="text" class="form-control " >
                                     </label>
                                     <label class="checkbox-inline" style="margin-left: 5px;">
                                         <strong class="label label-warning">2</strong>
                                     </label>
                                     <label class="checkbox-inline" style="margin-left: 5px; width: 215px;">
                                         <input type="text" class="form-control ">
-                                    </label>
-                                    <label class="checkbox-inline" style="margin-left: 5px;">
-                                         <span class="remaining">
-                                            <span class="byte_count">0</span>/<span class="max_byte_count">2000</span>byte
-                                        </span>
                                     </label>
                                 </div>
                             </td>
@@ -408,12 +358,7 @@
                                         <strong class="label label-warning">3</strong>
                                     </label>
                                     <label class="checkbox-inline" style="width: 586px; margin-left: 5px;">
-                                        <textarea class="form-control input-sm" style="width:100%; height:100px;"></textarea>
-                                    </label>
-                                    <label class="checkbox-inline" style="margin-left: 5px;">
-                                        <span class="remaining">
-                                            <span class="byte_count">0</span>/<span class="max_byte_count">2000</span>byte
-                                        </span>
+                                        <textarea class="form-control input-sm" style="width:100%; height:100px;" ></textarea>
                                     </label>
                                 </div>
                             </td>
@@ -423,7 +368,6 @@
                                 <div class="col-sm-6" style="text-align: left;">
                                     <label class="checkbox-inline" >
                                         Main 이미지 등록(최대 5개)
-                                        <button class="btn btn-primary btn-xs" type="button">사진등록</button>
                                     </label>
                                 </div>
                             </td>
@@ -441,27 +385,42 @@
                                     <ul class="bg_img_change" id="sortable">
                                         <li class="ui-state-default">
                                             <div >
-                                                <img src="../../images/login_img/5.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn4_1">등록</label>
+                                                <input type="file" id="uploadBtn4_1" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/6.jpg">
+                                                <img src="../../images/images_file/img_sp.gif">
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn4_2">등록</label>
+                                                <input type="file" id="uploadBtn4_2" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/7.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn4_3">등록</label>
+                                                <input type="file" id="uploadBtn4_3" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/9.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn4_4">등록</label>
+                                                <input type="file" id="uploadBtn4_4" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/10.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn4_5">등록</label>
+                                                <input type="file" id="uploadBtn4_5" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                     </ul>
@@ -509,8 +468,91 @@
                             <td class="text-center  col-sm-12 active" >
                                 <div class="col-sm-6" style="text-align: left;">
                                     <label class="checkbox-inline" >
-                                        Main 이미지 등록(최대 5개)
-                                        <button class="btn btn-primary btn-xs" type="button">사진등록</button>
+                                        <strong class="label label-warning">9</strong>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left: 5px;">
+                                        소개 페이지 상단 이미지 등록
+                                    </label>
+                                    <label class="btn btn-primary btn-xs" type="button" for="uploadBtn9">사진등록</label>
+                                    <input type="file" id="uploadBtn9" class="uploadBtn" style="display: none;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12" >
+                                <div class="col-sm-12" style="text-align: left;">
+                                    <img src="../../images/images_file/img_sp.gif" width="100%;" height="80px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12 active" >
+                                <div class="col-sm-6" style="text-align: left;">
+                                    <label class="checkbox-inline" >
+                                        글 등록
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12">
+                                <div class="col-sm-12" style="text-align: left;">
+                                    <label class="checkbox-inline" style="margin-left: 5px;">
+                                        <strong class="label label-warning">10</strong>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left: 5px; width: 90%;">
+                                        <input type="text" class="form-control ">
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12 active" >
+                                <div class="col-sm-6" style="text-align: left;">
+                                    <label class="checkbox-inline" >
+                                        <strong class="label label-warning">11</strong>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left: 5px;">
+                                        상세 페이지 이미지 등록
+                                    </label>
+                                    <label class="btn btn-primary btn-xs" type="button" for="uploadBtn11">사진등록</label>
+                                    <input type="file" id="uploadBtn11" class="uploadBtn" style="display: none;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12" >
+                                <div class="col-sm-12" style="text-align: center;">
+                                    <img src="../../images/images_file/img_sp.gif" width="100%;" height="150px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12 active" >
+                                <div class="col-sm-6" style="text-align: left;">
+                                    <label class="checkbox-inline" >
+                                        <strong class="label label-warning">12</strong>
+                                    </label>
+                                    <label class="checkbox-inline" style="margin-left: 5px;">
+                                        상세 페이지 설명글 등록
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12" >
+                                <div class="col-sm-12" style="text-align: left;">
+                                    <label class="checkbox-inline" style="width: 586px; margin-left: 5px;">
+                                        <textarea class="form-control input-sm" style="width:100%; height:100px;"></textarea>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center  col-sm-12 active" >
+                                <div class="col-sm-6" style="text-align: left;">
+                                    <label class="checkbox-inline" >
+                                        호텔 갤러리 이미지 등록(최대 9개)
                                     </label>
                                 </div>
                             </td>
@@ -524,31 +566,78 @@
                                     } );
                                 </script>
                                 <div class="col-sm-12" style="text-align: left;">
-                                    <strong class="label label-warning">4</strong><span class="text-warning">(이미지를 드래그해서 순서를 변경할 수 있습니다.)</span>
+                                    <strong class="label label-warning">13</strong><span class="text-warning">(이미지를 드래그해서 순서를 변경할 수 있습니다.)</span>
                                     <ul class="bg_img_change" id="sortable1">
                                         <li class="ui-state-default">
                                             <div >
-                                                <img src="../../images/login_img/5.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif">
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_1">등록</label>
+                                                <input type="file" id="uploadBtn13_1" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/6.jpg">
+                                                <img src="../../images/images_file/img_sp.gif">
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_2">등록</label>
+                                                <input type="file" id="uploadBtn13_2" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/7.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_3">등록</label>
+                                                <input type="file" id="uploadBtn13_3" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/9.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_4">등록</label>
+                                                <input type="file" id="uploadBtn13_4" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                         <li class="ui-state-default">
                                             <div>
-                                                <img src="../../images/login_img/10.jpg" >
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_5">등록</label>
+                                                <input type="file" id="uploadBtn13_5" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_6">등록</label>
+                                                <input type="file" id="uploadBtn13_6" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_7">등록</label>
+                                                <input type="file" id="uploadBtn13_7" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_8">등록</label>
+                                                <input type="file" id="uploadBtn13_8" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
+                                            </div>
+                                        </li>
+                                        <li class="ui-state-default">
+                                            <div>
+                                                <img src="../../images/images_file/img_sp.gif" >
+                                                <label class="label label-primary" style="cursor:pointer; vertical-align: top;float: left;" for="uploadBtn13_9">등록</label>
+                                                <input type="file" id="uploadBtn13_9" class="uploadBtn" style="display: none;">
+                                                <label class="label label-warning" style="cursor:pointer; vertical-align: top;float: left;">삭제</label>
                                             </div>
                                         </li>
                                     </ul>
@@ -558,49 +647,23 @@
                         </tbody>
                     </table>
 
-
-
-
-
-
-                    <h6 class="panel-title"><strong class="label label-warning">A</strong> 여행지/여행일정 하단 안내메시지 </h6>
-                    <div class="col-sm-12">
-
-
-
-
-
-                    </div>
-
-                    <h6 class="panel-title"><strong class="label label-warning">B</strong> 인원선택 우측 안내메시지</h6>
-                    <div class="col-sm-12">
-                          <textarea class="form-control input-sm" style="width:100%; height:100px;">
-- 총 투숙인원 수를 입력해 주세요.
-- 성인/아동/유아 기준은 체크인날짜 기준입니다.
-  (아동 : 만2세 ~ 12세 미만 / 유아 : 만2세 미만)
--2017년 출발기준
-* 2005년 생일 지나면 성인입니다.
-* 2015년 생일 지나면 아동입니다.
-
-- 객실+골드카드 견적으로 진행됩니다.
-                          </textarea>
-                    </div>
                 </div>
-                <div class="col-sm-5 text-right left_main_img1">
-                    <img src="../../images/images_file/Hotel_Main_pg.png">
+                <div class="col-sm-5 text-right left_main_img1" style="border: 2px dashed #999;">
+                    <img src="../../images/images_file/Hotel_Main_pg2.png" >
                     <div class="line_block"></div>
-                    <img src="../../images/images_file/Hotel_dt_pg.png">
+                    <img src="../../images/images_file/Hotel_dt_pg1.png">
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <a href="javascript:;" class="btn btn-default">미리보기</a>
+                        <a href="javascript:;" class="btn btn-primary">저장</a>
+                        <a href="javascript:;" class="btn btn-warning">취소</a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Table line -->
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <a href="javascript:;" class="btn btn-primary">저장</a>
-            </div>
-        </div>
 
 
     </div></div>
@@ -610,6 +673,7 @@
 <!-- //page container -->
 
 <!-- ================================  popup_st ================================  -->
+
 
 <div id="popup_tb_id1" class="" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
     <div class="modal-dialog modal-sm">
